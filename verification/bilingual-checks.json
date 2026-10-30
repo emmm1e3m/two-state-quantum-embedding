@@ -1,0 +1,17 @@
+{
+  "english_snapshot_bytes_identical": true,
+  "identical_math_spans": 610,
+  "display_math_identical_in_order": 117,
+  "labels": 105,
+  "references": 105,
+  "citations": 4,
+  "bibliography_keys": 5,
+  "environments": 263,
+  "sections": 20,
+  "formal_declarations_identical": 39,
+  "reproduction_commands_identical": true,
+  "bibliography_identical": true,
+  "author": "Tingyu Zhang",
+  "status": "全部对应检查通过",
+  "math_span_order_identical": false
+}

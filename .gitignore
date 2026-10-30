@@ -1,0 +1,9 @@
+lean/.lake/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.fdb_latexmk
+paper/*.fls
+paper/*.synctex.gz
+__pycache__/

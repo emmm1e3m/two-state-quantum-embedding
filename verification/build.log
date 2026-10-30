@@ -1,0 +1,1879 @@
+⚠ [3526/3551] Replayed TwoStateQuantumEmbedding.Duhamel
+warning: TwoStateQuantumEmbedding\Duhamel.lean: imports `Mathlib.Analysis.SpecialFunctions.Exponential` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Duhamel.lean: imports `Mathlib.Analysis.Calculus.Deriv.Mul` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Duhamel.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Duhamel.lean: imports `Mathlib.Analysis.Matrix.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Duhamel.lean: imports `Mathlib.Analysis.Normed.Algebra.MatrixExponential` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Duhamel.lean: imports `Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Duhamel.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/Duhamel.lean:194:0: 'TwoStateQuantumEmbedding.hasDerivAt_duhamel_path' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:195:0: 'TwoStateQuantumEmbedding.exp_add_sub_exp_eq_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:196:0: 'TwoStateQuantumEmbedding.exp_add_sub_exp_eq_integral_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:197:0: 'TwoStateQuantumEmbedding.exp_add_sub_exp_eq_integral_right' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:198:0: 'TwoStateQuantumEmbedding.exp_first_order_remainder_eq_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:199:0: 'TwoStateQuantumEmbedding.exp_first_order_remainder_eq_double_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:200:0: 'TwoStateQuantumEmbedding.norm_exp_add_sub_le_of_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:201:0: 'TwoStateQuantumEmbedding.norm_exp_first_order_remainder_le_of_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:202:0: 'TwoStateQuantumEmbedding.norm_exp_first_order_remainder_le_of_contractions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:203:0: 'TwoStateQuantumEmbedding.matrix_exp_add_sub_exp_eq_integral' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Duhamel.lean:204:0: 'TwoStateQuantumEmbedding.matrix_exp_first_order_remainder_eq_double_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3617/3629] Replayed TwoStateQuantumEmbedding.GKSLAlgebra
+warning: TwoStateQuantumEmbedding\GKSLAlgebra.lean: imports `Mathlib.LinearAlgebra.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GKSLAlgebra.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GKSLAlgebra.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GKSLAlgebra.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GKSLAlgebra.lean: imports `Mathlib.LinearAlgebra.Matrix.Notation` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GKSLAlgebra.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:435:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.pauli_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:436:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.dissipator_scalar_shift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:437:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.dissipator_bloch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:438:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.hamiltonian_bloch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:439:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.canonical_gksl_bloch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:440:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.hermitian_gksl_bloch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:441:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.kossakowski_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:442:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.gkslAction_gauge' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:443:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.arbitrary_gksl_bloch' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:444:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.gkslAction_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:445:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.gkslAction_adjoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:446:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.hermitian_drift_reconstruction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:447:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.kossakowski_real_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:448:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.exists_kossakowski_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:449:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.exists_gksl_for_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLAlgebra.lean:450:0: 'TwoStateQuantumEmbedding.GKSLAlgebra.hermitian_trace_one_blochState' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3621/3629] Built QICLean.Algebra.MatrixOperatorSpace (25s)
+warning: vendor\QICLean\QICLean\Algebra\MatrixOperatorSpace.lean: imports `Mathlib.Analysis.Matrix.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixOperatorSpace.lean: imports `Mathlib.Analysis.Normed.Group.Continuity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixOperatorSpace.lean: imports `Mathlib.Analysis.Normed.Operator.Mul` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixOperatorSpace.lean: imports `Mathlib.Topology.Algebra.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixOperatorSpace.lean: imports `Mathlib.Topology.Metrizable.Uniformity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3622/3629] Built TwoStateQuantumEmbedding.Model (26s)
+warning: TwoStateQuantumEmbedding\Model.lean: imports `Mathlib.Analysis.Normed.Algebra.MatrixExponential` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Model.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Model.lean: imports `Mathlib.Analysis.Matrix.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Model.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/Model.lean:217:0: 'TwoStateQuantumEmbedding.finiteOutput_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Model.lean:218:0: 'TwoStateQuantumEmbedding.finiteOutput_mem_Q2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Model.lean:219:0: 'TwoStateQuantumEmbedding.Q2_eq_closure_unitTimeOutputs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Model.lean:220:0: 'TwoStateQuantumEmbedding.gkslMatrix_mulVec' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Model.lean:221:0: 'TwoStateQuantumEmbedding.continuous_finiteOutput' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Model.lean:222:0: 'TwoStateQuantumEmbedding.finiteEvolution_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Model.lean:223:0: 'TwoStateQuantumEmbedding.mem_Q2_iff_approx' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Model.lean:224:0: 'TwoStateQuantumEmbedding.finiteEvolution_identical_root' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3623/3629] Replayed TwoStateQuantumEmbedding.TraceGradient
+warning: TwoStateQuantumEmbedding\TraceGradient.lean: imports `Mathlib.Data.Matrix.Basis` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\TraceGradient.lean: imports `Mathlib.Analysis.Matrix.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\TraceGradient.lean: imports `Mathlib.Analysis.Normed.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\TraceGradient.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding/TraceGradient.lean:20:0: automatically included section variable(s) unused in theorem `TwoStateQuantumEmbedding.TraceGradient.apply_single`:
+  [Fintype n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: TwoStateQuantumEmbedding/TraceGradient.lean:59:0: automatically included section variable(s) unused in theorem `TwoStateQuantumEmbedding.TraceGradient.re_trace_adjoint_pairing`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: TwoStateQuantumEmbedding/TraceGradient.lean:69:0: automatically included section variable(s) unused in theorem `TwoStateQuantumEmbedding.TraceGradient.hermitianGradient_isHermitian`:
+  [Fintype n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: TwoStateQuantumEmbedding/TraceGradient.lean:84:0: 'TwoStateQuantumEmbedding.TraceGradient.rawGradient_pairing' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/TraceGradient.lean:85:0: 'TwoStateQuantumEmbedding.TraceGradient.hermitianGradient_pairing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/TraceGradient.lean:86:0: 'TwoStateQuantumEmbedding.TraceGradient.hermitianGradient_isHermitian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3624/3629] Built TwoStateQuantumEmbedding.ExponentialRepresentation (22s)
+warning: TwoStateQuantumEmbedding\ExponentialRepresentation.lean: imports `Mathlib.Topology.Algebra.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialRepresentation.lean: imports `Mathlib.LinearAlgebra.Matrix.ToLin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialRepresentation.lean: imports `Mathlib.Analysis.Normed.Operator.Mul` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialRepresentation.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ExponentialRepresentation.lean:210:0: 'TwoStateQuantumEmbedding.matrixCLMAlgEquiv_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialRepresentation.lean:211:0: 'TwoStateQuantumEmbedding.matrix_exp_mulVec_eq_vec_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialRepresentation.lean:212:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_eq_real_exp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialRepresentation.lean:213:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_eq_end_exp' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialRepresentation.lean:214:0: 'TwoStateQuantumEmbedding.finiteEvolution_eq_superoperator_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialRepresentation.lean:215:0: 'TwoStateQuantumEmbedding.finiteEvolution_mulVec_eq_superoperator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialRepresentation.lean:216:0: 'TwoStateQuantumEmbedding.finiteOutput_eq_superoperator_probabilities' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3625/3632] Built TwoStateQuantumEmbedding.PSDOptimality (25s)
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.LinearAlgebra.Matrix.Rank` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.Analysis.Calculus.ImplicitFunction.ProdDomain` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.Analysis.Calculus.LocalExtr.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.Analysis.Calculus.Deriv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.Analysis.Calculus.Deriv.Comp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PSDOptimality.lean: imports `Mathlib.Analysis.Calculus.FDeriv.Mul` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding/PSDOptimality.lean:45:0: automatically included section variable(s) unused in theorem `TwoStateQuantumEmbedding.PSDNormal.trace_mul_im_eq_zero`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: TwoStateQuantumEmbedding/PSDOptimality.lean:163:0: automatically included section variable(s) unused in theorem `TwoStateQuantumEmbedding.PSDNormal.psd_of_nonneg_re_trace_tests`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:189:0: 'TwoStateQuantumEmbedding.PSDNormal.mul_eq_zero_of_psd_trace_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:190:0: 'TwoStateQuantumEmbedding.PSDNormal.mul_eq_zero_of_psd_re_trace_eq_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:191:0: 'TwoStateQuantumEmbedding.PSDNormal.rank_lower_bound_of_norm_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:192:0: 'TwoStateQuantumEmbedding.PSDNormal.rank_one_of_psd_trace_and_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:193:0: 'TwoStateQuantumEmbedding.PSDNormal.rank_one_of_psd_trace_and_quadratic_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:194:0: 'TwoStateQuantumEmbedding.PSDNormal.psd_complementarity_of_variational_inequality' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+warning: TwoStateQuantumEmbedding/PSDOptimality.lean:286:24: Unused tactic linter: `<;>` should be replaced with `;` or be removed.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: TwoStateQuantumEmbedding/PSDOptimality.lean:286:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:378:0: 'TwoStateQuantumEmbedding.ConeIFT.constrained_halfspace_normal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:379:0: 'TwoStateQuantumEmbedding.ConeIFT.cone_normal_of_localMin' depends on axioms: [propext, Classical.choice, Quot.sound]
+warning: TwoStateQuantumEmbedding/PSDOptimality.lean:421:22: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [S, _root_.sub_apply, _root_.smul_apply, smul_eq_mul, haPair W hW, hbPair W hW, Matrix.sub_mul,
+    Matrix.trace_sub, Matrix.trace_smul, RCLike.smul_re]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TwoStateQuantumEmbedding/PSDOptimality.lean:422:6: This simp argument is unused:
+  RCLike.smul_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [S, _root_.sub_apply, _root_.smul_apply, smul_eq_mul, haPair W hW, hbPair W hW, Matrix.sub_mul,
+    Matrix.smul_mul, Matrix.trace_sub, Matrix.trace_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:453:0: 'TwoStateQuantumEmbedding.PSDOptimality.psd_normal_of_localMin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PSDOptimality.lean:454:0: 'TwoStateQuantumEmbedding.PSDOptimality.minimizer_rank_one_of_quadratic_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3702/3713] Replayed QICLean.Channel.Basic
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Analysis.Matrix.Spectrum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Analysis.Matrix.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Analysis.CStarAlgebra.PositiveLinearMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Analysis.RCLike.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Topology.Algebra.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Topology.Order.OrderClosed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Topology.Sequences` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Topology.MetricSpace.Bounded` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Basic.lean: imports `Mathlib.Topology.Instances.Matrix` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [3706/3714] Built QICLean.Channel.Semigroup.GeneratorDefs (13s)
+ℹ [3707/3714] Built TwoStateQuantumEmbedding.CanonicalBloch (20s)
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:381:0: 'TwoStateQuantumEmbedding.CanonicalBloch.generalizedState' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:382:0: 'TwoStateQuantumEmbedding.CanonicalBloch.gkslAction_realGeneralizedState' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:383:0: 'TwoStateQuantumEmbedding.CanonicalBloch.finiteEvolution_bloch_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:384:0: 'TwoStateQuantumEmbedding.CanonicalBloch.generalizedState_evolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:385:0: 'TwoStateQuantumEmbedding.CanonicalBloch.realGeneralizedState_evolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:386:0: 'TwoStateQuantumEmbedding.CanonicalBloch.canonicalEvolution_head' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:387:0: 'TwoStateQuantumEmbedding.CanonicalBloch.finiteOutput_eq_canonicalOutput' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:388:0: 'TwoStateQuantumEmbedding.CanonicalBloch.exists_evolution_for_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:389:0: 'TwoStateQuantumEmbedding.CanonicalBloch.exists_finiteOutput_for_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:390:0: 'TwoStateQuantumEmbedding.CanonicalBloch.unitTimeOutputs_eq_canonicalOutputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBloch.lean:391:0: 'TwoStateQuantumEmbedding.CanonicalBloch.Q2_eq_closure_canonicalOutputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3708/3714] Replayed QICLean.Algebra.MatrixSpectralDecomp
+warning: vendor\QICLean\QICLean\Algebra\MatrixSpectralDecomp.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixSpectralDecomp.lean: imports `Mathlib.Analysis.Matrix.Spectrum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3709/3714] Built QICLean.Channel.Semigroup.Basic (26s)
+warning: vendor\QICLean\QICLean\Channel\Semigroup\Basic.lean: imports `Mathlib.Analysis.ODE.ExistUnique` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3710/3714] Replayed QICLean.Algebra.MatrixTracePairing
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.Basic.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.Data.Matrix.Basis` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.BilinearForm.Properties` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Dimension.Finite` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Eigenspace.Charpoly` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.FiniteDimensional.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Matrix.StdBasis` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Matrix.Vec` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Pi` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Span.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixTracePairing.lean: imports `Mathlib.LinearAlgebra.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [3711/3718] Built QICLean.Channel.Semigroup.LindbladForm.Basic (23s)
+⚠ [3712/3718] Replayed QICLean.Algebra.MatrixIsometryEntries
+warning: vendor\QICLean\QICLean\Algebra\MatrixIsometryEntries.lean: imports `Mathlib.Basic.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixIsometryEntries.lean: imports `Mathlib.LinearAlgebra.Matrix.ConjTranspose` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3713/3721] Built QICLean.Channel.PartialTrace (17s)
+warning: vendor\QICLean\QICLean\Channel\PartialTrace.lean: imports `Mathlib.LinearAlgebra.Matrix.Kronecker` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\PartialTrace.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\PartialTrace.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\PartialTrace.lean: imports `Mathlib.Basic.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3714/3721] Replayed QICLean.Channel.TensorMap
+warning: vendor\QICLean\QICLean\Channel\TensorMap.lean: imports `Mathlib.Basic.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\TensorMap.lean: imports `Mathlib.LinearAlgebra.Matrix.Kronecker` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\TensorMap.lean: imports `Mathlib.LinearAlgebra.Matrix.Reindex` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3715/3725] Replayed QICLean.Channel.MaximallyEntangled
+warning: vendor\QICLean\QICLean\Channel\MaximallyEntangled.lean: imports `Mathlib.Algebra.Ring.Idempotent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\MaximallyEntangled.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\MaximallyEntangled.lean: imports `Mathlib.Analysis.Real.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\MaximallyEntangled.lean: imports `Mathlib.Basic.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\MaximallyEntangled.lean: imports `Mathlib.LinearAlgebra.Matrix.Kronecker` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\MaximallyEntangled.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3717/3727] Built QICLean.Channel.ChoiRectangular (18s)
+warning: vendor\QICLean\QICLean\Channel\ChoiRectangular.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\ChoiRectangular.lean: imports `Mathlib.Analysis.InnerProductSpace.Positive` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3718/3727] Replayed QICLean.Algebra.MatrixAux
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Data.Matrix.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Data.Matrix.Block` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.LinearAlgebra.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Analysis.Matrix.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Analysis.CStarAlgebra.Matrix` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Analysis.MeanInequalities` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.LinearAlgebra.Matrix.Charpoly.Eigs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.LinearAlgebra.Matrix.Transvection` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixAux.lean: imports `Mathlib.Topology.Instances.Matrix` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3719/3729] Built TwoStateQuantumEmbedding.ExponentialGradient (40s)
+warning: TwoStateQuantumEmbedding\ExponentialGradient.lean: imports `Mathlib.Analysis.Normed.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialGradient.lean: imports `Mathlib.Analysis.Normed.Group.Bounded` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialGradient.lean: imports `Mathlib.Analysis.Calculus.FDeriv.Analytic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialGradient.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ExponentialGradient.lean:232:0: 'TwoStateQuantumEmbedding.ExponentialGradient.hasFDerivAt_exp_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialGradient.lean:233:0: 'TwoStateQuantumEmbedding.ExponentialGradient.fderiv_exp_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialGradient.lean:234:0: 'TwoStateQuantumEmbedding.ExponentialGradient.hasStrictFDerivAt_canonicalScalar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialGradient.lean:235:0: 'TwoStateQuantumEmbedding.ExponentialGradient.hasStrictFDerivAt_canonical_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialGradient.lean:236:0: 'TwoStateQuantumEmbedding.ExponentialGradient.hasStrictFDerivAt_canonical_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialGradient.lean:237:0: 'TwoStateQuantumEmbedding.ExponentialGradient.fderiv_exp_diagonal_exp_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [3720/3729] Built QICLean.Channel.ChoiJamiolkowski (19s)
+⚠ [3722/3729] Built QICLean.Channel.Semigroup.ProductFormula (20s)
+warning: vendor\QICLean\QICLean\Channel\Semigroup\ProductFormula.lean: imports `Mathlib.Analysis.SpecificLimits.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [3723/3729] Built TwoStateQuantumEmbedding.CanonicalGradient (21s)
+info: TwoStateQuantumEmbedding/CanonicalGradient.lean:96:0: 'TwoStateQuantumEmbedding.CanonicalGradient.canonicalScalarDerivative_pairing' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalGradient.lean:97:0: 'TwoStateQuantumEmbedding.CanonicalGradient.canonical_psd_normal_of_localMin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3724/3750] Built QICLean.Channel.Semigroup.LindbladForm.TraceBridge (19s)
+warning: vendor\QICLean\QICLean\Channel\Semigroup\LindbladForm\TraceBridge.lean: imports `Mathlib.Analysis.Calculus.MeanValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3735/3774] Built TwoStateQuantumEmbedding.DissipativeFlow (22s)
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Analysis.CStarAlgebra.Matrix` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Algebra.Order.Star.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Analysis.SpecialFunctions.Exponential` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Analysis.SpecialFunctions.ExpDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Analysis.InnerProductSpace.Calculus` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Analysis.Calculus.Deriv.MeanValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Analysis.Calculus.Deriv.Mul` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\DissipativeFlow.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/DissipativeFlow.lean:220:0: 'TwoStateQuantumEmbedding.DissipativeFlow.norm_exp_apply_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/DissipativeFlow.lean:221:0: 'TwoStateQuantumEmbedding.DissipativeFlow.exp_mul_norm_le_norm_exp_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DissipativeFlow.lean:222:0: 'TwoStateQuantumEmbedding.DissipativeFlow.matrix_contraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/DissipativeFlow.lean:223:0: 'TwoStateQuantumEmbedding.DissipativeFlow.matrix_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/DissipativeFlow.lean:224:0: 'TwoStateQuantumEmbedding.DissipativeFlow.matrix_inverse_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DissipativeFlow.lean:225:0: 'TwoStateQuantumEmbedding.DissipativeFlow.trace_complement_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DissipativeFlow.lean:226:0: 'TwoStateQuantumEmbedding.DissipativeFlow.canonical_bloch_flow_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3736/3774] Built QICLean.Channel.Semigroup.CPClosure (27s)
+warning: vendor\QICLean\QICLean\Channel\Semigroup\CPClosure.lean: imports `Mathlib.Analysis.SpecificLimits.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Semigroup\CPClosure.lean: imports `Mathlib.Topology.Algebra.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Semigroup\CPClosure.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor/QICLean/QICLean/Channel/Semigroup/CPClosure.lean:297:8: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [3737/3774] Replayed QICLean.Channel.CompletelyPositiveBridge
+warning: vendor\QICLean\QICLean\Channel\CompletelyPositiveBridge.lean: imports `Mathlib.Analysis.CStarAlgebra.CompletelyPositiveMap` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3738/3774] Replayed TwoStateQuantumEmbedding.SwapCore
+warning: TwoStateQuantumEmbedding\SwapCore.lean: imports `Mathlib.Analysis.Real.Pi.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapCore.lean: imports `Mathlib.Analysis.Complex.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapCore.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapCore.lean: imports `Mathlib.LinearAlgebra.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapCore.lean: imports `Mathlib.LinearAlgebra.Matrix.Determinant.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapCore.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapCore.lean:566:0: 'Swap.rootTwo_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:567:0: 'Swap.rootTwo_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:568:0: 'Swap.twice_rootTwo_lt_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:569:0: 'Swap.slope_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:570:0: 'Swap.slope_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:571:0: 'Swap.gap_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:572:0: 'Swap.coupling_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:573:0: 'Swap.frequency_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:574:0: 'Swap.frequency_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:575:0: 'Swap.squareMinus_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:576:0: 'Swap.squarePlus_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:577:0: 'Swap.squareMinus_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:578:0: 'Swap.squarePlus_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:579:0: 'Swap.energy_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:580:0: 'Swap.mass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:581:0: 'Swap.energy_ge_half_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:582:0: 'Swap.first_swap_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:583:0: 'Swap.first_swap_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:584:0: 'Swap.weight_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:585:0: 'Swap.weight_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:586:0: 'Swap.weight_le_third' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:587:0: 'Swap.all_frequency_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:588:0: 'Swap.all_frequency_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:589:0: 'Swap.higher_frequency_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:590:0: 'Swap.first_swap_equality_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:591:0: 'Swap.finite_jump_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:592:0: 'Swap.referenceMatrix_hermitian' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:593:0: 'Swap.referenceMatrix_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:594:0: 'Swap.matrixQa_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:595:0: 'Swap.matrixQb_form' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:596:0: 'Swap.generalized_determinant' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:597:0: 'Swap.mass_orthogonal_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:598:0: 'Swap.first_frequency_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:599:0: 'Swap.full_complex_leading_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:600:0: 'Swap.full_complex_leading_coercive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:601:0: 'Swap.generalized_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:602:0: 'Swap.generalized_real_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:603:0: 'Swap.frequency_ge_pi' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:604:0: 'Swap.frequency_coupling_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:605:0: 'Swap.all_frequency_real_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:606:0: 'Swap.frequencySlope_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:607:0: 'Swap.frequencySlope_formula' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:608:0: 'Swap.frequencySlope_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:609:0: 'Swap.frequencySlope_ge_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:610:0: 'Swap.dual_matrix_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:611:0: 'Swap.young_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:612:0: 'Swap.localization_energy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:613:0: 'Swap.exclude_higher_frequencies' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:614:0: 'Swap.equality_direction_value' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:615:0: 'Swap.sharp_slope_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:616:0: 'Swap.trace_matrix_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:617:0: 'Swap.trace_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:618:0: 'Swap.trace_kossakowski' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:619:0: 'Swap.trace_Qa_kossakowski' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:620:0: 'Swap.trace_Qb_kossakowski' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:621:0: 'Swap.kossakowski_trace_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:622:0: 'Swap.finite_jump_equality_rigidity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:623:0: 'Swap.equality_vector_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:624:0: 'Swap.outer_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCore.lean:625:0: 'Swap.endpoint_kossakowski_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3740/3774] Replayed TwoStateQuantumEmbedding.Geometry
+warning: TwoStateQuantumEmbedding\Geometry.lean: imports `Mathlib.Analysis.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Geometry.lean: imports `Mathlib.Tactic.FinCases` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Geometry.lean: imports `Mathlib.Tactic.Ring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Geometry.lean: imports `Mathlib.Tactic.Linarith` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Geometry.lean: imports `Mathlib.Tactic.NormNum` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Geometry.lean: imports `Mathlib.Tactic.FieldSimp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Geometry.lean: imports `Mathlib.Tactic.Positivity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/Geometry.lean:351:0: 'TwoState.Geometry.driftMatrix_posSemidef_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:352:0: 'TwoState.Geometry.driftMatrix_posSemidef_iff_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:353:0: 'TwoState.Geometry.posSemidef_transpose_mix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:354:0: 'TwoState.Geometry.driftMatrix_scale_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:355:0: 'TwoState.Geometry.transpose_mix_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:356:0: 'TwoState.Geometry.ball3_linear_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:357:0: 'TwoState.Geometry.driftMatrix_linear_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:358:0: 'TwoState.Geometry.physical_drift_linear_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:359:0: 'TwoState.Geometry.observable_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Geometry.lean:360:0: 'TwoState.Geometry.stochastic_iff_diamond' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3741/3785] Built TwoStateQuantumEmbedding.AnalyticFoundation (16s)
+warning: TwoStateQuantumEmbedding\AnalyticFoundation.lean: imports `Mathlib.Analysis.Calculus.ImplicitContDiff` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\AnalyticFoundation.lean: imports `Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\AnalyticFoundation.lean: imports `Mathlib.Analysis.Analytic.IsolatedZeros` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\AnalyticFoundation.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:187:0: 'QuantumEmbedding.AnalyticFoundation.analytic_factor_value_eq_deriv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:188:0: 'QuantumEmbedding.AnalyticFoundation.analytic_affine_parameter_directional_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:189:0: 'QuantumEmbedding.AnalyticFoundation.analytic_implicit_open_neighborhoods' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:190:0: 'QuantumEmbedding.AnalyticFoundation.analytic_directional_factor' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:191:0: 'QuantumEmbedding.AnalyticFoundation.analytic_curve_reparameterization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:192:0: 'QuantumEmbedding.AnalyticFoundation.analytic_implicit_branch' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:193:0: 'QuantumEmbedding.AnalyticFoundation.analytic_division_one_variable' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AnalyticFoundation.lean:194:0: 'QuantumEmbedding.AnalyticFoundation.analytic_local_reparameterization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3743/3785] Replayed TwoStateQuantumEmbedding.GeneralGeometry
+warning: TwoStateQuantumEmbedding\GeneralGeometry.lean: imports `Mathlib.LinearAlgebra.Matrix.Adjugate` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GeneralGeometry.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:390:0: 'TwoState.GeneralGeometry.crossMat_congruence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:391:0: 'TwoState.GeneralGeometry.orthogonal_crossMat' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:392:0: 'TwoState.GeneralGeometry.orthogonal_adjugate_congruence' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:393:0: 'TwoState.GeneralGeometry.exists_orthogonal_diagonalization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:394:0: 'TwoState.GeneralGeometry.adjugate_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:395:0: 'TwoState.GeneralGeometry.sqrt_adjugate_in_basis' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:396:0: 'TwoState.GeneralGeometry.canonical_posSemidef_iff_sqrt_ball' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:397:0: 'TwoState.GeneralGeometry.physicalCanonical_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:398:0: 'TwoState.GeneralGeometry.physicalCanonical_posSemidef_iff_ball' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:399:0: 'TwoState.GeneralGeometry.physicalCanonical_linear_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:400:0: 'TwoState.GeneralGeometry.physicalCanonical_max_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:401:0: 'TwoState.GeneralGeometry.adjugate_quadratic_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GeneralGeometry.lean:402:0: 'TwoState.GeneralGeometry.physicalCanonical_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3744/3785] Replayed TwoStateQuantumEmbedding.SwapComparison
+warning: TwoStateQuantumEmbedding\SwapComparison.lean: imports `Mathlib.Analysis.Calculus.MeanValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapComparison.lean: imports `Mathlib.Analysis.SpecialFunctions.Integrals.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapComparison.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapComparison.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapComparison.lean: imports `Mathlib.Algebra.Order.Floor.Semiring` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding/SwapComparison.lean:29:22: This simp argument is unused:
+  smul_mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [f, add_mul, hJ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TwoStateQuantumEmbedding/SwapComparison.lean:67:8: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Complex.I_sq]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TwoStateQuantumEmbedding/SwapComparison.lean:67:19: This simp argument is unused:
+  Complex.I_sq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [smul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: TwoStateQuantumEmbedding/SwapComparison.lean:69:0: 'TwoStateQuantumEmbedding.SwapComparison.exp_of_square_neg_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:70:0: 'TwoStateQuantumEmbedding.SwapComparison.pauliUnitary_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:171:0: 'TwoStateQuantumEmbedding.SwapComparison.integral_reference_amplitude_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:172:0: 'TwoStateQuantumEmbedding.SwapComparison.integral_reference_amplitude_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:173:0: 'TwoStateQuantumEmbedding.SwapComparison.integral_frequency_sin_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:174:0: 'TwoStateQuantumEmbedding.SwapComparison.amplitude_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:230:0: 'TwoStateQuantumEmbedding.SwapComparison.exists_winding_close' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:300:0: 'TwoStateQuantumEmbedding.SwapComparison.pauliUnitary_survival' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:301:0: 'TwoStateQuantumEmbedding.SwapComparison.actual_reference_amplitude_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:302:0: 'TwoStateQuantumEmbedding.SwapComparison.actual_reference_amplitude_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+warning: TwoStateQuantumEmbedding/SwapComparison.lean:323:66: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [GKSLAlgebra.dissipator, Matrix.mul_sub, Matrix.sub_mul, Matrix.smul_mul, Matrix.mul_add, Matrix.add_mul,
+    Matrix.conjTranspose_mul, Matrix.mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TwoStateQuantumEmbedding/SwapComparison.lean:324:6: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [GKSLAlgebra.dissipator, Matrix.mul_sub, Matrix.sub_mul, Matrix.mul_smul, Matrix.mul_add, Matrix.add_mul,
+    Matrix.conjTranspose_mul, Matrix.mul_assoc]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TwoStateQuantumEmbedding/SwapComparison.lean:327:52: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [diagonalReal, Matrix.sub_apply, Matrix.smul_apply, Matrix.add_apply, basis_sandwich_entry, hzero,
+    star_zero, mul_zero, zero_mul, add_zero, smul_zero, sub_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: TwoStateQuantumEmbedding/SwapComparison.lean:380:0: 'TwoStateQuantumEmbedding.SwapComparison.referenceFirstOrder_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapComparison.lean:381:0: 'TwoStateQuantumEmbedding.SwapComparison.referenceFirstOrder_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [3745/3785] Built QICLean.Channel.Semigroup.LindbladForm.ChoiCCP (15s)
+⚠ [3746/3785] Replayed TwoStateQuantumEmbedding.MatrixVolume
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.Analysis.SpecialFunctions.Exponential` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.Analysis.SpecialFunctions.ExpDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.Analysis.Calculus.Deriv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.Analysis.Calculus.MeanValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.Analysis.CStarAlgebra.Matrix` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.LinearAlgebra.CrossProduct` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.Analysis.Normed.Algebra.MatrixExponential` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\MatrixVolume.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/MatrixVolume.lean:72:0: 'TwoStateQuantumEmbedding.det_exp_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/MatrixVolume.lean:165:0: 'TwoStateQuantumEmbedding.cross_mulVec_of_det_ne_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/MatrixVolume.lean:166:0: 'TwoStateQuantumEmbedding.det_gram_two_eq_cross_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/MatrixVolume.lean:167:0: 'TwoStateQuantumEmbedding.norm_cross_mulVec_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/MatrixVolume.lean:168:0: 'TwoStateQuantumEmbedding.det_compressed_gram_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/MatrixVolume.lean:169:0: 'TwoStateQuantumEmbedding.det_compressed_exp_gram_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3748/3785] Replayed TwoStateQuantumEmbedding.SwapLeadingJacobian
+warning: TwoStateQuantumEmbedding\SwapLeadingJacobian.lean: imports `Mathlib.Analysis.Calculus.FDeriv.Pow` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapLeadingJacobian.lean: imports `Mathlib.Analysis.Calculus.FDeriv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapLeadingJacobian.lean: imports `Mathlib.Topology.Algebra.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapLeadingJacobian.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:107:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingDefect_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:108:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.beta_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:109:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingQb_at_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:110:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingDefect_gradient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:111:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingGradient_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:112:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingGradient_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:113:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingDefect_hessian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:114:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingGradient_at_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:115:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.leadingDefect_at_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:116:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.scale_multiplier_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:117:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.directionHessianMatrix_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:118:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.directionHessianMatrix_det' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapLeadingJacobian.lean:119:0: 'TwoStateQuantumEmbedding.SwapLeadingJacobian.directionHessianMatrix_nonsingular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3749/3785] Built TwoStateQuantumEmbedding.ActualSwapSystem (26s)
+warning: TwoStateQuantumEmbedding\ActualSwapSystem.lean: imports `Mathlib.Analysis.Normed.Algebra.MatrixExponential` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ActualSwapSystem.lean: imports `Mathlib.Analysis.Matrix.Normed` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ActualSwapSystem.lean: imports `Mathlib.Data.Matrix.Basis` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ActualSwapSystem.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:359:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_generator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:360:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.generator_at_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:361:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.dissipativePart_at_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:362:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.generator_eq_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:363:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.kossakowskiMatrix_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:364:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probability_eq_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:365:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probability_mem_unitTimeOutputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:366:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_evolution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:367:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_probabilityA' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:368:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_probabilityB' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:369:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_objective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:370:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.objective_eq_comp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:371:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.packedHamiltonian_direction_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:372:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_dividedDirection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:373:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.direction_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:374:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.dividedDirection_eq_quotient' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:375:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:376:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.dividedDirection_zero_eq_mixed_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:377:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.stationarity_zero_iff_raw' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:378:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.objective_direction_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:379:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.generator_scale_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:380:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.evolution_scale_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:381:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_matrix_entries' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:382:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.entry_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:383:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_hamiltonianPart' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:384:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_dissipativePart' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:385:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.packedHamiltonianLinear_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:386:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_packedDissipative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:387:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_packedGenerator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:388:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_outerObjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapSystem.lean:389:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_objective_direction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3750/3785] Replayed TwoStateQuantumEmbedding.AffineExponential
+info: TwoStateQuantumEmbedding/AffineExponential.lean:145:0: 'TwoStateQuantumEmbedding.AffineExponential.exp_zero_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/AffineExponential.lean:146:0: 'TwoStateQuantumEmbedding.AffineExponential.affine_evolution_spatial' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AffineExponential.lean:147:0: 'TwoStateQuantumEmbedding.AffineExponential.affine_evolution_head' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AffineExponential.lean:148:0: 'TwoStateQuantumEmbedding.AffineExponential.affine_drift_eq_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AffineExponential.lean:149:0: 'TwoStateQuantumEmbedding.AffineExponential.affine_drift_eq_integrated_mulVec' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AffineExponential.lean:150:0: 'TwoStateQuantumEmbedding.AffineExponential.affine_terminal_bias' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3751/3805] Built TwoStateQuantumEmbedding.AzimuthGauge (34s)
+info: TwoStateQuantumEmbedding/AzimuthGauge.lean:215:0: 'TwoStateQuantumEmbedding.AzimuthGauge.rotateNoise_drift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/AzimuthGauge.lean:216:0: 'TwoStateQuantumEmbedding.AzimuthGauge.rotate_blochMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/AzimuthGauge.lean:217:0: 'TwoStateQuantumEmbedding.AzimuthGauge.canonicalEvolution_azimuth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AzimuthGauge.lean:218:0: 'TwoStateQuantumEmbedding.AzimuthGauge.canonicalOutput_azimuth' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AzimuthGauge.lean:219:0: 'TwoStateQuantumEmbedding.AzimuthGauge.exists_azimuth_normal_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3753/3805] Built QICLean.Channel.Semigroup.LindbladForm.EulerStep (18s)
+warning: vendor\QICLean\QICLean\Channel\Semigroup\LindbladForm\EulerStep.lean: imports `Mathlib.Analysis.Calculus.MeanValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Channel\Semigroup\LindbladForm\EulerStep.lean: imports `Mathlib.Analysis.Matrix.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [3754/3805] Built TwoStateQuantumEmbedding.Rigidity (24s)
+warning: TwoStateQuantumEmbedding\Rigidity.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/Rigidity.lean:303:0: 'TwoStateQuantumEmbedding.Rigidity.exists_plane_gram_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Rigidity.lean:304:0: 'TwoStateQuantumEmbedding.Rigidity.canonical_half_area_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Rigidity.lean:305:0: 'TwoStateQuantumEmbedding.Rigidity.canonical_dissipative_rigidity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/Rigidity.lean:306:0: 'TwoStateQuantumEmbedding.Rigidity.bloch_dissipative_rigidity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3755/3805] Built TwoStateQuantumEmbedding.ArcIdentificationTopology (16s)
+warning: TwoStateQuantumEmbedding\ArcIdentificationTopology.lean: imports `Mathlib.Topology.Order.LeftRightNhds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ArcIdentificationTopology.lean:55:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.eventual_branch_identification' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ArcIdentificationTopology.lean:56:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.analytic_reparameterized_probabilityA' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3757/3805] Built TwoStateQuantumEmbedding.RankOneChart (17s)
+warning: TwoStateQuantumEmbedding\RankOneChart.lean: imports `Mathlib.LinearAlgebra.Matrix.Rank` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/RankOneChart.lean:248:0: 'TwoStateQuantumEmbedding.RankOneChart.rank_one_minor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:249:0: 'TwoStateQuantumEmbedding.RankOneChart.factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:250:0: 'TwoStateQuantumEmbedding.RankOneChart.representation_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:251:0: 'TwoStateQuantumEmbedding.RankOneChart.existsUnique_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:252:0: 'TwoStateQuantumEmbedding.RankOneChart.chart_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:253:0: 'TwoStateQuantumEmbedding.RankOneChart.referenceProjector_eq_outer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:254:0: 'TwoStateQuantumEmbedding.RankOneChart.chart_referenceProjector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:255:0: 'TwoStateQuantumEmbedding.RankOneChart.chart_continuousAt_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:256:0: 'TwoStateQuantumEmbedding.RankOneChart.chart_tendsto_of_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:257:0: 'TwoStateQuantumEmbedding.RankOneChart.scale_ratio_tendsto_of_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:258:0: 'TwoStateQuantumEmbedding.RankOneChart.eventually_factorization_of_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:259:0: 'TwoStateQuantumEmbedding.RankOneChart.actualGenerator_chart' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/RankOneChart.lean:260:0: 'TwoStateQuantumEmbedding.RankOneChart.actualProbabilities_chart' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3758/3805] Built TwoStateQuantumEmbedding.SwapReflection (18s)
+info: TwoStateQuantumEmbedding/SwapReflection.lean:164:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probabilityA_reflect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapReflection.lean:165:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probabilityB_reflect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapReflection.lean:166:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.objective_derivative_reflect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapReflection.lean:167:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.dividedDirection_reflect_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapReflection.lean:168:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.stationarity_reflect' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapReflection.lean:169:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.stationarity_reflect_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3759/3805] Replayed TwoStateQuantumEmbedding.ResetCore
+warning: TwoStateQuantumEmbedding\ResetCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Exp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetCore.lean: imports `Mathlib.Analysis.Convex.SpecificFunctions.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.NegMulLog` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetCore.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ResetCore.lean:477:0: 'Reset.logarithmic_profile_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:478:0: 'Reset.stationary_measurement_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:479:0: 'Reset.scalar_envelope_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:480:0: 'Reset.scalar_envelope_attains' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:481:0: 'Reset.scalar_envelope_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:482:0: 'Reset.reset_two_modes_at_optimum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:483:0: 'Reset.reverse_rate_scalar_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:484:0: 'Reset.shape_normalized_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:485:0: 'Reset.scaled_reset_gain_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:486:0: 'Reset.reset_gain_eq_prefactor' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:487:0: 'Reset.shape_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:488:0: 'Reset.pure_prefactor_shape' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetCore.lean:489:0: 'Reset.pure_prefactor_uniform_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3761/3805] Built TwoStateQuantumEmbedding.CanonicalBias (19s)
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:252:0: 'TwoStateQuantumEmbedding.CanonicalBias.canonicalOutput_sum_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:253:0: 'TwoStateQuantumEmbedding.CanonicalBias.canonicalEvolution_drift' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:254:0: 'TwoStateQuantumEmbedding.CanonicalBias.fixed_bias_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:255:0: 'TwoStateQuantumEmbedding.CanonicalBias.fixed_real_output_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:256:0: 'TwoStateQuantumEmbedding.CanonicalBias.fixed_interval_mem_Q2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:257:0: 'TwoStateQuantumEmbedding.CanonicalBias.fixed_max_attained' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:258:0: 'TwoStateQuantumEmbedding.CanonicalBias.fixed_interval_finite_attained' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:259:0: 'TwoStateQuantumEmbedding.CanonicalBias.Q2_eq_closure_fixedOutputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:260:0: 'TwoStateQuantumEmbedding.CanonicalBias.Q2_antidiagonal_filling' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalBias.lean:261:0: 'TwoStateQuantumEmbedding.CanonicalBias.Q2_swap_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3762/3805] Replayed TwoStateQuantumEmbedding.ContinuityCore
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Topology.Order.IntermediateValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Topology.Order.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Topology.Instances.Real.Lemmas` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Exp` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Analysis.Real.Pi.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Topology.Order.LocalExtr` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Topology.Connected.LocallyConnected` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.LinearAlgebra.Matrix.Determinant.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.LinearAlgebra.Matrix.Trace` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ContinuityCore.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:578:0: 'QuantumEmbedding.Continuity.continuousOn_of_closed_strictInterior' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:579:0: 'QuantumEmbedding.Continuity.frontier_eq_two_graphs' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:580:0: 'QuantumEmbedding.Continuity.rectangle_of_connected_parameters' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:581:0: 'QuantumEmbedding.Continuity.continuity_frontier_of_parametric_coverage' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:582:0: 'QuantumEmbedding.Continuity.no_high_frequency_remainder' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:583:0: 'QuantumEmbedding.Continuity.no_complex_spectral_solution' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:584:0: 'QuantumEmbedding.Continuity.continuity_frontier_of_attainment_no_extrema' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:585:0: 'QuantumEmbedding.Continuity.continuityOn_subset_of_attainment_no_extrema' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:586:0: 'QuantumEmbedding.Continuity.reducedMatrix_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:587:0: 'QuantumEmbedding.Continuity.determinant_of_second_moment' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ContinuityCore.lean:588:0: 'QuantumEmbedding.Continuity.envelope_left_limit_of_reset_curve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3763/3805] Built TwoStateQuantumEmbedding.DriftGradient (21s)
+info: TwoStateQuantumEmbedding/DriftGradient.lean:245:0: 'TwoStateQuantumEmbedding.DriftGradient.hasStrictFDerivAt_ambientZ_c' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DriftGradient.lean:246:0: 'TwoStateQuantumEmbedding.DriftGradient.ambientZDerivative_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DriftGradient.lean:247:0: 'TwoStateQuantumEmbedding.DriftGradient.ambientZ_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/DriftGradient.lean:248:0: 'TwoStateQuantumEmbedding.DriftGradient.ambientZDerivative_bloch' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DriftGradient.lean:249:0: 'TwoStateQuantumEmbedding.DriftGradient.fderiv_ambientX_exp_neg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DriftGradient.lean:250:0: 'TwoStateQuantumEmbedding.DriftGradient.ambientZDerivative_column' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/DriftGradient.lean:251:0: 'TwoStateQuantumEmbedding.DriftGradient.ambientZDerivative_ne_zero_of_x_ne_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [3764/3806] Built QICLean.Channel.Semigroup.LindbladForm.GKSLTheorem (14s)
+ℹ [3766/3806] Built TwoStateQuantumEmbedding.CanonicalRigidity (16s)
+info: TwoStateQuantumEmbedding/CanonicalRigidity.lean:48:0: 'TwoStateQuantumEmbedding.Rigidity.canonicalOutput_dissipative_rigidity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalRigidity.lean:49:0: 'TwoStateQuantumEmbedding.Rigidity.finiteOutput_dissipative_rigidity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3767/3806] Built TwoStateQuantumEmbedding.ResetFamily (22s)
+warning: TwoStateQuantumEmbedding\ResetFamily.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Sinc` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetFamily.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetFamily.lean: imports `Mathlib.Analysis.SpecialFunctions.Pow.Continuity` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetFamily.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ResetFamily.lean:709:0: 'TwoStateQuantumEmbedding.ResetFamily.matrix_exp_eigen' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetFamily.lean:710:0: 'TwoStateQuantumEmbedding.ResetFamily.finiteOutput_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetFamily.lean:711:0: 'TwoStateQuantumEmbedding.ResetFamily.optimal_curve_mem_Q2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetFamily.lean:712:0: 'TwoStateQuantumEmbedding.ResetFamily.actual_unit_curve_output' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetFamily.lean:713:0: 'TwoStateQuantumEmbedding.ResetFamily.curvePoint_eventually_mem_Q2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetFamily.lean:714:0: 'TwoStateQuantumEmbedding.ResetFamily.finiteOutput_log_gain_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetFamily.lean:715:0: 'TwoStateQuantumEmbedding.ResetFamily.finiteOutput_endpoint_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3768/3806] Built TwoStateQuantumEmbedding.OptimalDrift (19s)
+info: TwoStateQuantumEmbedding/OptimalDrift.lean:80:0: 'TwoStateQuantumEmbedding.OptimalDrift.endpoint_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/OptimalDrift.lean:81:0: 'TwoStateQuantumEmbedding.OptimalDrift.endpoint_bias' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/OptimalDrift.lean:82:0: 'TwoStateQuantumEmbedding.OptimalDrift.explicit_endpoint_output' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3769/3806] Built TwoStateQuantumEmbedding.SwapMixedDerivatives (15s)
+warning: TwoStateQuantumEmbedding\SwapMixedDerivatives.lean: imports `Mathlib.Analysis.Calculus.FDeriv.Symmetric` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapMixedDerivatives.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapMixedDerivatives.lean:74:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.objective_second_direction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMixedDerivatives.lean:75:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.objective_mixed_symmetry' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMixedDerivatives.lean:76:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.dividedDirection_zero_eq_scale_direction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMixedDerivatives.lean:77:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_frozenObjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMixedDerivatives.lean:78:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_scaleAtZero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMixedDerivatives.lean:79:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.objective_parameter_direction_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMixedDerivatives.lean:80:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.stationarity_at_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3770/3807] Built TwoStateQuantumEmbedding.CPTP (18s)
+warning: TwoStateQuantumEmbedding\CPTP.lean: imports `Mathlib.Topology.Order.Compact` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/CPTP.lean:120:0: 'TwoStateQuantumEmbedding.gkslLinearMap_eq_lindbladForm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:121:0: 'TwoStateQuantumEmbedding.model_dissipator_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:122:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_toLinearMap_eq_expSemigroup' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:123:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_isChannel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:124:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_posSemidef' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:125:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:126:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_completelyPositiveMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:127:0: 'TwoStateQuantumEmbedding.gkslSuperoperatorEvolution_completelyPositiveMap_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:128:0: 'TwoStateQuantumEmbedding.basisProjector_posSemidef' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:129:0: 'TwoStateQuantumEmbedding.basisProjector_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:130:0: 'TwoStateQuantumEmbedding.density_diagonal_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:131:0: 'TwoStateQuantumEmbedding.gksl_basis_probability_mem_Icc' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:132:0: 'TwoStateQuantumEmbedding.finiteOutput_mem_unitSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:133:0: 'TwoStateQuantumEmbedding.finiteOutputs_subset_unitSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:134:0: 'TwoStateQuantumEmbedding.Q2_subset_unitSquare' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CPTP.lean:135:0: 'TwoStateQuantumEmbedding.Q2_isCompact' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3771/3807] Replayed TwoStateQuantumEmbedding.ExponentialHermite
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.Analysis.Normed.Module.FiniteDimension` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.LinearAlgebra.Matrix.Charpoly.Coeff` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.RingTheory.Adjoin.Polynomial.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.LinearAlgebra.Eigenspace.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.Analysis.Polynomial.Factorization` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.LinearAlgebra.Matrix.ToLinearEquiv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.Analysis.Complex.Trigonometric` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ExponentialHermite.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:477:0: 'TwoStateQuantumEmbedding.ExponentialHermite.exists_exp_quadratic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:478:0: 'TwoStateQuantumEmbedding.ExponentialHermite.newtonSecond_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:479:0: 'TwoStateQuantumEmbedding.ExponentialHermite.newtonSecond_eq_triangle' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:480:0: 'TwoStateQuantumEmbedding.ExponentialHermite.exp_quadratic_of_real_charpoly' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:481:0: 'TwoStateQuantumEmbedding.ExponentialHermite.real_cubic_spectral_cases' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:482:0: 'TwoStateQuantumEmbedding.ExponentialHermite.exp_quadratic_at_root' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:483:0: 'TwoStateQuantumEmbedding.ExponentialHermite.exists_exp_quadratic_spectral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:484:0: 'TwoStateQuantumEmbedding.ExponentialHermite.affine_exp_spectral_relations' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ExponentialHermite.lean:485:0: 'TwoStateQuantumEmbedding.ExponentialHermite.spectral_relations_of_coefficient_constraints' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3773/3807] Built TwoStateQuantumEmbedding.AmbientSubmersion (33s)
+warning: TwoStateQuantumEmbedding\AmbientSubmersion.lean: imports `Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:409:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.ambientCanonicalEquiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:410:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.ambientDerivative_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:411:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.ambientOutput_map_nhds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:412:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.canonicalXYDerivative_hermitian_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:413:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.legalParameters_hasStrictFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:414:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.legalDerivative_surjective_hermitian' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:415:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.legalOutput_map_nhds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:416:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.posDef_output_mem_interior_finiteOutputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:417:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.posDef_output_mem_interior_Q2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/AmbientSubmersion.lean:418:0: 'TwoStateQuantumEmbedding.AmbientSubmersion.rank_ne_three_of_nonclassical_frontier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3774/3807] Built TwoStateQuantumEmbedding.ResetRemainder (20s)
+warning: TwoStateQuantumEmbedding\ResetRemainder.lean: imports `Mathlib.Topology.Order.IntermediateValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetRemainder.lean: imports `Mathlib.Analysis.Asymptotics.AsymptoticEquivalent` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetRemainder.lean: imports `Mathlib.Analysis.SpecialFunctions.ExpDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetRemainder.lean: imports `Mathlib.Analysis.SpecialFunctions.Log.Deriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetRemainder.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetRemainder.lean: imports `Mathlib.LinearAlgebra.Matrix.Rank` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\ResetRemainder.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:663:0: 'TwoStateQuantumEmbedding.ResetFamily.curve_covers_small_epsilon' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:664:0: 'TwoStateQuantumEmbedding.ResetFamily.gainCorrection_fast' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:665:0: 'TwoStateQuantumEmbedding.ResetFamily.curveEpsilon_scaled_fast' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:666:0: 'TwoStateQuantumEmbedding.ResetFamily.scaled_reset_gain_rate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:667:0: 'TwoStateQuantumEmbedding.ResetFamily.finiteOutput_remainder_rate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:668:0: 'TwoStateQuantumEmbedding.ResetFamily.finiteOutput_remainder_isBigO' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:669:0: 'TwoStateQuantumEmbedding.ResetFamily.finiteOutput_nonclassical_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetRemainder.lean:670:0: 'TwoStateQuantumEmbedding.ResetFamily.unitJumps_eventually_rank_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3775/3807] Built TwoStateQuantumEmbedding.NegativeCutoff (22s)
+warning: TwoStateQuantumEmbedding\NegativeCutoff.lean: imports `Mathlib.Analysis.InnerProductSpace.Adjoint` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\NegativeCutoff.lean: imports `Mathlib.Analysis.Normed.Operator.NNNorm` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\NegativeCutoff.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/NegativeCutoff.lean:351:0: 'TwoStateQuantumEmbedding.NegativeCutoff.canonical_cross_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NegativeCutoff.lean:352:0: 'TwoStateQuantumEmbedding.NegativeCutoff.rankOne_approximation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NegativeCutoff.lean:353:0: 'TwoStateQuantumEmbedding.NegativeCutoff.canonical_even_readout' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NegativeCutoff.lean:354:0: 'TwoStateQuantumEmbedding.NegativeCutoff.canonicalOutput_trace_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NegativeCutoff.lean:355:0: 'TwoStateQuantumEmbedding.NegativeCutoff.finiteOutput_trace_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3776/3807] Built TwoStateQuantumEmbedding.PureStationary (17s)
+warning: TwoStateQuantumEmbedding\PureStationary.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/PureStationary.lean:222:0: 'TwoStateQuantumEmbedding.PureStationary.stationary_ground_offdiagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PureStationary.lean:223:0: 'TwoStateQuantumEmbedding.PureStationary.stationary_common_eigenvector' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PureStationary.lean:224:0: 'TwoStateQuantumEmbedding.PureStationary.pure_stationary_normal_form' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3777/3809] Built TwoStateQuantumEmbedding.GKSLNormBounds (22s)
+warning: TwoStateQuantumEmbedding\GKSLNormBounds.lean: imports `Mathlib.Analysis.CStarAlgebra.ContinuousFunctionalCalculus.Order` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GKSLNormBounds.lean: imports `Mathlib.Analysis.InnerProductSpace.Rayleigh` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\GKSLNormBounds.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:647:0: 'TwoStateQuantumEmbedding.GKSLBounds.blochState_posSemidef_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:648:0: 'TwoStateQuantumEmbedding.GKSLBounds.norm_drift_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:649:0: 'TwoStateQuantumEmbedding.GKSLBounds.norm_canonicalD_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:650:0: 'TwoStateQuantumEmbedding.GKSLBounds.norm_dissipativeCLM_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:651:0: 'TwoStateQuantumEmbedding.GKSLBounds.norm_exp_canonicalCLM_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:652:0: 'TwoStateQuantumEmbedding.GKSLBounds.norm_canonical_perturbation_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:653:0: 'TwoStateQuantumEmbedding.GKSLBounds.norm_canonical_first_order_remainder_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:654:0: 'TwoStateQuantumEmbedding.GKSLBounds.canonicalOutput_perturbation_common_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:655:0: 'TwoStateQuantumEmbedding.GKSLBounds.canonicalOutput_first_order_common_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:656:0: 'TwoStateQuantumEmbedding.GKSLBounds.firstOrderReturn_eq_integral' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/GKSLNormBounds.lean:657:0: 'TwoStateQuantumEmbedding.GKSLBounds.firstOrderReturn_real_smul' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3779/3810] Built TwoStateQuantumEmbedding.UnitaryBoundary (16s)
+warning: TwoStateQuantumEmbedding\UnitaryBoundary.lean: imports `Mathlib.Analysis.Calculus.MeanValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\UnitaryBoundary.lean: imports `Mathlib.Analysis.Calculus.Deriv.Prod` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\UnitaryBoundary.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\UnitaryBoundary.lean: imports `Mathlib.Analysis.SpecialFunctions.Trigonometric.Inverse` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/UnitaryBoundary.lean:145:0: 'TwoStateQuantumEmbedding.eq_exp_of_hasDerivAt_left' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/UnitaryBoundary.lean:146:0: 'TwoStateQuantumEmbedding.exp_rotationGenerator4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/UnitaryBoundary.lean:147:0: 'TwoStateQuantumEmbedding.diagonal_mem_Q2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/UnitaryBoundary.lean:148:0: 'TwoStateQuantumEmbedding.lowerBoundary_isLeast' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/UnitaryBoundary.lean:149:0: 'TwoStateQuantumEmbedding.lowerBoundary_mem_Q2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/UnitaryBoundary.lean:150:0: 'TwoStateQuantumEmbedding.lowerBoundary_approx' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3780/3810] Built TwoStateQuantumEmbedding.ResetUniform (14s)
+warning: TwoStateQuantumEmbedding\ResetUniform.lean: imports `Mathlib.LinearAlgebra.Matrix.PosDef` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/ResetUniform.lean:131:0: 'TwoStateQuantumEmbedding.ResetFamily.cover_with_eventual' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/ResetUniform.lean:132:0: 'TwoStateQuantumEmbedding.ResetFamily.reset_every_small_epsilon_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ResetUniform.lean:133:0: 'TwoStateQuantumEmbedding.ResetFamily.reset_pure_stationary' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3781/3810] Built TwoStateQuantumEmbedding.PureDynamics (16s)
+warning: TwoStateQuantumEmbedding\PureDynamics.lean: imports `Mathlib.Analysis.InnerProductSpace.PiL2` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PureDynamics.lean: imports `Mathlib.Analysis.SpecialFunctions.ExpDeriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PureDynamics.lean: imports `Mathlib.Analysis.Calculus.MeanValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\PureDynamics.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/PureDynamics.lean:126:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: TwoStateQuantumEmbedding/PureDynamics.lean:149:4: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: TwoStateQuantumEmbedding/PureDynamics.lean:301:0: 'TwoStateQuantumEmbedding.PureStationary.dark_action_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/PureDynamics.lean:302:0: 'TwoStateQuantumEmbedding.PureStationary.actual_dark_flow' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/PureDynamics.lean:303:0: 'TwoStateQuantumEmbedding.PureStationary.pure_stationary_actual_flow' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/PureDynamics.lean:304:0: 'TwoStateQuantumEmbedding.PureStationary.source_normSq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/PureDynamics.lean:305:0: 'TwoStateQuantumEmbedding.PureStationary.interferenceKernel_norm_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3783/3811] Built TwoStateQuantumEmbedding.LocalizationCore (30s)
+info: TwoStateQuantumEmbedding/LocalizationCore.lean:672:0: 'TwoStateQuantumEmbedding.NearSwap.matrix_localization_of_remainders' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/LocalizationCore.lean:673:0: 'TwoStateQuantumEmbedding.NearSwap.canonical_near_scale' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/LocalizationCore.lean:674:0: 'TwoStateQuantumEmbedding.NearSwap.hamiltonian_coordinate_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/LocalizationCore.lean:675:0: 'TwoStateQuantumEmbedding.NearSwap.matrix_concentration_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/LocalizationCore.lean:676:0: 'TwoStateQuantumEmbedding.NearSwap.normalized_noise_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/LocalizationCore.lean:677:0: 'TwoStateQuantumEmbedding.NearSwap.inverse_scale_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/LocalizationCore.lean:678:0: 'TwoStateQuantumEmbedding.NearSwap.scale_ratio_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3784/3811] Built TwoStateQuantumEmbedding.FirstOrderBridge (30s)
+warning: TwoStateQuantumEmbedding/FirstOrderBridge.lean:34:37: This simp argument is unused:
+  Matrix.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [encoded, basisInitial, augmentedCoords, realGeneralizedState, generalizedState, pauli, euclid,
+    smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TwoStateQuantumEmbedding/FirstOrderBridge.lean:40:37: This simp argument is unused:
+  Matrix.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [encoded, basisInitial, augmentedCoords, realGeneralizedState, generalizedState, pauli, euclid,
+    smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: TwoStateQuantumEmbedding/FirstOrderBridge.lean:104:2: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+info: TwoStateQuantumEmbedding/FirstOrderBridge.lean:131:0: 'TwoStateQuantumEmbedding.SwapComparison.firstOrderReturn_single_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/FirstOrderBridge.lean:132:0: 'TwoStateQuantumEmbedding.SwapComparison.firstOrderReturn_single_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/FirstOrderBridge.lean:133:0: 'TwoStateQuantumEmbedding.SwapComparison.encoded_dissipative_single' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/FirstOrderBridge.lean:134:0: 'TwoStateQuantumEmbedding.SwapComparison.encoded_exp_hamiltonian_x' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3785/3811] Built TwoStateQuantumEmbedding.CompactAttainment (15s)
+info: TwoStateQuantumEmbedding/CompactAttainment.lean:94:0: 'TwoStateQuantumEmbedding.CompactAttainment.traceBall_isCompact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CompactAttainment.lean:95:0: 'TwoStateQuantumEmbedding.CompactAttainment.closure_boundedOutputs_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CompactAttainment.lean:96:0: 'TwoStateQuantumEmbedding.CompactAttainment.finite_attainment_of_local_bounded_outputs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CompactAttainment.lean:97:0: 'TwoStateQuantumEmbedding.CompactAttainment.lowerBoundary_finite_of_uniform_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3786/3811] Built TwoStateQuantumEmbedding.Envelope (16s)
+warning: TwoStateQuantumEmbedding\Envelope.lean: imports `Mathlib.Topology.Semicontinuity.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/Envelope.lean:279:0: 'TwoStateQuantumEmbedding.Envelope.F_isGreatest' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Envelope.lean:280:0: 'TwoStateQuantumEmbedding.Envelope.mem_Q2_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Envelope.lean:281:0: 'TwoStateQuantumEmbedding.Envelope.F_upperSemicontinuousOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Envelope.lean:282:0: 'TwoStateQuantumEmbedding.Envelope.damping_output' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Envelope.lean:283:0: 'TwoStateQuantumEmbedding.Envelope.F_classical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Envelope.lean:284:0: 'TwoStateQuantumEmbedding.Envelope.F_le_nearbySup' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Envelope.lean:285:0: 'TwoStateQuantumEmbedding.Envelope.relaxed_variational_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3787/3812] Built TwoStateQuantumEmbedding.HamiltonianHessian (22s)
+warning: TwoStateQuantumEmbedding\HamiltonianHessian.lean: imports `Mathlib.Analysis.SpecialFunctions.Sqrt` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\HamiltonianHessian.lean: imports `Mathlib.Analysis.Calculus.Deriv.Pow` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:305:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.exp_of_cube' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:306:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.canonicalOutput_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:307:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_eventually_eq_explicit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:308:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:309:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_hasFDerivAt_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:310:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_fderiv_hasFDerivAt_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:311:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_hessian_omega_omega' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:312:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_hessian_h_h' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:313:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_hessian_omega_h' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:314:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actual_hessian_h_omega' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:315:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.canonicalOutput_eventually_eq_diagonal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/HamiltonianHessian.lean:316:0: 'TwoStateQuantumEmbedding.HamiltonianHessian.actualB_fderiv_hasFDerivAt_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3791/3812] Built TwoStateQuantumEmbedding.CanonicalStationarity (19s)
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:101:0: 'TwoStateQuantumEmbedding.EqualityIFT.constrained_plane_stationarity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:102:0: 'TwoStateQuantumEmbedding.EqualityIFT.lagrange_of_localMin' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:178:0: 'TwoStateQuantumEmbedding.CanonicalStationarity.globalMinimum_of_lowerBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:179:0: 'TwoStateQuantumEmbedding.CanonicalStationarity.hGradient_stationarity_of_globalMinimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:236:0: 'TwoStateQuantumEmbedding.CanonicalStationarity.hGradient_lagrangian_of_lowerBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:237:0: 'TwoStateQuantumEmbedding.CanonicalStationarity.canonical_kkt_of_lowerBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:370:0: 'TwoStateQuantumEmbedding.ActualSwapOptimality.probabilityA_radial_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:371:0: 'TwoStateQuantumEmbedding.ActualSwapOptimality.probabilityB_radial_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:372:0: 'TwoStateQuantumEmbedding.ActualSwapOptimality.probability_lagrange_of_globalMinimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:373:0: 'TwoStateQuantumEmbedding.ActualSwapOptimality.stationarity_zero_of_globalMinimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:408:0: 'TwoStateQuantumEmbedding.ActualSwapOptimality.stationarity_chart_of_globalMinimum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:409:0: 'TwoStateQuantumEmbedding.ActualSwapOptimality.stationarity_chart_of_lowerBoundary' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:413:0: theorem TwoStateQuantumEmbedding.CanonicalStationarity.hGradient_lagrangian_of_lowerBoundary : ∀
+  (h : TwoStateQuantumEmbedding.GKSLAlgebra.BlochVec) (K : TwoStateQuantumEmbedding.CanonicalGradient.KMatrix),
+  PosSemidef K →
+    (TwoStateQuantumEmbedding.CanonicalGradient.kDerivative (1 / 2) (-1 / 2) (h, K)) K ≠ 0 →
+      ∀ (b : ℝ),
+        TwoStateQuantumEmbedding.CanonicalBloch.canonicalOutput h K 1 = (TwoStateQuantumEmbedding.lowerBoundary b, b) →
+          TwoStateQuantumEmbedding.CanonicalGradient.hGradient
+              ((1 - TwoStateQuantumEmbedding.CanonicalStationarity.multiplier h K) / 2)
+              ((1 + TwoStateQuantumEmbedding.CanonicalStationarity.multiplier h K) / 2) (h, K) =
+            0 :=
+⋯
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:414:0: theorem TwoStateQuantumEmbedding.CanonicalStationarity.canonical_kkt_of_lowerBoundary : ∀
+  (h : TwoStateQuantumEmbedding.GKSLAlgebra.BlochVec) (K : TwoStateQuantumEmbedding.CanonicalGradient.KMatrix),
+  PosSemidef K →
+    (TwoStateQuantumEmbedding.CanonicalGradient.kDerivative (1 / 2) (-1 / 2) (h, K)) K ≠ 0 →
+      ∀ (b : ℝ),
+        TwoStateQuantumEmbedding.CanonicalBloch.canonicalOutput h K 1 = (TwoStateQuantumEmbedding.lowerBoundary b, b) →
+          have μ := TwoStateQuantumEmbedding.CanonicalStationarity.multiplier h K;
+          have S :=
+            TwoStateQuantumEmbedding.CanonicalGradient.kGradient (1 / 2) (1 / 2) (h, K) -
+              μ • TwoStateQuantumEmbedding.CanonicalGradient.kGradient (1 / 2) (-1 / 2) (h, K);
+          TwoStateQuantumEmbedding.CanonicalGradient.hGradient ((1 - μ) / 2) ((1 + μ) / 2) (h, K) = 0 ∧
+            PosSemidef S ∧ (S * K).trace.re = 0 ∧ S * K = 0 :=
+⋯
+info: TwoStateQuantumEmbedding/CanonicalStationarity.lean:415:0: theorem TwoStateQuantumEmbedding.ActualSwapOptimality.stationarity_chart_of_lowerBoundary : ∀
+  (h : TwoStateQuantumEmbedding.GKSLAlgebra.BlochVec) (K : TwoStateQuantumEmbedding.CanonicalGradient.KMatrix),
+  h 1 = 0 →
+    PosSemidef K →
+      rank K = 1 →
+        0 < TwoStateQuantumEmbedding.RankOneChart.scale K →
+          (TwoStateQuantumEmbedding.CanonicalGradient.kDerivative (1 / 2) (-1 / 2) (h, K)) K ≠ 0 →
+            ∀ (b : ℝ),
+              TwoStateQuantumEmbedding.CanonicalBloch.canonicalOutput h K 1 =
+                  (TwoStateQuantumEmbedding.lowerBoundary b, b) →
+                TwoStateQuantumEmbedding.ActualSwapSystem.stationarity
+                    (TwoStateQuantumEmbedding.RankOneChart.scale K,
+                      TwoStateQuantumEmbedding.RankOneChart.parameters (h 0) (h 2 / 2)
+                        (TwoStateQuantumEmbedding.CanonicalStationarity.multiplier h K)
+                        (TwoStateQuantumEmbedding.RankOneChart.chart K)) =
+                  0 :=
+⋯
+⚠ [3792/3812] Built TwoStateQuantumEmbedding.SwapMatching (19s)
+warning: TwoStateQuantumEmbedding\SwapMatching.lean: imports `Mathlib.Analysis.Calculus.TangentCone.Real` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapMatching.lean: imports `Mathlib.Topology.Order.IntermediateValue` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapMatching.lean:170:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingOutput_mem_Q2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:171:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingVector_qa' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:172:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingK_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:173:0: 'TwoStateQuantumEmbedding.SwapMatching.matching_constant_lt_forty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:174:0: 'TwoStateQuantumEmbedding.SwapMatching.exact_second_from_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:175:0: 'TwoStateQuantumEmbedding.SwapMatching.exact_match_quadratic_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:263:0: 'TwoStateQuantumEmbedding.SwapMatching.oppositeVector_qa' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:264:0: 'TwoStateQuantumEmbedding.SwapMatching.directionOutput_mem_Q2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:265:0: 'TwoStateQuantumEmbedding.SwapMatching.direction_coefficients_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:295:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingOutput_eq_finiteOutput' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:380:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingVector_qa' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:381:0: 'TwoStateQuantumEmbedding.SwapMatching.quadratic_curve_mem_posTangent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:382:0: 'TwoStateQuantumEmbedding.SwapMatching.firstOrderReturn_add' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:413:0: 'TwoStateQuantumEmbedding.SwapMatching.matching_unitary_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:414:0: 'TwoStateQuantumEmbedding.SwapMatching.directionOutput_eq_finiteOutput' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:537:0: 'TwoStateQuantumEmbedding.SwapMatching.matching_single_first_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:538:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingOutput_quadratic_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:539:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingOutput_exact_second' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:540:0: 'TwoStateQuantumEmbedding.SwapMatching.every_small_b_finite_matching' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:541:0: 'TwoStateQuantumEmbedding.SwapMatching.lowerBoundary_small_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:542:0: 'TwoStateQuantumEmbedding.SwapMatching.directionOutput_quadratic_remainder' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:543:0: 'TwoStateQuantumEmbedding.SwapMatching.all_allowed_directions_mem_posTangent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:569:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingOutput_scaled_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapMatching.lean:570:0: 'TwoStateQuantumEmbedding.SwapMatching.matchingOutput_ratio_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3793/3812] Built TwoStateQuantumEmbedding.SwapScaleDerivative (19s)
+warning: TwoStateQuantumEmbedding\SwapScaleDerivative.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapScaleDerivative.lean:96:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.hasDerivAt_readout_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapScaleDerivative.lean:97:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.hasDerivAt_canonicalOutput_scale_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapScaleDerivative.lean:98:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.hasDerivAt_canonicalOutput_scale_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapScaleDerivative.lean:99:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.hasDerivAt_probabilityA_swap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapScaleDerivative.lean:100:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.hasDerivAt_probabilityB_swap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapScaleDerivative.lean:101:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.scaleAtZero_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3794/3812] Built TwoStateQuantumEmbedding.SwapRankOneNeighborhood (19s)
+warning: TwoStateQuantumEmbedding\SwapRankOneNeighborhood.lean: imports `Mathlib.Analysis.Calculus.ContDiff.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:440:0: 'TwoStateQuantumEmbedding.SwapRankOne.reference_kGradient_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:441:0: 'TwoStateQuantumEmbedding.SwapRankOne.reference_kGradient_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:442:0: 'TwoStateQuantumEmbedding.SwapRankOne.continuousAt_dualNormal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:443:0: 'TwoStateQuantumEmbedding.SwapRankOne.reference_radial_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:444:0: 'TwoStateQuantumEmbedding.SwapRankOne.referenceDual_quadratic_gap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:445:0: 'TwoStateQuantumEmbedding.SwapRankOne.reference_mem_rankOneNeighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:446:0: 'TwoStateQuantumEmbedding.SwapRankOne.exists_actual_rank_one_neighborhood' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:447:0: 'TwoStateQuantumEmbedding.SwapRankOne.eventually_rank_one_of_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapRankOneNeighborhood.lean:448:0: 'TwoStateQuantumEmbedding.SwapRankOne.multiplier_tendsto_slope' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3795/3812] Built TwoStateQuantumEmbedding.UniformRotation (20s)
+info: TwoStateQuantumEmbedding/UniformRotation.lean:227:0: 'TwoStateQuantumEmbedding.SwapComparison.exp_hamiltonian_axis_conj' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/UniformRotation.lean:228:0: 'TwoStateQuantumEmbedding.SwapComparison.norm_exp_hamiltonian_near_swap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3796/3812] Built TwoStateQuantumEmbedding.FirstOrderComparison (19s)
+info: TwoStateQuantumEmbedding/FirstOrderComparison.lean:106:0: 'TwoStateQuantumEmbedding.SwapComparison.firstOrderReturn_comparison_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3797/3812] Built TwoStateQuantumEmbedding.FirstOrderPSD (19s)
+info: TwoStateQuantumEmbedding/FirstOrderPSD.lean:85:0: 'TwoStateQuantumEmbedding.SwapComparison.firstOrderReturn_psd_a' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/FirstOrderPSD.lean:86:0: 'TwoStateQuantumEmbedding.SwapComparison.firstOrderReturn_psd_b' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3798/3812] Built TwoStateQuantumEmbedding.LocalSections (14s)
+info: TwoStateQuantumEmbedding/LocalSections.lean:77:0: 'TwoStateQuantumEmbedding.LocalSections.F_eq_of_sumBoundary' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/LocalSections.lean:78:0: 'TwoStateQuantumEmbedding.LocalSections.exact_local_section_of_monotonicity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3799/3813] Built TwoStateQuantumEmbedding.ProbabilityGeometry (16s)
+info: TwoStateQuantumEmbedding/ProbabilityGeometry.lean:107:0: 'TwoStateQuantumEmbedding.SwapComparison.normalized_swap_reference' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ProbabilityGeometry.lean:108:0: 'TwoStateQuantumEmbedding.SwapComparison.unitaryProbability_le_small_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3801/3814] Built TwoStateQuantumEmbedding.SwapHamiltonianBlock (19s)
+warning: TwoStateQuantumEmbedding\SwapHamiltonianBlock.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:122:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.hamiltonianProjection_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:123:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.hamiltonianProjection_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:124:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.radius_positive_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:125:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.frozenObjective_eventually_eq_model' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:126:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.frozenModel_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:127:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.explicitProbability_at_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:128:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.frozenGradient_at_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:129:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.frozenObjective_hasFDerivAt_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:130:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.frozenGradient_hasFDerivAt_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:131:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.frozenObjective_fderiv_hasFDerivAt_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapHamiltonianBlock.lean:132:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.frozenObjective_hessian_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3802/3815] Built TwoStateQuantumEmbedding.SwapDissipativeBlock (16s)
+warning: TwoStateQuantumEmbedding\SwapDissipativeBlock.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:123:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.directionInsertion_single' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:124:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.directionSection_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:125:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.directionSection_hasFDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:126:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.scaleAtZero_directionSection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:127:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_zeroDivided' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:128:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.zeroDivided_directionSection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:129:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.scaleAtZero_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:130:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.zeroDivided_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:131:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.scaleAtZero_direction_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:132:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.zeroDivided_direction_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:133:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.multiplierSection_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:134:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.multiplierSection_hasDerivAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:135:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.scaleAtZero_multiplierSection' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapDissipativeBlock.lean:136:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.scaleAtZero_multiplier_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3805/3815] Built TwoStateQuantumEmbedding.ActualSwapComparison (21s)
+info: TwoStateQuantumEmbedding/ActualSwapComparison.lean:118:0: 'TwoStateQuantumEmbedding.SwapComparison.canonical_near_swap_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapComparison.lean:119:0: 'TwoStateQuantumEmbedding.SwapComparison.canonical_near_swap_comparison_all_axes' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/ActualSwapComparison.lean:120:0: 'TwoStateQuantumEmbedding.SwapComparison.finite_near_swap_comparison' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [3807/3817] Built TwoStateQuantumEmbedding.SwapJacobian (21s)
+warning: TwoStateQuantumEmbedding\SwapJacobian.lean: imports `Mathlib.LinearAlgebra.Matrix.Block` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapJacobian.lean: imports `Mathlib.LinearAlgebra.Determinant` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapJacobian.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:132:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.analytic_systemAtZero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:133:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:134:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemAtZero_row_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:135:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemAtZero_row_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:136:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_row_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:137:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_row_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:138:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemAtZero_first_two' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:139:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemAtZero_row_scale' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:140:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemAtZero_row_direction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:141:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_scale_multiplier' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:142:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_scale_direction' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:143:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_direction_block' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:144:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemAtZero_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:145:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_lower_triangular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:146:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_determinant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapJacobian.lean:147:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.jacobian_nonsingular' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3808/3818] Built TwoStateQuantumEmbedding.SwapCone (19s)
+info: TwoStateQuantumEmbedding/SwapCone.lean:240:0: 'TwoStateQuantumEmbedding.SwapCone.reference_trace_sharp' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:241:0: 'TwoStateQuantumEmbedding.SwapCone.remainder_absorption' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:242:0: 'TwoStateQuantumEmbedding.SwapCone.closure_local_quadratic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:243:0: 'TwoStateQuantumEmbedding.SwapCone.local_quadratic_tangent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:244:0: 'TwoStateQuantumEmbedding.SwapCone.tangent_eq_of_local_quadratic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:245:0: 'TwoStateQuantumEmbedding.SwapCone.canonical_quadratic_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:246:0: 'TwoStateQuantumEmbedding.SwapCone.finiteOutputs_quadratic_outer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:247:0: 'TwoStateQuantumEmbedding.SwapCone.Q2_quadratic_outer' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:248:0: 'TwoStateQuantumEmbedding.SwapCone.Q2_quadratic_outer_sub' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:249:0: 'TwoStateQuantumEmbedding.SwapCone.Q2_posTangentConeAt_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:250:0: 'TwoStateQuantumEmbedding.SwapCone.mem_Q2_posTangentConeAt_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapCone.lean:251:0: @Q2_quadratic_outer : ∀ {a b : ℝ},
+  (a, b) ∈ Q2 → a + b ≤ 1 / 256 → Swap.slope * b ≤ a + 2600 * (a + b) ^ 2 ∧ Swap.slope * a ≤ b + 2600 * (a + b) ^ 2
+info: TwoStateQuantumEmbedding/SwapCone.lean:252:0: TwoStateQuantumEmbedding.SwapCone.Q2_posTangentConeAt_zero :
+  posTangentConeAt Q2 (0, 0) = {z | 0 ≤ z.1 ∧ 0 ≤ z.2 ∧ Swap.slope * z.2 ≤ z.1 ∧ Swap.slope * z.1 ≤ z.2}
+info: TwoStateQuantumEmbedding/SwapCone.lean:253:0: TwoStateQuantumEmbedding.SwapCone.mem_Q2_posTangentConeAt_zero_iff (u v : ℝ) :
+  (u, v) ∈ posTangentConeAt Q2 (0, 0) ↔ 0 ≤ u ∧ 0 ≤ v ∧ Swap.slope * v ≤ u ∧ Swap.slope * u ≤ v
+⚠ [3809/3820] Built TwoStateQuantumEmbedding.SwapAnalyticBranch (17s)
+warning: TwoStateQuantumEmbedding\SwapAnalyticBranch.lean: imports `Mathlib.LinearAlgebra.Determinant` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\SwapAnalyticBranch.lean: imports `Mathlib.Tactic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:141:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemDerivative_matrix' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:142:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.systemDerivative_isInvertible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:143:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.stationarity_partial_isInvertible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:144:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.actual_analytic_stationary_branch' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:145:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.zeroProbabilityB_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:146:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.zeroProbabilityB_hasFDerivAt_base' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:147:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probabilityB_base' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:148:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probabilityB_parameter_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:149:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probabilityB_scale_derivative' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:150:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probabilityB_derivative_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:151:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.probabilityB_along_analytic_curve' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapAnalyticBranch.lean:152:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.actual_stationary_arc_reparameterized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3812/3821] Built TwoStateQuantumEmbedding.NearSwapLocalization (28s)
+info: TwoStateQuantumEmbedding/NearSwapLocalization.lean:239:0: 'TwoStateQuantumEmbedding.NearSwap.canonical_planar_localization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NearSwapLocalization.lean:240:0: 'TwoStateQuantumEmbedding.NearSwap.canonical_near_localization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NearSwapLocalization.lean:241:0: 'TwoStateQuantumEmbedding.NearSwap.finite_near_bounded_parameters' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NearSwapLocalization.lean:242:0: 'TwoStateQuantumEmbedding.NearSwap.uniform_finite_near_bounded_parameters' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/NearSwapLocalization.lean:243:0: 'TwoStateQuantumEmbedding.NearSwap.finite_near_localization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/NearSwapLocalization.lean:244:0: 'TwoStateQuantumEmbedding.NearSwap.canonical_near_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/NearSwapLocalization.lean:245:0: 'TwoStateQuantumEmbedding.NearSwap.canonical_normalized_parameters_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [3815/3839] Built TwoStateQuantumEmbedding.SwapPlanarity (13s)
+info: TwoStateQuantumEmbedding/SwapPlanarity.lean:94:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.unique_stationary_branch_eventually_planar' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapPlanarity.lean:95:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.planar_curve_derivative_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapPlanarity.lean:96:0: 'TwoStateQuantumEmbedding.ActualSwapSystem.actual_planar_analytic_stationary_branch' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [5202/5247] Built TwoStateQuantumEmbedding.SwapFiniteAttainment (13s)
+info: TwoStateQuantumEmbedding/SwapFiniteAttainment.lean:74:0: 'TwoStateQuantumEmbedding.SwapFiniteAttainment.lowerBoundary_finite' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapFiniteAttainment.lean:75:0: 'TwoStateQuantumEmbedding.SwapFiniteAttainment.exists_bounded_swapMinimizer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapFiniteAttainment.lean:76:0: 'TwoStateQuantumEmbedding.SwapFiniteAttainment.all_minimizers_localized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapFiniteAttainment.lean:77:0: 'TwoStateQuantumEmbedding.SwapFiniteAttainment.lowerBoundary_three_jumps' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [9135/9149] Replayed QICLean.Channel.Stinespring
+warning: vendor\QICLean\QICLean\Channel\Stinespring.lean: imports `Mathlib.LinearAlgebra.Matrix.Kronecker` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [9136/9149] Replayed QICLean.Algebra.FinSum
+warning: vendor\QICLean\QICLean\Algebra\FinSum.lean: imports `Mathlib.Algebra.BigOperators.Fin` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\FinSum.lean: imports `Mathlib.Algebra.BigOperators.Group.Finset.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\FinSum.lean: imports `Mathlib.Algebra.Module.BigOperators` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\FinSum.lean: imports `Mathlib.Basic.Complex.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\FinSum.lean: imports `Mathlib.Data.Matrix.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\FinSum.lean: imports `Mathlib.LinearAlgebra.LinearIndependent.Defs` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\FinSum.lean: imports `Mathlib.Order.Fin.Tuple` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [9137/9149] Built TwoStateQuantumEmbedding.MinimizerCoordinates (14s)
+info: TwoStateQuantumEmbedding/MinimizerCoordinates.lean:216:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.minimizing_normalized_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/MinimizerCoordinates.lean:217:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.minimizing_rank_one_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/MinimizerCoordinates.lean:218:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.minimizing_parameters_tendsto' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/MinimizerCoordinates.lean:219:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.minimizing_probabilities_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/MinimizerCoordinates.lean:220:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.minimizing_stationarity_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/MinimizerCoordinates.lean:221:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.selectedMinimizer_eventually' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+⚠ [9138/9149] Built QICLean.Algebra.MatrixGramUnitary (18s)
+warning: vendor\QICLean\QICLean\Algebra\MatrixGramUnitary.lean: imports `Mathlib.Analysis.InnerProductSpace.Adjoint` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixGramUnitary.lean: imports `Mathlib.Analysis.InnerProductSpace.PiL2` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixGramUnitary.lean: imports `Mathlib.Data.Matrix.Block` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: vendor\QICLean\QICLean\Algebra\MatrixGramUnitary.lean: imports `Mathlib.Logic.Equiv.Fin.Basic` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+ℹ [9139/9149] Built TwoStateQuantumEmbedding.OriginalProblem (19s)
+info: TwoStateQuantumEmbedding/OriginalProblem.lean:85:0: 'TwoStateQuantumEmbedding.OriginalProblem.probability_is_real' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/OriginalProblem.lean:86:0: 'TwoStateQuantumEmbedding.OriginalProblem.all_four_probabilities' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/OriginalProblem.lean:87:0: 'TwoStateQuantumEmbedding.OriginalProblem.original_Q2_four_entry_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+ℹ [9140/9149] Built TwoStateQuantumEmbedding.SwapGlobalArc (14s)
+info: TwoStateQuantumEmbedding/SwapGlobalArc.lean:78:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.lowerBoundary_eq_stationary_arc' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapGlobalArc.lean:79:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.probabilityA_base_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+info: TwoStateQuantumEmbedding/SwapGlobalArc.lean:80:0: 'TwoStateQuantumEmbedding.GlobalSwapArc.lowerBoundary_analytic_near_swap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+✔ [9141/9149] Built QICLean.Channel.KrausFreedom (13s)
+⚠ [9142/9149] Built QICLean.Channel.KrausUnitaryFreedom (11s)
+warning: vendor\QICLean\QICLean\Channel\KrausUnitaryFreedom.lean: imports `Mathlib.LinearAlgebra.UnitaryGroup` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [9143/9149] Built QICLean.Channel.Semigroup.LindbladForm.Uniqueness (14s)
+✔ [9144/9149] Built QICLean.Channel.Semigroup.LindbladForm (11s)
+✔ [9145/9149] Built QICLean.Channel.Semigroup.KossakowskiForm (17s)
+⚠ [9147/9149] Built TwoStateQuantumEmbedding.Roots (27s)
+warning: TwoStateQuantumEmbedding\Roots.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding\Roots.lean: imports `Mathlib.Analysis.Convex.SpecificFunctions.Deriv` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: TwoStateQuantumEmbedding/Roots.lean:157:21: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mixKraus, Fin.sum_univ_three, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val,
+    Matrix.head_fin_const]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: TwoStateQuantumEmbedding/Roots.lean:157:39: This simp argument is unused:
+  Matrix.head_fin_const
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mixKraus, Fin.sum_univ_three, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val,
+    Matrix.head_cons]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: TwoStateQuantumEmbedding/Roots.lean:205:0: 'TwoStateRoots.mix_channel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:206:0: 'TwoStateRoots.mix_sq_a' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:207:0: 'TwoStateRoots.mix_sq_b' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:360:0: 'TwoStateRoots.upper_triangle_fill' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:361:0: 'TwoStateRoots.square_root_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:362:0: 'TwoStateRoots.rootLayer_two_eq_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:363:0: 'IsCPMap.toCompletelyPositiveMap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:397:0: 'TwoStateRoots.rootLayer_antitone_dvd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:398:0: 'TwoStateRoots.all_roots_iff_factorial' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:415:0: 'TwoStateRoots.mixKraus_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:416:0: 'TwoStateRoots.mix_all_auxiliary_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:479:0: 'TwoStateRoots.finiteSlope_lt_limit' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:480:0: 'TwoStateRoots.finiteSlope_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:529:0: 'TwoStateRoots.finiteSlope_tendsto' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:555:0: 'TwoStateRoots.finiteSlope_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:556:0: 'TwoStateRoots.limitingSlope_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:672:0: 'TwoStateRoots.singleJump_gksl' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:673:0: 'TwoStateRoots.finiteRoot_channel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:674:0: 'TwoStateRoots.finiteRoot_projection_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:675:0: 'TwoStateRoots.finiteRoot_zero_projection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: TwoStateQuantumEmbedding/Roots.lean:690:0: 'TwoStateRoots.rootLayer_subset_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [9148/9149] Built TwoStateQuantumEmbedding (27s)
+Build completed successfully (9149 jobs).

@@ -1,0 +1,24 @@
+--- a/QICLean/Channel/Semigroup/Basic.lean
++++ b/QICLean/Channel/Semigroup/Basic.lean
+@@ -47,6 +47,9 @@
+   TNOperatorSpace.instIsScalarTowerRealComplexMatrixCLM
+ 
+ noncomputable section
++
++local instance (D : ℕ) : IsNormableSpace ℂ (Matrix (Fin D) (Fin D) ℂ) :=
++  isNormableSpace_of_finiteDimensional
+ 
+ /-! ## Taylor remainder bound for the matrix exponential -/
+ 
+--- a/QICLean/Channel/Semigroup/LindbladForm/TraceBridge.lean
++++ b/QICLean/Channel/Semigroup/LindbladForm/TraceBridge.lean
+@@ -24,6 +24,9 @@
+ open Matrix TNLean
+ 
+ noncomputable section
++
++local instance (D : ℕ) : IsNormableSpace ℂ (Matrix (Fin D) (Fin D) ℂ) :=
++  isNormableSpace_of_finiteDimensional
+ 
+ variable {D : ℕ}
+ 

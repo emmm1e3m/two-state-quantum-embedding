@@ -1,0 +1,1002 @@
+\documentclass[UTF8,11pt,a4paper,fontset=fandol]{ctexart}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=27mm]{geometry}
+\usepackage{microtype,booktabs,longtable,array,xurl}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\hypersetup{pdfauthor={Tingyu Zhang},pdftitle={两态量子嵌入：交换端点的尖锐几何与解析边界}}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{定义}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{注}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\adj}{adj}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Rea}{Re}
+\DeclareMathOperator{\Ima}{Im}
+\newcommand{\Q}{\mathcal Q_2}
+\newcommand{\Diss}{\mathcal D}
+\newcommand{\ee}{\mathbf e_z}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\PSD}{\succeq0}
+\newcommand{\id}{\mathrm{id}}
+\title{两态量子嵌入：\\交换端点的尖锐几何与解析边界}
+\author{Tingyu Zhang}
+\date{}
+\renewcommand{\proofname}{证明}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\refname}{参考文献}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\maketitle
+\begin{abstract}
+我们研究这样一类随机矩阵：在同一固定正交归一基中制备并测量一个量子比特，制备与测量之间的演化由时间无关的 Gorini--Kossakowski--Sudarshan--Lindblad 生成元产生。我们确定了可实现集合的闭包在确定性交换点处的精确切锥，其两个非平凡斜率由
+\(r_*=(\pi-2\sqrt2)/(\pi+2\sqrt2)\)
+决定。证明覆盖任意哈密顿旋转圈数和任意有限跳跃算符族。随后，我们证明，真实下边界在交换点附近是一个实解析函数的限制。充分小的正边界点均可由有限生成元达到；经过保持测量的规范变换后，其规范噪声具有秩一结构，而唯一的局部驻点支路位于一个共同不变的 Bloch 平面内。论证结合了统一弱耗散估计、谱隙、半正定优化条件，以及完整复秩一坐标图中的解析隐函数定理。此外，我们给出精确的漂移椭球和截面填充描述、系数为 \(4/e\) 的对数阶重置构造，并显式证明量子信道的平方可以实现任意两态随机矩阵。主要结论及其与原始 GKSL 模型之间的联系均已在 Lean 和 mathlib 中验证；文末的明确对应表记录了形式化验证的范围。
+\end{abstract}
+
+\section{引言与问题设定}\label{sec:introduction}
+
+一个经典随机矩阵即使无法由经典连续时间 Markov 链产生，也可能来自量子演化。这一区别在只有两个结果时就已出现。固定 \(\C^2\) 的计算基，将列随机矩阵写为
+\begin{equation}\label{eq:stochastic}
+ T(a,b)=\begin{pmatrix}a&1-b\\1-a&b\end{pmatrix},\qquad 0\leq a,b\leq1.
+\end{equation}
+对于量子信道 \(\Phi\)，其测得的转移表为
+\begin{equation}\label{eq:readout}
+ a=\langle0|\Phi(|0\rangle\langle0|)|0\rangle,
+ \qquad b=\langle1|\Phi(|1\rangle\langle1|)|1\rangle.
+\end{equation}
+只有制备与最终测量使用这一基；演化期间的相干性不受限制。
+
+我们考虑时间无关的 GKSL 生成元 \cite{GKS1976,Lindblad1976}
+\begin{equation}\label{eq:gksl}
+ \mathcal L(\rho)=-i[H,\rho]+\sum_{\nu=1}^N\Diss[A_\nu](\rho),\qquad
+ \Diss[A](\rho)=A\rho A^\dagger-\tfrac12\{A^\dagger A,\rho\},
+\end{equation}
+其中 \(H=H^\dagger\)，\(N\) 有限，观测时间非负。令 \(\mathcal Q_2^{\mathrm{fin}}\) 为由 \(e^{t\mathcal L}\) 得到的转移表集合，并定义
+\begin{equation}\label{eq:Qdefinition}
+ \Q=\overline{\mathcal Q_2^{\mathrm{fin}}}\subseteq[0,1]^2.
+\end{equation}
+闭包纳入了无限时间极限，但不改变有限逼近所使用的物理模型。将 \(H\) 缩放为 \(tH\)、跳跃算符缩放为 \(\sqrt t A_\nu\)，即可把任意有限时间实现归约为时间一的实现。全文采用这一归一化。
+
+点 \((0,0)\) 对应确定性交换，\((0,1)\) 对应确定性重置。文献 \cite{Shahbeigi2024} 系统研究了随机矩阵的量子可嵌入性；经典数据与相干信道实现之间的关系也见文献 \cite{Korzekwa2018}。本文的主要结果针对交换点附近的真实边界。定义
+\begin{equation}\label{eq:fdefinition}
+ f(b)=\min\{a:(a,b)\in\Q\},\qquad 0\leq b\leq1.
+\end{equation}
+这一最小值存在，因为 \(\Q\) 是紧集，并包含由酉旋转实现的 \((b,b)\)。特别地，\(0\leq f(b)\leq b\) 且 \(f(0)=0\)。
+
+令
+\begin{equation}\label{eq:constants}
+ q_*=\frac{2\sqrt2}{\pi},\qquad
+ r_*=\frac{1-q_*}{1+q_*},\qquad
+ g=1-r_*,\qquad \beta_*=1+q_*.
+\end{equation}
+下文简记 \(r=r_*\)。
+我们证明，\(\Q\) 在交换点处的正切锥恰为
+\begin{equation}\label{eq:cone-intro}
+ \{(u,v)\in[0,\infty)^2:r_*v\leq u,\ r_*u\leq v\}.
+\end{equation}
+我们还证明，存在 \(b_0>0\) 以及定义在 \((-b_0,b_0)\) 上的实解析函数 \(f_{\mathrm{arc}}\)，使得
+\begin{equation}\label{eq:analytic-intro}
+ f(b)=f_{\mathrm{arc}}(b)\qquad(0\leq b<b_0).
+\end{equation}
+仅仅存在一个解析驻点族，并不足以推出这一结论。在证明有限达到性和规范噪声的精确秩一归约之后，我们证明每个充分小的边界极小元都会进入该驻点族的同一固定唯一性邻域。这就建立了式\eqref{eq:analytic-intro}所需的全局边界与局部分支之间的识别。
+
+几何结构中的另外两个部分也有显式描述。固定线性 Bloch 动力学后，全部允许的漂移构成一个椭球，从而给出测量偏置的精确区间。在重置点附近，一个合法的单跳跃族实现了相对改进 \(4/[e\log(1/\epsilon)]\)，且余项具有统一的对数阶估计。最后，对于取任意量子信道平方这一不同的问题，我们直接证明式\eqref{eq:stochastic}中的每个转移表都能出现。时间齐次半群与信道根之间的区别至关重要 \cite{WolfCirac2008}。
+
+下文以通常的数学记号给出证明。第\ref{sec:formal}节列出对应的 Lean 声明，并记录可复现的验证步骤。解析区间以存在性形式给出；本文不声称 \(f\) 的任何数值区间端点或二阶系数。
+
+\section{规范几何与截面填充}\label{sec:geometry}
+
+\subsection{从任意跳跃算符到实仿射方程}
+以 \(X,Y,Z\) 表示 Pauli 矩阵，并写作 \(\sigma=(X,Y,Z)\)。移除跳跃算符的标量部分不会限制生成元类别。事实上，若 \(A=\alpha I+L\) 且 \(\tr L=0\)，则
+\begin{equation}\label{eq:scalar-gauge}
+ \Diss[A]=\Diss[L]-i\left[\frac{i}{2}(\overline\alpha L-\alpha L^\dagger),\,\cdot\,\right].
+\end{equation}
+这里的哈密顿修正是 Hermitian 的。再移除哈密顿量自身的标量部分，便可写成
+\begin{equation}\label{eq:canonical}
+ H=\tfrac12 h\cdot\sigma,\qquad L_\nu=v_\nu\cdot\sigma,
+ \qquad K=\sum_\nu v_\nu v_\nu^\dagger\PSD,
+\end{equation}
+其中 \(h\in\R^3\)，\(K\) 是 Hermitian 的 \(3\times3\) 矩阵。反之，任意半正定矩阵 \(K\) 都有一个至多含三个向量的 Gram 分解，因此每一对 \((h,K)\) 都对应有限 GKSL 生成元。
+
+对于 \(\rho=(I+r\cdot\sigma)/2\)，直接使用 Pauli 乘法可得
+\begin{equation}\label{eq:bloch}
+ \dot r=Mr+c,\qquad
+ M=[h]_\times+2(S-dI),\quad S=\Rea K,\quad d=\tr K=\tr S,
+\end{equation}
+其中 \([h]_\times r=h\times r\)，并且
+\begin{equation}\label{eq:drift}
+ c=-4(\Ima K_{23},\Ima K_{31},\Ima K_{12}),\qquad
+ K=S+\frac{i}{4}[c]_\times.
+\end{equation}
+这些公式中的指标采用 \(1,2,3\)。实矩阵 \(S\) 是半正定的。阻尼矩阵
+\begin{equation}\label{eq:damping}
+ D=2(dI-S)
+\end{equation}
+满足 \(D\PSD\)、\(\tr D=4d\) 和 \(\|D\|\leq2d\)，所以线性 Bloch 流是压缩映射。由完全正性，完整仿射流保持 Bloch 球。
+
+令
+\begin{equation}\label{eq:xz}
+ x=a+b-1,\qquad z=a-b,
+ \qquad a=\frac{1+x+z}{2},\quad b=\frac{1+x-z}{2}.
+\end{equation}
+随机矩阵的参数正方形由此变为菱形 \(|z|\leq1-|x|\)。定义
+\begin{equation}\label{eq:linear-readout}
+ E=e^M,\qquad \ell=\int_0^1e^{tM^T}\ee\,dt,
+\end{equation}
+后，两个测量量具有特别简单的形式：
+\begin{equation}\label{eq:xz-readout}
+ x=\ee^T E\ee,\qquad z=\ell^Tc.
+\end{equation}
+第一个量仅依赖 \((S,h)\)，第二个量则线性依赖于漂移。
+
+\subsection{精确漂移椭球}
+\begin{theorem}[允许的漂移]\label{thm:drift-ellipsoid}
+对于任意实对称矩阵 \(S\PSD\)，有
+\begin{equation}\label{eq:ellipsoid}
+ S+\frac{i}{4}[c]_\times\PSD
+ \quad\Longleftrightarrow\quad
+ c=4\sqrt{\adj S}\,u\ \text{for some }u\in\R^3,\ \|u\|\leq1.
+\end{equation}
+该陈述也包括奇异的 \(S\)。
+\end{theorem}
+\begin{proof}
+保持定向的正交换基可以将 \(S\) 对角化，并使 \([c]_\times\) 协变地变换。因此，只需考虑 \(S=\diag(s_1,s_2,s_3)\)，其中所有 \(s_i\geq0\)。其二阶主子式为
+\(s_i s_j-c_k^2/16\)，且
+\begin{equation}\label{eq:det-ellipsoid}
+ \det\left(S+\frac{i}{4}[c]_\times\right)
+ =s_1s_2s_3-\frac{s_1c_1^2+s_2c_2^2+s_3c_3^2}{16}.
+\end{equation}
+若所有 \(s_i>0\)，则这一行列式非负等价于
+\(\sum_i c_i^2/(16s_js_k)\leq1\)，并且蕴含全部二阶主子式不等式。这正是式\eqref{eq:ellipsoid}。例如，当 \(s_3=0<s_1,s_2\) 时，半正定性强制 \(c_1=c_2=0\)，余下的条件为 \(|c_3|\leq4\sqrt{s_1s_2}\)。此时伴随矩阵为 \(\diag(0,0,s_1s_2)\)，仍得到同一公式。若 \(\rank S\leq1\)，则二阶主子式强制 \(c=0\)，同时 \(\adj S=0\)。以上情形涵盖了全部可能性。
+\end{proof}
+
+\begin{proposition}[固定动力学的偏置区间]\label{prop:fixed-drift}
+固定 \(S\PSD\) 和 \(h\) 后，\(z\) 的全部可达到值恰好构成
+\begin{equation}\label{eq:bias-interval}
+ [-Z(S,h),Z(S,h)],\qquad
+ Z(S,h)=4\sqrt{\ell^T(\adj S)\ell}.
+\end{equation}
+该区间中的每个值都有有限 GKSL 实现。若 \(Z(S,h)>0\)，上端点由
+\begin{equation}\label{eq:optimal-drift}
+ c_+=\frac{4(\adj S)\ell}{\sqrt{\ell^T(\adj S)\ell}}.
+\end{equation}
+实现。
+\end{proposition}
+\begin{proof}
+由定理\ref{thm:drift-ellipsoid}，线性泛函 \(\ell^Tc\) 的取值就是单位球在映射 \(u\mapsto4\langle\sqrt{\adj S}\ell,u\rangle\) 下的像。其像为所述区间，最大值在 \(\sqrt{\adj S}\ell\) 方向上取得。对所得 \(K\) 作 Gram 分解，即得有限实现。
+\end{proof}
+
+\begin{proposition}[沿反对角线填充]\label{prop:filling}
+若 \((a,b)\in\Q\) 且 \(-1\leq\eta\leq1\)，则坐标为
+\(x=a+b-1\)、\(z=\eta(a-b)\) 的点也属于 \(\Q\)。特别地，\(\Q\) 在变换 \((a,b)\mapsto(b,a)\) 下不变。
+\end{proposition}
+\begin{proof}
+对于有限规范生成元，将 \(K\) 替换为
+\begin{equation}\label{eq:drift-scaling}
+ K_\eta=\frac{1+\eta}{2}K+\frac{1-\eta}{2}\overline K.
+\end{equation}
+所得矩阵半正定，具有相同的实部，并将 \(c\) 替换为 \(\eta c\)。保持规范哈密顿量不变。由式\eqref{eq:xz-readout}，\(x\) 保持不变，而 \(z\) 乘以 \(\eta\)。对有限逼近逐一施行此构造，即可将结论推广到 \(\Q\)。式\eqref{eq:scalar-gauge}中的标量跳跃修正在这一构造之前完成；所有生成元都以同一测量基表示。
+\end{proof}
+
+\subsection{整个闭区域的标量描述}
+\begin{theorem}[包络与经典半区域]\label{thm:envelope}
+存在一个上半连续函数 \(F:[-1,1]\to[0,1]\)，使得
+\begin{equation}\label{eq:envelope}
+ \Q=\left\{\left(\frac{1+x+z}{2},\frac{1+x-z}{2}\right):
+ -1\leq x\leq1,\ |z|\leq F(x)\right\}.
+\end{equation}
+它满足 \(0\leq F(x)\leq1-|x|\)、\(F(-1)=0\)，以及
+\begin{equation}\label{eq:classical-half}
+ F(x)=1-x\qquad(0\leq x\leq1).
+\end{equation}
+此外，它具有如下松弛变分表示：
+\begin{equation}\label{eq:relaxed-envelope}
+ F(x)=\lim_{\delta\downarrow0}\sup\left\{
+ Z(S,h):S\PSD,\ \big|\ee^Te^{[h]_\times+2(S-(\tr S)I)}\ee-x\big|<\delta
+ \right\}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+对于每个 \(x\in[-1,1]\)，酉旋转均可实现 \((x,z)=(x,0)\)。因此，紧集 \(\Q\) 与固定 \(x\) 的直线之交具有一个非负的最大偏置，将其定义为 \(F(x)\)。命题\ref{prop:filling}表明，这一交集恰为整个区间 \([-F(x),F(x)]\)。菱形界给出 \(F(x)\leq1-|x|\) 和 \(F(-1)=0\)。
+
+若 \(x_n\to x\)，则对任意使 \(F(x_n)\) 收敛的子列，由闭性可得区域中的一点 \((x,\lim F(x_n))\)。其偏置至多为 \(F(x)\)。取一个实现上极限的子列，即证明上半连续性。
+
+对于 \(0<x\leq1\)，振幅阻尼跳跃 \(\sqrt{-\log x}\,|0\rangle\langle1|\) 在零哈密顿量、时间一时实现 \((a,b)=(1,x)\)。其偏置为 \(1-x\)，恰为菱形上界。极限 \(x\downarrow0\) 给出剩余端点，从而证明式\eqref{eq:classical-half}。
+
+式\eqref{eq:relaxed-envelope}右侧的量随 \(\delta\downarrow0\) 单调下降。由命题\ref{prop:fixed-drift}，每个允许的 \((S,h)\) 都有有限端点实现。一列近最大端点在随机矩阵参数正方形中有收敛子列；固定 \(x\) 处的极限偏置至多为 \(F(x)\)。反之，用有限生成元逼近最大偏置点 \((x,F(x))\)。将每个漂移替换为对应的最大化漂移，会保持其邻近的 \(x\) 坐标并增大偏置，因此每个充分小邻域上的上确界都不小于逼近点的偏置。这就证明了反向不等式及该极限公式。
+\end{proof}
+
+\section{交换点处的尖锐切锥}\label{sec:swap-cone}
+
+本节始终令 \(r=r_*\)，并将观测时间取为一。输出端测得的小参数为 \(s=a+b\)。论证开始时不假设哈密顿量有界。
+
+\subsection{近乎完美交换所强制的弱耗散}
+\begin{lemma}[统一耗散刚性]\label{lem:rigidity}
+对于输出为 \((a,b)\) 的任意有限规范生成元，若 \(s=a+b\leq1/16\)，则
+\begin{equation}\label{eq:rigidity}
+ d\leq-\frac12\log(1-4s)\leq\frac83s.
+\end{equation}
+\end{lemma}
+\begin{proof}
+写作 \(M=\Omega-D\)，其中 \(\Omega^T=-\Omega\) 且 \(D=2(dI-S)\)。令
+\[
+ B=e^{M/2},\quad u=B\ee,\quad v=B^2\ee,\quad Q=I-B^TB.
+\]
+压缩性质给出 \(Q\PSD\)、\(\|v\|\leq\|u\|\leq1\)。由读出公式，\(\ee^Tv=-1+s\)，故
+\[
+ \|v\|\geq1-s,\qquad \delta:=1-\|v\|^2\leq2s,
+ \qquad\|v+\ee\|\leq\sqrt{2s}.
+\]
+此外，
+\[
+ \ee^TQ\ee+u^TQu=\delta,
+ \qquad |\ee^TQu|\leq\delta/2.
+\]
+对于 \(m=\ee^Tu\)，恒等式
+\(2m=\ee^TQu+u^T(v+\ee)\) 蕴含
+\[
+ |m|\leq s/2+\sqrt{s/2}<1/4.
+\]
+因此，\(V=(\ee,u)\) 的两列所组成的 Gram 矩阵 \(N\) 满足 \(N\succeq I/2\)：其第一个对角元为一，第二个对角元至少为 \((1-s)^2\geq3/4\)，非对角元的绝对值至多为 \(1/4\)。于是 \(P=VN^{-1/2}\) 的列正交归一，且
+\[
+ \tr(P^TQP)\leq2\tr(V^TQV)=2\delta\leq4s.
+\]
+令 \(\sigma_1\geq\sigma_2\geq\sigma_3>0\) 为 \(B\) 的奇异值。压缩至 \(P\) 张成的二维子空间可得
+\begin{equation}\label{eq:singular-area}
+ (\sigma_1\sigma_2)^2\geq\det(P^TB^TBP)
+ =\det(I-P^TQP)\geq1-4s.
+\end{equation}
+最后一个不等式使用了 \(P^TQP\) 的两个特征值都位于 \([0,1]\) 这一事实。
+
+沿 \(M\) 演化时的范数微分不等式给出
+\[
+ \sigma_3\geq e^{-\|D\|/2}\geq e^{-\tr D/4}
+ =\sqrt{\det B}.
+\]
+由于 \(\det B=\sigma_1\sigma_2\sigma_3\)，这意味着 \(\sigma_3\geq\sigma_1\sigma_2\)。因此
+\[
+ e^{-2d}=\det B\geq(\sigma_1\sigma_2)^2\geq1-4s.
+\]
+取对数即得式\eqref{eq:rigidity}的第一个不等式。当 \(0\leq4s\leq1/4\) 时，将 \((1-t)^{-1}\leq4/3\) 从零积分至 \(4s\)，即得第二个不等式。
+\end{proof}
+
+\subsection{对全部哈密顿旋转圈数一致的比较}
+绕测量轴旋转不会改变测得的转移表。施行这样的方位旋转后，可以假设
+\begin{equation}\label{eq:azimuth}
+ h=(h_x,0,h_z),\qquad h_x\geq0.
+\end{equation}
+这一变换正交地作用于 Bloch 坐标，以同一个实合同变换作用于 \(K\)，保持 \(d\)，并固定 \(\ee\)。定义
+\[
+ \theta=\frac12\sqrt{h_x^2+h_z^2},\qquad
+ p=\left|\langle0|e^{-iH}|0\rangle\right|^2.
+\]
+两个纯哈密顿演化的返回概率都等于 \(p\)。当 \(\theta>0\) 且 \(n=h/(2\theta)\) 时，
+\begin{equation}\label{eq:unitary-p}
+ p=\cos^2\theta+n_z^2\sin^2\theta
+ =n_z^2+(1-n_z^2)\cos^2\theta.
+\end{equation}
+对于 \(j=0,1,2,\ldots\)，令 \(\omega_j=(2j+1)\pi\)，并定义
+\begin{equation}\label{eq:QaQb}
+ C_0=\diag(1,\tfrac12,\tfrac12),\qquad
+ F_j=\begin{pmatrix}0&0&2i/\omega_j\\0&0&0\\-2i/\omega_j&0&0\end{pmatrix},
+ \qquad Q_{a,j}=C_0+F_j,\quad Q_{b,j}=C_0-F_j.
+\end{equation}
+
+\begin{lemma}[统一首阶比较]\label{lem:uniform-swap}
+若 \(a+b=s\leq1/64\)，则在式\eqref{eq:azimuth}的规范中，存在整数 \(j\geq0\)，使得
+\begin{gather}\label{eq:angle-comparison}
+ p\leq\frac{35}{3}s,\qquad
+ |\theta-\omega_j/2|\leq2\sqrt p,\qquad |h_z|\leq2\theta\sqrt p,\\
+ \label{eq:uniform-first-order}
+ a=p+\tr(Q_{a,j}K)+R_a,\qquad
+ b=p+\tr(Q_{b,j}K)+R_b,\\
+ \label{eq:uniform-error}
+ |R_a|,|R_b|\leq34d\sqrt p+8d^2.
+\end{gather}
+\end{lemma}
+\begin{proof}
+为说明式\eqref{eq:QaQb}中矩阵的来源，我们同时给出范数估计和精确积分。将 Hermitian 矩阵表示为 \((u,r)\mapsto(uI+r\cdot\sigma)/2\)，其迹范数为 \(\max(|u|,\|r\|)\)。生成元的耗散部分为
+\[
+ B_D(u,r)=(0,-Dr+uc).
+\]
+除了 \(\|D\|\leq2d\)，半正定性还给出 \(\|c\|\leq2d\)。后者可由如下方式看出：分解 \(K=\sum v_\nu v_\nu^\dagger\)，写出 \(v_\nu=x_\nu+iy_\nu\)，再使用
+\(\|c\|\leq4\sum\|x_\nu\|\|y_\nu\|\leq2\sum\|v_\nu\|^2\)。
+因此 \(\|B_D\|\leq4d\)。哈密顿半群与完整的完全正保迹半群在这一范数下均为压缩映射。由 Duhamel 公式，相对于哈密顿演化的概率误差至多为 \(4d\)。特别地，
+\[
+ p\leq a+4d\leq s+4d\leq35s/3.
+\]
+再次作 Duhamel 展开可知，扣除首个耗散积分后，余项范数至多为 \((4d)^2/2=8d^2\)。
+
+式\eqref{eq:unitary-p}蕴含 \(|n_z|\leq\sqrt p\)。取距离 \(\theta\) 最近的奇数个半圈；等价地，选取 \(j\) 使 \(j\pi\leq\theta<(j+1)\pi\)。若 \(\delta=\theta-(j+1/2)\pi\)，则 \(|\delta|\leq\pi/2\) 且 \(|\sin\delta|=|\cos\theta|\leq\sqrt p\)。初等界 \(|\delta|\leq(\pi/2)|\sin\delta|\) 给出 \(|\delta|\leq2\sqrt p\)。在当前小输出范围内，这也排除了 \(\theta=0\)。
+
+令 \(R(t)\) 表示实际哈密顿量产生的 Bloch 旋转，\(R_j(t)\) 表示绕 \(X\)、角速度为 \(\omega_j\) 的旋转。将 \((1,0,0)\) 变到 \(n=(n_x,0,n_z)\) 的一个正交轴变换，与恒等变换的距离至多为 \(2|n_z|\)。用该轴变换共轭一个旋转，所引起的算符范数变化至多为 \(4|n_z|\)。将旋转角从 \(2\theta t\) 改为 \(\omega_jt\)，所引起的变化至多为 \(2|\theta-\omega_j/2|t\)。所以
+\begin{equation}\label{eq:propagator-comparison}
+ \sup_{0\leq t\leq1}\|R(t)-R_j(t)\|\leq8\sqrt p.
+\end{equation}
+这一估计不含任何依赖 \(j\) 的因子。
+
+首阶积分含有两个传播子因子和一个 \(B_D\)。使用式\eqref{eq:propagator-comparison}替换两个传播子，积分范数的变化至多为 \(64d\sqrt p\)。所得向量的迹坐标为零，而任一个概率读出在该子空间上的范数为 \(1/2\)。因此，概率误差至多为 \(32d\sqrt p\)，特别地，不超过 \(34d\sqrt p\)。
+
+剩下只需计算参考首阶积分。对于一个无迹跳跃算符 \(V=v_xX+v_yY+v_zZ\)，参考酉算符为 \(U_j(t)=e^{-i\omega_jtX/2}\)。由于 \(U_j(1)\) 交换两个基态，反对易子项对返回概率的首阶贡献为零。忽略常相位后，跳跃振幅为
+\[
+ v_x+i(v_y\cos\omega_jt+v_z\sin\omega_jt),\qquad
+ v_x-i(v_y\cos\omega_jt+v_z\sin\omega_jt).
+\]
+使用
+\[
+ \int_0^1\cos\omega_jt\,dt=0,\quad
+ \int_0^1\sin\omega_jt\,dt=\frac2{\omega_j},\quad
+ \int_0^1\cos^2\omega_jt\,dt=\int_0^1\sin^2\omega_jt\,dt=\frac12,
+\]
+并注意混合积分为零，得到
+\begin{equation}\label{eq:quadratic-forms}
+ \begin{aligned}
+ v^\dagger Q_{a,j}v&=|v_x|^2+\frac{|v_y|^2+|v_z|^2}{2}
+ -\frac4{\omega_j}\Ima(\overline v_xv_z),\\
+ v^\dagger Q_{b,j}v&=|v_x|^2+\frac{|v_y|^2+|v_z|^2}{2}
+ +\frac4{\omega_j}\Ima(\overline v_xv_z).
+ \end{aligned}
+\end{equation}
+对 \(K\) 的一个 Gram 分解求和，即得式\eqref{eq:uniform-first-order}中的两个迹。将其与二阶 Duhamel 界结合，就证明了式\eqref{eq:uniform-error}。
+\end{proof}
+
+\subsection{尖锐谱不等式与匹配族}
+\begin{lemma}[全部频率上的谱隙]\label{lem:spectrum}
+令 \(S_j=Q_{a,j}-rQ_{b,j}\)，并定义
+\begin{equation}\label{eq:kernel}
+ w_0=\frac1{\sqrt3}(-i,0,\sqrt2)^T,\qquad
+ P_0=w_0w_0^\dagger,\qquad P_\perp=I-P_0.
+\end{equation}
+则
+\begin{equation}\label{eq:spectral-gap}
+ S_0\succeq\frac g2P_\perp,\quad \ker S_0=\C w_0,
+ \qquad S_j\succeq\frac g3I\quad(j\geq1).
+\end{equation}
+对于每个 \(j\geq0\)，\(Q_{a,j}\succeq rQ_{b,j}\) 和 \(Q_{b,j}\succeq rQ_{a,j}\) 均成立。
+\end{lemma}
+\begin{proof}
+Hermitian 矩阵 \(C_0^{-1/2}F_jC_0^{-1/2}\) 的特征值为
+\(0,\pm2\sqrt2/\omega_j\)。恒等式 \((1+r)q_*=g\) 给出
+\[
+ S_j=gC_0+(1+r)F_j.
+\]
+当 \(j=0\) 时，直接对角化得到特征值 \(0,g/2,3g/2\)，零特征空间为 \(\C w_0\)。对于 \(j\geq1\)，白化后的扰动范数至多为 \(q_*/3\)，因而 \(S_j\succeq(2g/3)C_0\succeq(g/3)I\)。将 \(F_j\) 改为 \(-F_j\)，即证明反向不等式。
+\end{proof}
+
+\begin{lemma}[有限匹配曲线与小纵坐标的精确实现]\label{lem:matching}
+令
+\begin{equation}\label{eq:matching-jumps}
+ V_-=-\frac{i\sqrt2}{4}X+\frac12Z,\qquad V_+=V_-^\dagger,
+ \qquad \alpha_0=\frac{1-q_*}{4},\quad \beta_0=\frac{1+q_*}{4}.
+\end{equation}
+哈密顿量为 \(H=\pi X/2\)、单跳跃算符为 \(\sqrt\epsilon V_-\) 的生成元，其输出 \((a_\epsilon,b_\epsilon)\) 满足
+\begin{equation}\label{eq:matching-errors}
+ |a_\epsilon-\alpha_0\epsilon|\leq2\epsilon^2,
+ \qquad |b_\epsilon-\beta_0\epsilon|\leq2\epsilon^2.
+\end{equation}
+每个 \(0<b\leq\beta_0^2/8\) 都是某个 \(0<\epsilon\leq2b/\beta_0\) 对应输出的精确第二坐标，并且
+\begin{equation}\label{eq:matching-upper}
+ f(b)<rb+40b^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+对于这一生成元，\(d=3\epsilon/8\)，且其哈密顿量恰为参考哈密顿量。式\eqref{eq:quadratic-forms}中的二次型给出首阶系数 \(\alpha_0,\beta_0\)。二阶误差至多为 \(8d^2=9\epsilon^2/8\leq2\epsilon^2\)。注意 \(\alpha_0=r\beta_0\)。
+
+在所述范围内固定 \(b\)，并令 \(\epsilon_1=2b/\beta_0\)。则
+\[
+ b_{\epsilon_1}\geq2b-8b^2/\beta_0^2\geq b.
+\]
+由于 \(b_0=0\)，且矩阵指数连续，由介值定理可得一个精确的 \(\epsilon\in(0,\epsilon_1]\)，满足 \(b_\epsilon=b\)。于是
+\[
+ a_\epsilon-rb\leq2(1+r)\epsilon^2
+ \leq\frac{8(1+r)}{\beta_0^2}b^2
+ =32(1+r)^3b^2<40b^2.
+\]
+这里 \(0<r<1/16\) 可由其定义直接得到。这为 \(f(b)\) 提供了一个合法的有限竞争实现。
+\end{proof}
+
+\begin{theorem}[二次外估计与精确交换切锥]\label{thm:swap-cone}
+每个满足 \(a+b\leq1/256\) 的 \((a,b)\in\Q\) 都满足
+\begin{equation}\label{eq:outer}
+ a\geq rb-2600(a+b)^2,\qquad
+ b\geq ra-2600(a+b)^2.
+\end{equation}
+采用约定
+\[
+ T^+_{\Q}(0)=\{v:\exists t_n\downarrow0,\ z_n\in\Q,
+ \ z_n/t_n\longrightarrow v\},
+\]
+其中也可等价地使用任意正的 \(t_n\to0\)，则有
+\begin{equation}\label{eq:exact-cone}
+ T^+_{\Q}(0)=\{(u,v):u,v\geq0,\ rv\leq u,\ ru\leq v\}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+对于满足 \(s\leq1/64\) 的有限输出，引理\ref{lem:uniform-swap}和\ref{lem:spectrum}给出
+\[
+ a-rb\geq gp-34(1+r)d\sqrt p-8(1+r)d^2.
+\]
+对 \(\sqrt p\) 完成平方，再使用式\eqref{eq:rigidity}，得到
+\[
+ a-rb\geq-\left(\frac{34^2(1+r)^2}{4g}+8(1+r)\right)d^2
+ \geq-2600s^2.
+\]
+仅由 \(0<r<1/16\) 就可推出最后一个数值不等式。交换 \(a,b\) 后，同样的论证给出反向估计。对于闭包中满足 \(s\leq1/256\) 的点，可用最终落入较大窗口 \(s<1/64\) 的有限点逼近；连续性于是给出式\eqref{eq:outer}。
+
+对于一列切向逼近，将式\eqref{eq:outer}除以 \(t_n\)。由于 \(z_n/t_n\) 收敛，二次误差除以 \(t_n\) 后趋于零。再利用坐标非负性，即得式\eqref{eq:exact-cone}的外包含关系。
+
+为证明反向包含关系，令 \((u,v)\) 满足所显示的四个不等式，并定义
+\[
+ \lambda=\frac{\beta_0v-\alpha_0u}{\beta_0^2-\alpha_0^2},\qquad
+ \nu=\frac{\beta_0u-\alpha_0v}{\beta_0^2-\alpha_0^2}.
+\]
+两个系数都非负。取 \(H=\pi X/2\) 及两个跳跃算符
+\(\sqrt{\epsilon\lambda}V_-\)、\(\sqrt{\epsilon\nu}V_+\)。由首个耗散项的线性性和同一个 Duhamel 界，所得输出为
+\[
+ \epsilon\{\lambda(\alpha_0,\beta_0)+\nu(\beta_0,\alpha_0)\}+O(\epsilon^2)
+ =\epsilon(u,v)+O(\epsilon^2).
+\]
+对于每个 \(\epsilon\geq0\)，这些都是实际的有限 GKSL 点，从而证明了内包含关系，也包括零向量的情形。
+\end{proof}
+
+
+\section{有限极小元与解析边界}\label{sec:analytic}
+
+引理\ref{lem:spectrum}中使谱不等式取等的方向预示了一个秩一驻点族。为了将它与真实边界识别起来，我们先对每个充分接近最优的生成元作统一定位，包括起初没有任何参数界的生成元。
+
+\subsection{全部近极小元的统一定位}
+固定 \(C>0\)，考虑满足
+\begin{equation}\label{eq:near-class}
+ b>0,\qquad a\leq rb+Cb^2.
+\end{equation}
+的有限生成元。以下常数依赖 \(C\)，但不依赖生成元。定义
+\begin{equation}\label{eq:localization-constants}
+ \begin{aligned}
+ D_*&=16/3,\\
+ L_C&=C+\left(\frac{34^2(1+r)^2}{2g}+8(1+r)\right)D_*^2,\\
+ P_C&=2L_C/g,\qquad E_C=34D_*\sqrt{P_C}+8D_*^2.
+ \end{aligned}
+\end{equation}
+
+\begin{lemma}[统一定位]\label{lem:localization}
+对于所有充分小的 \(b>0\)，式\eqref{eq:near-class}中的每个生成元经过方位规范变换后，在引理\ref{lem:uniform-swap}中均有 \(j=0\)，且
+\begin{equation}\label{eq:localized}
+ p\leq P_Cb^2,\qquad b/4\leq d\leq D_*b,\qquad
+ \tr(P_\perp K)\leq P_Cb^2.
+\end{equation}
+当 \(b\downarrow0\) 时，对所有这类生成元一致地有
+\begin{equation}\label{eq:uniform-limits}
+ h\longrightarrow(\pi,0,0),\qquad
+ K\longrightarrow0,\qquad
+ \frac Kd\longrightarrow P_0,\qquad
+ \frac db\longrightarrow\frac{1}{(2/3)\beta_*}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+缩小 \(b\) 的允许范围，使 \(s=a+b\leq2b\leq1/64\)。引理\ref{lem:rigidity}给出 \(d\leq D_*b\)。在定理\ref{thm:swap-cone}的证明中保留非负谱项，并仅对 \(\sqrt p\) 的二次项的一半完成平方，得到
+\begin{equation}\label{eq:local-energy}
+ \frac g2p+\tr(S_jK)\leq L_Cb^2.
+\end{equation}
+特别地，\(p\leq P_Cb^2\)，而式\eqref{eq:uniform-error}中的余项至多为 \(E_Cb^2\)。由于 \(Q_{b,j}\preceq2I\)，有
+\[
+ b\leq2d+(P_C+E_C)b^2.
+\]
+因此，只要 \((P_C+E_C)b\leq1/2\)，就有 \(d\geq b/4\)。若 \(j\geq1\)，则全部频率上的谱隙给出
+\[
+ gb/12\leq gd/3\leq\tr(S_jK)\leq L_Cb^2,
+\]
+这对充分小的正 \(b\) 不可能成立，故 \(j=0\)。此时 \(S_0\succeq(g/2)P_\perp\) 与式\eqref{eq:local-energy}共同证明式\eqref{eq:localized}中余下的估计。
+
+式\eqref{eq:angle-comparison}的角度界和轴方向界一致地蕴含 \(h=(\pi,0,0)+O(b)\)。为控制噪声方向，将 \(K\) 相对于分解 \(\C w_0\oplus w_0^\perp\) 写成分块形式。若 \(t=\tr(P_\perp K)\)，则半正定性使非对角块的范数不超过 \(\sqrt{dt}\)。正交补块的范数至多为 \(t\)，去除这一块会使平行方向上的系数改变 \(t\)。因此，由式\eqref{eq:localized}，
+\[
+ \left\|\frac Kd-P_0\right\|\leq\frac{2t}{d}+2\sqrt{\frac td}\longrightarrow0
+\]
+最后，将式\eqref{eq:uniform-first-order}中的第二个等式除以 \(d\)。其中 \(p/d\) 和 \(R_b/d\) 一致趋于零，而
+\[
+ \tr\left(Q_{b,0}\frac Kd\right)\longrightarrow
+ \tr(Q_{b,0}P_0)=\frac23\beta_*>0.
+\]
+这就证明了式\eqref{eq:uniform-limits}的最后一个极限。
+\end{proof}
+
+\begin{lemma}[交换点附近的有限达到性]\label{lem:attainment}
+对于所有充分小的 \(b>0\)，点 \((f(b),b)\) 都由一个有限规范生成元达到，且至多需要三个无迹跳跃算符。每个规范极小元均满足引理\ref{lem:localization}的统一定位结论。
+\end{lemma}
+\begin{proof}
+由紧性，点 \((f(b),b)\) 属于 \(\Q\)。取收敛到该点的有限输出 \((a_n,b_n)\)。由引理\ref{lem:matching}，
+\(f(b)<rb+40b^2\)。对于固定的正 \(b\)，连续性因而给出
+\[
+ b_n>0,\qquad a_n\leq rb_n+41b_n^2
+\]
+对所有充分大的 \(n\) 成立。对每个逼近元施行方位规范变换后，引理\ref{lem:localization}将全部哈密顿量和噪声矩阵限制在同一有界集中。例如，进一步缩小小 \(b\) 区间后，可以使用 \(\|h_n\|\leq6\) 和 \(\tr K_n\leq1\)。某个子列收敛到 \((h,K)\)，其中 \(K\PSD\)。有限维矩阵指数和读出均连续，因此极限生成元达到 \((f(b),b)\)。Gram 分解给出至多三个跳跃算符。每个极小元本身都满足式\eqref{eq:near-class}，可取 \(C=40\)，也可取 \(C=41\)，所以统一结论适用于所有极小元。
+\end{proof}
+
+\subsection{半正定最优性强制精确秩一}
+将两个规范概率视为关于 \(h\) 和 Hermitian 矩阵 \(K\) 所在实向量空间上的实解析函数 \(a(h,K)\)、\(b(h,K)\)。即使 \(K\) 不是半正定的，同一个矩阵指数仍在这一环境空间上定义这些函数。其矩阵梯度采用实内积 \(\langle A,B\rangle=\tr(AB)\)。
+
+\begin{lemma}[精确秩一归约]\label{lem:rank-one}
+采用式\eqref{eq:azimuth}中的方位规范。
+对于每个充分小的正 \(b\)，\(f(b)\) 的每个有限规范极小元都满足 \(\rank K=1\)。其约束的径向导数 \(D_Kb[K]\) 为正，乘子
+\begin{equation}\label{eq:multiplier}
+ \mu=\frac{D_Ka[K]}{D_Kb[K]}
+\end{equation}
+在 \(b\downarrow0\) 时一致收敛到 \(r\)。对偶矩阵
+\begin{equation}\label{eq:dual}
+ \mathcal S=\nabla_Ka-\mu\nabla_Kb
+\end{equation}
+满足 \(\mathcal S\PSD\)、\(\mathcal SK=0\) 和 \(\mathcal S\to S_0\)。
+\end{lemma}
+\begin{proof}
+在 \(h_0=(\pi,0,0)\)、\(K=0\) 处，精确首阶计算给出
+\[
+ \nabla_Ka(h_0,0)=Q_{a,0},\qquad
+ \nabla_Kb(h_0,0)=Q_{b,0}.
+\]
+这些恒等式对完整 Hermitian 梯度成立：跳跃算符的计算适用于每个复向量，而秩一 Hermitian 矩阵张成全部 Hermitian 矩阵组成的实空间。由引理\ref{lem:localization}及导数的连续性，对所有极小元一致地有
+\[
+ D_Kb[K/d]\longrightarrow\tr(Q_{b,0}P_0)=\tfrac23\beta_*>0,
+ \qquad D_Ka[K/d]\longrightarrow r\tfrac23\beta_*.
+\]
+由于 \(d>0\)，径向导数对所有充分小的 \(b\) 均为正，所以式\eqref{eq:multiplier}定义良好，且 \(\mu\to r\)。连续性随即给出 \(\mathcal S\to S_0\)。
+
+由于极小化问题没有施加秩约束，我们明确给出锥上的最优性论证。任取 \(W\PSD\)。路径 \(K+t(W-K)\) 在 \(0\leq t\leq1\) 时保持半正定。由径向导数非零，隐函数定理给出一个实标量因子 \(\lambda(t)\)，满足 \(\lambda(0)=1\)，使得
+\[
+ b\bigl(h,\lambda(t)(K+t(W-K))\bigr)=b(h,K).
+\]
+当 \(t\) 充分小且非负时，这仍然是合法生成元。由极小性并求导，得到
+\(\tr(\mathcal S(W-K))\geq0\)。
+按照 \(\mu\) 的定义，\(\tr(\mathcal SK)=0\)，因此对每个 \(W\PSD\) 均有 \(\tr(\mathcal SW)\geq0\)，从而 \(\mathcal S\PSD\)。若两个半正定矩阵的乘积的迹为零，则有 \(\mathcal SK=0\)；这可由 \(K^{1/2}\mathcal SK^{1/2}\) 的迹为零推出。
+
+\(S_0\) 的两个正特征值为 \(g/2\) 和 \(3g/2\)。因此，每个充分接近它的 \(\mathcal S\) 都至少有两个正特征值，其核的维数至多为一。由于 \(K\ne0\)，且其像包含在这一核中，故 \(\rank K=1\)。对任意双侧哈密顿变化施行相同的径向修正，还可证明 \(a-\mu b\) 关于哈密顿坐标的驻点条件。
+\end{proof}
+
+\subsection{完整复秩一解析系统}
+上述秩一结论针对的是规范 \(3\times3\) 噪声矩阵。在 \(P_0\) 附近，其 \(zz\) 元为正。每个这样的秩一矩阵都有唯一表示
+\begin{equation}\label{eq:rank-one-chart}
+ K=kww^\dagger,\qquad k=K_{zz}>0,\qquad
+ w=(\xi+iv,q+i\zeta,-1)^T.
+\end{equation}
+事实上，\(w_x=-K_{xz}/K_{zz}\) 且 \(w_y=-K_{yz}/K_{zz}\)，其余元素由秩一性质确定。经过方位规范变换后，写作
+\[
+ H=\frac\omega2X+hZ,
+ \qquad y=(\omega,h,\mu,\xi,v,q,\zeta).
+\]
+引理\ref{lem:localization}和引理\ref{lem:rank-one}给出
+\begin{equation}\label{eq:chart-base}
+ k\longrightarrow0,\quad
+ y\longrightarrow y_0=(\pi,0,r,0,1/\sqrt2,0,0),\quad
+ k/d\longrightarrow2/3.
+\end{equation}
+这一坐标图包含极限噪声附近的全部复跳跃方向，没有预先施加平面条件。
+
+为明确后续论证，将整个解析系统写成一个实 \(4\times4\) 矩阵指数。采用坐标 \((u,r_x,r_y,r_z)\)，令
+\begin{equation}\label{eq:augmented-Q}
+ Q(k,y)=
+ \begin{pmatrix}0&0&0&0\\0&0&-2h&0\\0&2h&0&-\omega\\0&0&\omega&0\end{pmatrix}
+ +k\begin{pmatrix}
+ 0&0&0&0\\
+ 4\zeta&-2(W+1)&2C&-2\xi\\
+ -4v&2C&-2(U+1)&-2q\\
+ 4(\xi\zeta-vq)&-2\xi&-2q&-2(U+W)
+ \end{pmatrix},
+\end{equation}
+其中 \(U=\xi^2+v^2\)、\(W=q^2+\zeta^2\)、\(C=\xi q+v\zeta\)。若 \(E=e^{Q(k,y)}\)，其指标从零编号到三，定义
+\begin{equation}\label{eq:analytic-probabilities}
+ A(k,y)=\frac{1+E_{33}+E_{30}}2,\qquad
+ B(k,y)=\frac{1+E_{33}-E_{30}}2,\qquad J=A-\mu B.
+\end{equation}
+这些函数对于全部实参数都是实解析的。当 \(k\geq0\) 时，它们恰好是上述哈密顿量和无迹跳跃算符 \(\sqrt{k}\,w\cdot\sigma\) 的概率。
+
+驻点方程在 \(k=0\) 处需要重标度。令
+\begin{equation}\label{eq:stationary-system}
+ G(k,y)=\left(J_\omega,J_h,J_k,
+ \frac{J_\xi}{k},\frac{J_v}{k},\frac{J_q}{k},\frac{J_\zeta}{k}\right).
+\end{equation}
+第三个方程是关于耗散尺度 \(k\) 的导数；不需要关于乘子的导数方程。当 \(k=0\) 时，概率与四个跳跃方向变量无关。因此，最后四个分量的分子在 \(k=0\) 上恒为零，且解析延拓为
+\begin{equation}\label{eq:analytic-division}
+ \frac{J_u(k,y)}k=\int_0^1J_{ku}(tk,y)\,dt,
+ \qquad u\in\{\xi,v,q,\zeta\}.
+\end{equation}
+这就在 \((0,y_0)\) 的一个完整邻域内定义了实解析的 \(G\)，包括负的 \(k\)。
+
+\begin{lemma}[唯一解析驻点支路]\label{lem:analytic-system}
+存在 \(0\) 的开邻域 \(U_0\)、\(y_0\) 的开邻域 \(V_0\)，以及实解析映射 \(\psi:U_0\to V_0\)，使得 \(\psi(0)=y_0\)，且
+\begin{equation}\label{eq:fixed-uniqueness}
+ G(k,y)=0\quad\Longleftrightarrow\quad y=\psi(k)
+ \qquad(k\in U_0,\ y\in V_0).
+\end{equation}
+函数 \(\mathcal B(k)=B(k,\psi(k))\) 满足
+\begin{equation}\label{eq:beta-derivative}
+ \mathcal B(0)=0,\qquad \mathcal B'(0)=\beta_*>0,
+\end{equation}
+并具有一个满足 \(\kappa(0)=0\) 的实解析局部逆 \(\kappa\)。
+\end{lemma}
+\begin{proof}
+零耗散时的概率为
+\[
+ p(\omega,h)=\cos^2 R+\frac{h^2}{R^2}\sin^2 R,
+ \qquad R=\sqrt{(\omega/2)^2+h^2}.
+\]
+其梯度在 \((\pi,0)\) 处为零，该处 Hessian 矩阵为
+\(\diag(1/2,8/\pi^2)\)。在 \(\omega=\pi,h=0\) 处，关于 \(k\) 的一阶导数由式\eqref{eq:quadratic-forms}给出：
+\[
+ A_k=C_1-4v/\pi,\qquad B_k=C_1+4v/\pi,
+ \qquad C_1=\xi^2+v^2+(q^2+\zeta^2+1)/2.
+\]
+当 \(\mu=r\) 时，它们的差为以下精确平方形式：
+\begin{equation}\label{eq:leading-square}
+ A_k-rB_k=g\left(\xi^2+(v-1/\sqrt2)^2+\frac{q^2+\zeta^2}{2}\right).
+\end{equation}
+因此 \(G(0,y_0)=0\)。将 \(D_yG\) 的列依次排列为两个哈密顿变量、乘子和四个方向变量。对行作相同分组，得到分块下三角矩阵
+\begin{equation}\label{eq:Jacobian}
+ D_yG(0,y_0)=
+ \begin{pmatrix}
+ g\diag(1/2,8/\pi^2)&0&0\\
+ *&-\beta_*&0\\
+ *&*&g\diag(2,2,1,1)
+ \end{pmatrix}.
+\end{equation}
+三个零块分别来自：在 \(k=0\) 时与跳跃方向无关、酉概率梯度为零，以及式\eqref{eq:leading-square}的驻点性质。特别地，
+\[
+ \det D_yG(0,y_0)=-\frac{16\beta_*g^6}{\pi^2}\ne0.
+\]
+实解析隐函数定理在固定邻域上给出式\eqref{eq:fixed-uniqueness}。在基点处，\(B\) 关于 \(y\) 的各个一阶偏导数均为零，而 \(B_k(0,y_0)=\beta_*\)。因此，由链式法则得到式\eqref{eq:beta-derivative}。一维解析逆函数定理给出 \(\kappa\)，以及对于充分小的实参数成立的两个恒等式
+\begin{equation}\label{eq:both-inverses}
+ \mathcal B(\kappa(b))=b,\qquad \kappa(\mathcal B(k))=k
+\end{equation}
+\end{proof}
+
+\subsection{与真实下边界的识别}
+\begin{theorem}[真实解析边界弧]\label{thm:analytic-boundary}
+存在 \(b_0>0\)，以及定义在 \((-b_0,b_0)\) 上的实解析函数 \(f_{\mathrm{arc}}\)，使得
+\begin{equation}\label{eq:actual-analytic-arc}
+ f_{\mathrm{arc}}(b)=f(b)\qquad(0\leq b<b_0).
+\end{equation}
+对于每个充分小的正 \(b\)，边界点具有规范噪声秩为一的有限规范实现，且所有经过方位规范化的极小生成元都位于引理\ref{lem:analytic-system}的唯一支路上。
+\end{theorem}
+\begin{proof}
+取引理\ref{lem:analytic-system}中的固定邻域与局部逆。对于每个充分小的正 \(b\)，引理\ref{lem:attainment}给出一个有限极小元。引理\ref{lem:localization}和\ref{lem:rank-one}适用于每个这样的极小元，并给出式\eqref{eq:chart-base}中的统一极限。因此，进一步缩小允许区间后，每个极小元的尺度和坐标图参数均满足 \(k\in U_0\)、\(y\in V_0\)、\(k>0\)。
+
+这里的量词顺序值得明确说明。若不存在一个具有上述性质的共同区间，就可以选取 \(b_n\downarrow0\)，并在每个 \(b_n\) 处选出一个不满足该性质的极小元。但统一估计\eqref{eq:localized}、归一化径向导数的收敛，以及显式坐标图\eqref{eq:rank-one-chart}，将强制这一列参数趋于 \((0,y_0)\)，与它们不属于固定开邻域矛盾。此论证中没有固定某一个生成元。
+
+最优性给出方程 \(G(k,y)=0\)。哈密顿方程来自引理\ref{lem:rank-one}中使用的径向约束修正。对 \(k>0\) 和四个复坐标图变量的变化给出其余方程；乘子恰为式\eqref{eq:multiplier}。因此，固定邻域内的唯一性推出 \(y=\psi(k)\)。由于第二坐标为 \(b\)，式\eqref{eq:both-inverses}中的标量左逆给出
+\[
+ b=\mathcal B(k),\qquad k=\kappa(b)
+\]
+于是每个极小元都满足
+\[
+ f(b)=A(\kappa(b),\psi(\kappa(b))).
+\]
+对所有充分小的实 \(b\)，用等式右侧定义函数；由复合解析性，它是实解析的。在 \(b=0\) 处，有 \(\kappa(0)=0\)、\(\psi(0)=y_0\) 和 \(A(0,y_0)=0=f(0)\)。缩小零点周围的对称开区间，即得到包含零端点的式\eqref{eq:actual-analytic-arc}。
+\end{proof}
+
+\begin{proposition}[支路的精确平面对称性]\label{prop:planarity}
+对于每个充分小的正 \(b\)，定理\ref{thm:analytic-boundary}中支路上的规范实现具有形式
+\begin{equation}\label{eq:planar-branch}
+ H=\frac\omega2X,\qquad
+ V=\sqrt{k}\,(ivX+qY-Z),\qquad k>0.
+\end{equation}
+在 Bloch 坐标中，包含测量轴的平面 \(r_x=0\) 在仿射动力学下不变。
+\end{proposition}
+\begin{proof}
+物理矩阵上的变换
+\[
+ H\longmapsto-Z\overline HZ,\qquad V\longmapsto Z\overline VZ
+\]
+通过 \(\rho\mapsto Z\overline\rho Z\) 与原演化交织。它固定两个制备投影算符，并保持两个测量概率。在坐标图中，这一变换是线性对合
+\[
+ \mathcal R(\omega,h,\mu,\xi,v,q,\zeta)
+ =(\omega,-h,\mu,-\xi,v,q,-\zeta).
+\]
+因此 \(A(k,\mathcal Ry)=A(k,y)\)、\(B(k,\mathcal Ry)=B(k,y)\)，驻点系统则按照对应的符号变换。由式\eqref{eq:analytic-division}或连续性，\(k=0\) 处的延拓具有相同协变性。
+
+基点在 \(\mathcal R\) 下不变。将唯一性邻域与其反射像相交，再缩小尺度邻域，使 \(\psi(k)\) 和 \(\mathcal R\psi(k)\) 都留在其中。两者求解同一个驻点系统，唯一性强制 \(\mathcal R\psi(k)=\psi(k)\)，因而精确地有 \(h=\xi=\zeta=0\)。这就是式\eqref{eq:planar-branch}。
+
+代入式\eqref{eq:augmented-Q}，可见 \(x\) 坐标上的漂移为零，\(x\) 与 \(y,z\) 之间的耦合为零，且
+\(\dot r_x=-2k(q^2+1)r_x\)。所以 \(r_x=0\) 是仿射方程的不变平面。这里的秩一结论是 \(\rank K=1\)，并不声称无迹 \(2\times2\) 矩阵 \(V\) 具有秩一。
+\end{proof}
+
+
+
+\section{对数尺度的重置构造}\label{sec:reset}
+
+重置顶点具有不同的渐近尺度。对于每个充分小的指定 \(\epsilon=1-b\)，我们都给出一个有限构造，而不只是构造趋近顶点的序列。本节的所有跳跃算符均为式\eqref{eq:gksl}中使用的原始 \(2\times2\) 矩阵，不移除其标量部分。
+
+对于 \(0<\kappa<1\)，令
+\begin{equation}\label{eq:reset-jump}
+ m=\sqrt{\frac{1-\kappa}{2}},\qquad n=\sqrt{\frac{1+\kappa}{2}},\qquad
+ J_0=\begin{pmatrix}-m&0\\n&0\end{pmatrix},\qquad
+ U_r=\begin{pmatrix}\cos r&\sin r\\-\sin r&\cos r\end{pmatrix}.
+\end{equation}
+取 \(H=0\) 和 \(J=U_rJ_0U_r^T\)。这是一个非零秩一跳跃算符。其纯稳态是到 \(U_r|1\rangle\) 上的投影，因为 \(J_0|1\rangle=0\)。
+
+\begin{theorem}[统一重置构造]\label{thm:reset}
+存在常数 \(C>0\) 和 \(\epsilon_0>0\)，使得每个 \(0<\epsilon<\epsilon_0\) 都有一个时间为一的实现 \((a,1-\epsilon)\)，其哈密顿量为零，并且只有一个秩一跳跃算符，其中
+\begin{equation}\label{eq:reset-remainder}
+ 0<a<\epsilon,\qquad
+ \left|\frac a\epsilon-\left(1-\frac{4/e}{\log(1/\epsilon)}\right)\right|
+ \leq C\frac{\log\log(1/\epsilon)}{\log^2(1/\epsilon)}.
+\end{equation}
+跳跃算符可以选为式\eqref{eq:reset-jump}中 \(U_rJ_0U_r^T\) 的正实数倍。
+\end{theorem}
+\begin{proof}
+首先精确求解这一生成元。记 \(P_0=|0\rangle\langle0|\)、\(P_1=|1\rangle\langle1|\)。\(J_0\) 的耗散子具有以下三个 Hermitian 模态：
+\begin{equation}\label{eq:reset-modes}
+ \begin{array}{c|c}
+ \text{mode}&\text{eigenvalue}\\ \hline
+ P_1&0\\
+ X&-1/2\\
+ \kappa(P_0-P_1)+2mnX&-(1+\kappa)/2.
+ \end{array}
+\end{equation}
+将式\eqref{eq:reset-jump}中的两个三角矩阵相乘即可得到这些恒等式。用 \(U_r\) 共轭便得到 \(J\) 的模态。令
+\begin{equation}\label{eq:reset-coefficients}
+ \sigma=\sqrt{1-\kappa^2}=2mn,\quad
+ B=\cos2r+\frac\sigma\kappa\sin2r,\quad A=\cos2r\,B,
+ \quad S=e^{-t/2},\quad F=S^{1+\kappa}.
+\end{equation}
+将两个输入投影算符按式\eqref{eq:reset-modes}中的模态展开，得到精确输出
+\begin{equation}\label{eq:reset-output}
+ \epsilon=\sin^2r\,[1-(1+B)S+BF],\qquad
+ a=\epsilon+AF-(A-1)S,\qquad b=1-\epsilon.
+\end{equation}
+例如，相干模态乘以衰减因子 \(S\)，快速模态乘以 \(F\)，稳态投影算符保持不变；代入它们的对角元即得到方括号中的两项。当 \(t=0\) 时，这些公式给出 \((a,b)=(1,1)\)，符合初始条件。
+
+假设 \(A>1\)。相对于经典边界 \(a=\epsilon\) 的改进量为 \((A-1)S-AS^{1+\kappa}\)。它作为 \(S\in(0,1)\) 的函数，在以下位置达到最大值：
+\begin{equation}\label{eq:optimal-reset-scale}
+ S_* =\left(\frac{A-1}{(1+\kappa)A}\right)^{1/\kappa},
+ \qquad t_*=-2\log S_*>0.
+\end{equation}
+在这一尺度下，改进量为
+\begin{equation}\label{eq:reset-gain}
+ \Delta=\epsilon-a=\kappa A S_*^{1+\kappa}>0.
+\end{equation}
+现在选择一条曲线，使改进量具有所需的对数量级。对于 \(L>2\)，令
+\begin{equation}\label{eq:reset-schedule}
+ r=e^{-L/2},\qquad \kappa=1-\frac2L,
+ \qquad \sigma=\frac{2\sqrt{L-1}}L,
+\end{equation}
+并令 \(A,B,S_*,t_*,\epsilon,\Delta\) 表示沿这条曲线取值的上述各量。下文所有估计都在同一个尾区间 \(L\geq L_0\) 上成立，且常数与 \(L\) 无关。
+
+恒等式
+\begin{equation}\label{eq:reset-correction}
+ A-1=\frac{2\sigma r}{\kappa}\,D_L,\qquad
+ D_L=\frac{\sin2r}{2r}
+ \left(\cos2r-\frac\kappa\sigma\sin2r\right)
+\end{equation}
+表明 \(D_L=1+O(\sqrt L\,e^{-L/2})\)。特别地，最终有 \(A>1\)。式\eqref{eq:optimal-reset-scale}和\eqref{eq:reset-gain}给出精确分解
+\begin{equation}\label{eq:reset-prefactor}
+ \frac{\Delta}{r^2}
+ =\kappa\left(\frac{2\sigma}{\kappa(1+\kappa)}\right)^{1+1/\kappa}
+ e^{-1/\kappa}\,
+ A\left(\frac{D_L}{A}\right)^{1+1/\kappa}.
+\end{equation}
+其中的指数因子是精确的：在式\eqref{eq:reset-schedule}的选取下，\(r^{1/\kappa-1}=e^{-1/\kappa}\)。
+
+这里 \(A=1+O(e^{-L/2}/\sqrt L)\)，而式\eqref{eq:reset-prefactor}中的最后一个因子为 \(1+O(\sqrt L\,e^{-L/2})\)。其余前因子的对数满足
+\begin{equation}\label{eq:reset-log-expansion}
+ \begin{aligned}
+ &\log\kappa+\left(1+\frac1\kappa\right)
+   \log\frac{2\sigma}{\kappa(1+\kappa)}-\frac1\kappa\\
+ &\hspace{18mm}=\log4-\log L-1+O\left(\frac{\log L}{L}\right).
+ \end{aligned}
+\end{equation}
+事实上，\(1/\kappa=1+O(1/L)\)、\(\log\kappa=O(1/L)\)，并且
+\(\log[2\sigma/(\kappa(1+\kappa))]=\log2-\tfrac12\log L+O(1/L)\)。
+这些估计直接来自 \(\log\) 在一的某个固定邻域上的中值定理，因此余项在所选尾区间上一致成立。对式\eqref{eq:reset-log-expansion}取指数并代入式\eqref{eq:reset-prefactor}，得到
+\begin{equation}\label{eq:reset-gain-asymptotic}
+ \frac{\Delta}{r^2}=\frac{4}{eL}+O\left(\frac{\log L}{L^2}\right).
+\end{equation}
+此外，对充分大的 \(L\)，有 \(S_*\leq C_1r/\sqrt L\)：式\eqref{eq:optimal-reset-scale}中的底数满足这一界，属于 \((0,1)\)，且指数大于一。于是式\eqref{eq:reset-output}给出
+\begin{equation}\label{eq:epsilon-equivalence}
+ \frac\epsilon{r^2}=1+O(r/\sqrt L+r^2),\qquad
+ E:=\log(1/\epsilon)=L+O(r/\sqrt L+r^2).
+\end{equation}
+结合式\eqref{eq:reset-gain-asymptotic}和\eqref{eq:epsilon-equivalence}，并利用 \(a=\epsilon-\Delta\)，可得
+\[
+ \frac a\epsilon=1-\frac4{eE}+O\left(\frac{\log E}{E^2}\right).
+\]
+在充分靠后的尾区间上还有 \(0<\Delta<\epsilon\)，故 \(0<a<\epsilon\)。
+
+剩下要说明的是，每个充分小的指定 \(\epsilon\) 都能得到。函数 \(\epsilon(L)\) 连续，在某个尾区间上为正，并由式\eqref{eq:epsilon-equivalence}趋于零。固定一个超过上述所有阈值的点 \(L_0\)。对于任意 \(0<\epsilon<\epsilon(L_0)\)，选取 \(L_1>L_0\) 使 \(\epsilon(L_1)<\epsilon\)。由 \([L_0,L_1]\) 上的介值定理，可找到一个参数，使输出恰好具有所需的 \(\epsilon\)。统一尾部估计对每一种这样的选取都适用。最后，将时间吸收到跳跃算符中：
+\begin{equation}\label{eq:reset-actual-unit-jump}
+ J_{\mathrm{unit}}(L)=\sqrt{t_*(L)}\,
+ U_{r(L)}\begin{pmatrix}-m(L)&0\\n(L)&0\end{pmatrix}U_{r(L)}^T.
+\end{equation}
+该算符仍然非零且为秩一，其时间为一的输出恰为式\eqref{eq:reset-output}中的点。所有结论均已得证。
+\end{proof}
+
+\section{信道的平方填满随机矩阵正方形}\label{sec:roots}
+
+前几节讨论的是时间齐次半群。现在考虑任意单个量子信道的幂在测量后产生的作用。若 \(\pi(\Phi)\) 表示式\eqref{eq:readout}中的坐标对，定义
+\begin{equation}\label{eq:root-layer}
+ \mathcal R_n=\{\pi(\Phi^n):\Phi\text{ is a qubit completely positive trace-preserving map}\}.
+\end{equation}
+每一步均使用同一个信道。由正性和保迹性可知 \(\mathcal R_n\subseteq[0,1]^2\)。
+
+\begin{theorem}[平方根区域]\label{thm:square-roots}
+\begin{equation}\label{eq:R2-square}
+ \mathcal R_2=[0,1]^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+对于 \(0\leq r\leq1\)，用以下 Kraus 矩阵定义信道 \(\Phi_r\)：
+\begin{equation}\label{eq:root-kraus}
+ K_0=\frac1{\sqrt{1+r^2}}
+ \begin{pmatrix}r&-r^2\\1&r^3\end{pmatrix},\qquad
+ K_1=\begin{pmatrix}0&0\\0&\sqrt{1-r^4}\end{pmatrix}.
+\end{equation}
+事实上，\(K_0^\dagger K_0=\diag(1,r^4)\) 且 \(K_1^\dagger K_1=\diag(0,1-r^4)\)，所以两者之和为恒等矩阵。令
+\(\psi_r=(r,1)^T/\sqrt{1+r^2}\)。有
+\[
+ \Phi_r(P_0)=|\psi_r\rangle\langle\psi_r|,\qquad
+ K_0\psi_r=r|1\rangle,\qquad K_1\psi_r=\sqrt{1-r^2}|1\rangle.
+\]
+因此 \(\Phi_r^2(P_0)=P_1\)。对另一个输入直接代入，得到
+\begin{equation}\label{eq:root-readouts}
+ \pi(\Phi_r)=\left(\frac{r^2}{1+r^2},1-\frac{r^4}{1+r^2}\right),\qquad
+ \pi(\Phi_r^2)=(0,1-r^4).
+\end{equation}
+
+将根信道与恒等信道混合：对于 \(0\leq q\leq1\)，定义
+\(\Psi_{q,r}=q\id+(1-q)\Phi_r\)。这仍是一个信道。它的平方为
+\(q^2\id+2q(1-q)\Phi_r+(1-q)^2\Phi_r^2\)，故测量坐标为
+\begin{equation}\label{eq:root-square-formula}
+ \begin{aligned}
+ a(q,r)&=q^2+2q(1-q)\frac{r^2}{1+r^2},\\
+ b(q,r)&=q^2+2q(1-q)\left(1-\frac{r^4}{1+r^2}\right)
+            +(1-q)^2(1-r^4).
+ \end{aligned}
+\end{equation}
+固定 \(a\in[0,1]\)。对于每个 \(r\)，第一个表达式是 \(q\in[0,1]\) 的连续严格递增函数，且在两个端点分别取零和一。为核对严格递增性，将它写成 \((1-2t)q^2+2tq\)，其中 \(t=r^2/(1+r^2)\in[0,1/2]\)。因此，存在唯一的 \(q=q_a(r)\) 给出指定的 \(a\)。这一选取是连续的：对于任意收敛的 \(r\) 序列，相应的 \(q\) 在紧区间内具有子列极限，而唯一性保证每个这样的极限都等于极限 \(r\) 处的取值。
+
+当 \(r=0\) 时，\(q_a(0)=\sqrt a\) 且 \(b=1\)。当 \(r=1\) 时，\(q_a(1)=a\) 且 \(b=a\)。连续性与介值定理因而给出每个 \(b\in[a,1]\)，从而填满随机矩阵正方形的上三角区域。用交换两个基向量的酉算符共轭根信道，会交换 \(a,b\)，所以其平方也填满下三角区域。每个点都由单个显式构造的 CPTP 信道的平方给出，式\eqref{eq:R2-square}得证。
+\end{proof}
+
+\section{形式化验证与结论范围}\label{sec:formal}
+
+\subsection{定义与语义对应}
+配套的 Lean 开发使用 \texttt{v4.35.0} 版本的 Lean 和 mathlib。起点是作用于复 \(2\times2\) 矩阵的有限 GKSL 超算符\eqref{eq:gksl}及其实际矩阵指数。概率坐标是式\eqref{eq:readout}中的对角元；闭区域是这些有限输出的闭包。形式化证明还建立了与式\eqref{eq:stochastic}全部四个矩阵元的对应，因此两坐标表示没有削弱原问题对整个随机矩阵的要求。
+
+形式化开发也证明了分析中所需的各个对应关系：移除跳跃算符的标量部分并相应修正哈密顿量；将复矩阵表示转化为实增广 Bloch 方程；用有限多个 Pauli 跳跃算符实现每个半正定规范矩阵；以及证明所得读出与原始概率相同。参考一阶积分与全局估计和解析系统所使用的同一指数导数相衔接。因此，谱计算、有限达到论证和隐函数定理都适用于原始的 \(\Q\) 和 \(f\)。
+
+有限维信道的基础采用项目内保留署名的 QICLean 副本\footnote{源代码修订版本：\url{https://github.com/LionSR/QICLean/tree/4d5bcdbe6e92fa64c60d0361cf5472445deba534}。其 Apache-2.0 许可证和兼容性补丁包含在源码发行包中。}。主要定理通过 \texttt{\#print axioms} 审计。其依赖为 Lean 的标准原理 \texttt{propext}、\texttt{Classical.choice} 和 \texttt{Quot.sound}；没有使用 \texttt{sorryAx} 或额外数学公理。这些是关于实数和复数的精确证明；特别是，交换斜率中的 \(\pi\) 和 \(\sqrt2\) 没有被有理数数值近似替代。
+
+\subsection{命题对应}
+表\ref{tab:formal-map}列出形式化证明链的主要终点。除命名空间 \texttt{Swap}、\texttt{TwoStateRoots} 和 \path{TwoState.GeneralGeometry} 外，表中所有声明名均带有前缀 \path{TwoStateQuantumEmbedding}。源码发行包还提供更完整的命题对照，包含各项假设及支撑它们的对应关系声明。关于邻域或局部极小元的中间命题保留各自的假设；最终边界定理通过真实极小元满足这些假设。
+
+\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.31\textwidth}>{\raggedright\arraybackslash}p{0.65\textwidth}@{}}
+\caption{论文命题与形式化开发的对应关系。}\label{tab:formal-map}\\
+\toprule
+数学命题 & 主要 Lean 声明\\
+\midrule
+\endfirsthead
+\toprule
+数学命题 & 主要 Lean 声明\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+原始随机矩阵与规范模型 &
+\path{OriginalProblem.original_Q2_four_entry_iff};
+\path{CanonicalBloch.finiteOutput_eq_canonicalOutput};
+\path{CanonicalBloch.finiteOutputs_eq_canonicalOutputs}\\[3pt]
+定理\ref{thm:drift-ellipsoid} &
+\path{TwoState.GeneralGeometry.physicalCanonical_posSemidef_iff_ball}\\[3pt]
+命题\ref{prop:fixed-drift} &
+\path{TwoState.GeneralGeometry.physicalCanonical_linear_image};
+\path{OptimalDrift.explicit_endpoint_output}\\[3pt]
+命题\ref{prop:filling} &
+\path{CanonicalBias.Q2_antidiagonal_filling};
+\path{CanonicalBias.Q2_swap}\\[3pt]
+定理\ref{thm:envelope} &
+\path{Envelope.Q2_envelope_iff};
+\path{Envelope.F_upperSemicontinuousOn};
+\path{Envelope.F_classical};
+\path{Envelope.relaxed_variational_limit}\\[3pt]
+引理\ref{lem:rigidity} &
+\path{Rigidity.canonicalOutput_dissipative_rigidity};
+\path{Rigidity.finiteOutput_dissipative_rigidity}\\[3pt]
+引理\ref{lem:uniform-swap} &
+\path{SwapComparison.canonical_near_swap_comparison_all_axes};
+\path{SwapComparison.finite_near_swap_comparison}\\[3pt]
+引理\ref{lem:spectrum} &
+\path{Swap.all_frequency_sharp};
+\path{Swap.higher_frequency_gap};
+\path{Swap.first_frequency_gap}\\[3pt]
+引理\ref{lem:matching} &
+\path{SwapMatching.lowerBoundary_small_upper_strict}，以及同一模块中关于真实匹配输出和介值定理的引理\\[3pt]
+定理\ref{thm:swap-cone} &
+\path{SwapCone.Q2_quadratic_outer};
+\path{SwapCone.Q2_posTangentConeAt_zero}\\[3pt]
+引理\ref{lem:localization} &
+\path{NearSwap.canonical_near_localization};
+\path{NearSwap.canonical_normalized_parameters_tendsto}\\[3pt]
+引理\ref{lem:attainment} &
+\path{SwapFiniteAttainment.exists_swapMinimizer};
+\path{SwapFiniteAttainment.all_minimizers_localized}\\[3pt]
+引理\ref{lem:rank-one}与完整坐标图 &
+\path{SwapRankOne.eventually_rank_one_of_tendsto};
+\path{GlobalSwapArc.minimizing_rank_one_eventually};
+\path{GlobalSwapArc.minimizing_parameters_tendsto}\\[3pt]
+极小元的实际驻点方程 &
+\path{ActualSwapOptimality.stationarity_chart_of_lowerBoundary};
+\path{GlobalSwapArc.minimizing_stationarity_eventually}\\[3pt]
+引理\ref{lem:analytic-system} &
+\path{ActualSwapSystem.actual_analytic_stationary_branch};
+\path{ActualSwapSystem.actual_stationary_arc_reparameterized}\\[3pt]
+定理\ref{thm:analytic-boundary} &
+\path{GlobalSwapArc.lowerBoundary_analytic_near_swap}\\[3pt]
+命题\ref{prop:planarity} &
+\path{ActualSwapSystem.unique_stationary_branch_eventually_planar};
+\path{ActualSwapSystem.actual_planar_analytic_stationary_branch}，与前述识别定理结合\\[3pt]
+定理\ref{thm:reset} &
+\path{ResetFamily.reset_every_small_epsilon_uniform}；实际跳跃算符与读出定义于 \path{ResetFamily}\\[3pt]
+定理\ref{thm:square-roots} &
+\path{TwoStateRoots.rootLayer_two_eq_square}\\
+\end{longtable}
+\normalsize
+
+为精确起见，最终解析边界声明的数学类型为
+\[
+ \exists f_{\mathrm{arc}}:\R\to\R,\ \exists b_0>0:
+ \quad f_{\mathrm{arc}}\text{ is analytic on }(-b_0,b_0),\qquad
+ \forall b\in[0,b_0),\ f_{\mathrm{arc}}(b)=f(b).
+\]
+这一命题没有假设局部边界恒等式。形式化证明由有限极小元、其统一参数极限、实际驻点方程，以及实际第二概率的标量逆函数推得该恒等式。平面性先对唯一驻点支路证明，再转移到它在正尺度上的边界实现。重置定理同样量化到每个充分小的指定 \(\epsilon\)，并使用同一个统一余项常数，而不仅是沿所选参数取极限。
+
+\subsection{复现与尚待确定的几何}
+从源码发行包的根目录执行以下命令，即可验证：
+\begin{verbatim}
+cd lean
+lake exe cache get
+lake build TwoStateQuantumEmbedding QICLean
+lake env lean ../verification/PublicationAudit.lean
+\end{verbatim}
+项目固定了工具链与 mathlib 的修订版本。审计文件列出论文所用的最终声明，并打印其公理依赖。论文源码是自足的 LaTeX 文件，不依赖研究工作区。
+
+这些结果确定了交换端点处的精确一阶几何，并在该端点的正侧邻域上证明了真实解析边界。它们还给出全局截面的填充性与经典半区域，但尚未确定 \(-1<x<0\) 上的整个非经典包络。特别地，本文不主张 \(F\) 全局连续、每个负 \(x\) 处均有有限生成元达到边界、系数为 \(4/e\) 的普遍重置上界，或更高次信道根层的分类。重置结果给出一个构造性的改进，而 \(\mathcal R_2=[0,1]^2\) 仅涉及平方。这些区分明确了已建立的局部边界定理与剩余全局嵌入问题之间的范围。
+
+\begin{thebibliography}{9}
+\bibitem{GKS1976}
+V.~Gorini, A.~Kossakowski, and E.~C.~G.~Sudarshan,
+Completely positive dynamical semigroups of \(N\)-level systems,
+\emph{Journal of Mathematical Physics} \textbf{17}, 821--825 (1976).
+\href{https://doi.org/10.1063/1.522979}{doi:10.1063/1.522979}.
+
+\bibitem{Lindblad1976}
+G.~Lindblad,
+On the generators of quantum dynamical semigroups,
+\emph{Communications in Mathematical Physics} \textbf{48}, 119--130 (1976).
+\href{https://doi.org/10.1007/BF01608499}{doi:10.1007/BF01608499}.
+
+\bibitem{Shahbeigi2024}
+F.~Shahbeigi, C.~T.~Chubb, R.~Kukulski, {\L}.~Pawela, and K.~Korzekwa,
+Quantum-embeddable stochastic matrices,
+\emph{Quantum} \textbf{8}, 1404 (2024).
+\href{https://doi.org/10.22331/q-2024-07-10-1404}{doi:10.22331/q-2024-07-10-1404}.
+
+\bibitem{Korzekwa2018}
+K.~Korzekwa, S.~Czach\'orski, Z.~Pucha\l a, and K.~\.{Z}yczkowski,
+Coherifying quantum channels,
+\emph{New Journal of Physics} \textbf{20}, 043028 (2018).
+\href{https://doi.org/10.1088/1367-2630/aaaff3}{doi:10.1088/1367-2630/aaaff3}.
+
+\bibitem{WolfCirac2008}
+M.~M.~Wolf and J.~I.~Cirac,
+Dividing quantum channels,
+\emph{Communications in Mathematical Physics} \textbf{279}, 147--168 (2008).
+\href{https://doi.org/10.1007/s00220-008-0411-y}{doi:10.1007/s00220-008-0411-y}.
+\end{thebibliography}
+\end{document}
+
+
+
