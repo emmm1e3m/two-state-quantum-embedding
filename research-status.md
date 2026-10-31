@@ -1,15 +1,23 @@
 # Research status / 研究状态
 
-Snapshot: 30 October 2026 / 快照：2026 年 10 月 30 日
+Snapshot: 31 October 2026 / 快照：2026 年 10 月 31 日
 
-## 当前已验证稿
+## Verified results
 
-本次论文只报告配套 Lean 项目中已经完成验证的结果，核心是原始二态 GKSL 模型下，真实下边界在交换端点附近的局部实解析性。支撑结果包括原始有限跳跃模型与规范 Bloch 表示的等价、CPTP 性质、固定耗散实部时的完整偏置区间、相关耗散估计，以及交换端点附近真实极小元、驻点系统和解析支路的识别。实际重置构造及若干结构性结果也有独立形式化证明。
+The latest [reset paper](paper/reset_manuscript.pdf), by Tingyu Zhang and Yan Cen (corresponding author), establishes the sharp unrestricted `4/e` and diagonal-stationary `64/e²` reset-gain laws. Both laws start from the original finite GKSL model and optimize at fixed actual disturbance over the probability closure. The complete Lean chain also covers the displayed single-jump matching constructions and the spectral, coherence, and purity constraints for any stationary-state sequence selected along a saturating finite-generator sequence. See the [reset theorem map](reset-theorem-map.md).
 
-完整研究计划仍有未完成部分：全负行列式区域的有限达到与边界连续性、完整边界分类、一般纯稳态类的最终统一上界、显式曲率与定量解析半径，以及部分原稿显示参数式的精确接合。现有证明、已通过但未整合的工具模块和未完成草稿均已保留，供后续恢复。本次发布不将这些未完成工作表述为已验证结论。
+The [earlier swap-endpoint paper](paper/manuscript.pdf), by Tingyu Zhang, proves the exact tangent cone and local real analyticity of the actual lower boundary near swap, together with the supporting model, geometric, and finite-attainment results identified in its [theorem map](theorem-map.md). The earlier papers and proof development remain intact.
 
-## Current verified manuscript
+The reset papers in English and Chinese have seven main sections, including separate Discussion and Conclusions, with acknowledgment placeholders awaiting author completion. Recorded proof evidence is described in [verification/README.md](verification/README.md); the release-packaging work did not itself rerun either full build.
 
-This manuscript reports only results verified in the accompanying Lean development. Its central result is the local real analyticity of the true lower boundary near the swap endpoint for the original two-state GKSL model. Supporting results establish the equivalence with canonical Bloch coordinates, complete positivity and trace preservation, the full bias interval at fixed real dissipation, relevant dissipation estimates, and the identification of actual minimizers with the stationary analytic branch near swap. The explicit reset construction and several structural results also have separate formal proofs.
+## Open questions
 
-Work remains on finite attainment and boundary continuity throughout the negative-determinant region, the full boundary classification, the final uniform bound for the general pure-stationary class, explicit curvature and quantitative analyticity radii, and some exact links to the displayed parameterizations in the longer manuscript. Existing proofs, locally checked modules awaiting integration, and unfinished drafts have been preserved for continuation. These unfinished parts are not claimed as verified results in this release.
+- The exact optimal reset boundary at finite, nonzero error; the plotted curves are attained constructions.
+- Higher-order corrections to the sharp reset asymptotics and quantitative transition scales.
+- The complete middle boundary of the two-state embedding region beyond the established endpoint results.
+
+## 已验证范围与后续问题
+
+最新[重置论文](paper/reset_manuscript_zh.pdf)署名 Tingyu Zhang、Yan Cen，Yan Cen 为通讯作者。原始有限 GKSL 模型下的两条尖锐重置规律、论文显示的两组达到构造，以及饱和序列任意稳态选择的谱、相干和纯度结构，均已接入完整 Lean 证明链。[旧交换端点论文](paper/manuscript_zh.pdf)及其真实局部解析边界证明继续保留。
+
+重置上界及显示构造的形式化接合已完成。仍开放的是有限非零误差下的精确最优曲线、高阶渐近修正与定量过渡尺度，以及两个端点之外的完整中段边界。图中有限误差曲线展示具体可达到族，不代表完整最优边界。中英文重置稿包含七节正文、独立讨论与结论，以及待作者补充的致谢占位。

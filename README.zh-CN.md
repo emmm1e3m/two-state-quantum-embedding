@@ -1,19 +1,26 @@
 # 两态量子嵌入
 
-**Tingyu Zhang**
+最新论文为 **《时间齐次量子比特动力学的尖锐重置误差边界》**，作者 **Tingyu Zhang、Yan Cen**，通讯作者 **Yan Cen**。
 
-[中文论文](paper/manuscript_zh.pdf) · [英文论文](paper/manuscript.pdf) · [English](README.md) · [定理与代码对应表](theorem-map.md)
+[中文论文](paper/reset_manuscript_zh.pdf) · [English paper](paper/reset_manuscript.pdf) · [重置定理映射](reset-theorem-map.md) · [English](README.md)
 
-本仓库研究固定制备、测量基下，由时间不变的量子比特 GKSL 生成元产生的两态概率表。主要结果是完全交换端点的精确切锥，以及该端点附近真实下边界的实解析性。Lean 证明从任意有限组跳跃算符和原始概率可达集的闭包定义出发。
+固定制备—测量基，记实际扰动 `ε = P(0|1)`、`a = P(0|0)`，并定义最大增益 `G(ε) = max(ε-a)`。在全部时间无关量子比特 GKSL 生成元及其概率闭包上，尖锐渐近律为
 
-论文还包含精确漂移几何与偏置区间、重置端点的对数阶合法构造，以及量子通道平方根层。公开稿的结论与已经核验的 Lean 声明逐项对应，见[定理映射](theorem-map.md)。完整中段边界仍然开放。
+$$G(\epsilon)\sim\frac{4}{e}\frac{\epsilon}{\log(1/\epsilon)}.$$
 
-## 文件
+若生成元存在一个在制备—测量基中对角的稳态，则
 
-- `paper/`：完整中英文论文，含 PDF 和 LaTeX 源文件。
-- `lean/`：形式化源码、固定版本的依赖清单和 QICLean 基础库切片。
-- `verification/`：主定理公理审计及构建证据。
-- [研究状态](research-status.md)：本次公开范围及后续工作入口。
+$$G_{\mathrm{diag}}(\epsilon)\sim\frac{64}{e^2}\frac{\epsilon}{\log^2(1/\epsilon)}.$$
+
+Lean 已覆盖两条规律、饱和序列的稳态相干与纯度约束，以及论文展示的两组单跳跃匹配构造。中英文稿正文均为七节，包含独立的**讨论**与**结论**；致谢内容保留占位，供作者补充。
+
+## 此前的交换端点论文
+
+**Sharp swap-endpoint geometry and an analytic boundary for two-state quantum embedding**，作者 **Tingyu Zhang**。
+
+[中文论文](paper/manuscript_zh.pdf) · [English paper](paper/manuscript.pdf) · [交换端点定理映射](theorem-map.md)
+
+该论文证明交换端点的精确切锥及真实下边界的局部实解析性。原论文、证明和审计均保留。有限误差下的精确重置边界、高阶渐近项及完整中段边界仍待解决，见[研究状态](research-status.md)。
 
 ## 验证证明
 
@@ -23,21 +30,22 @@
 cd lean
 lake exe cache get
 lake build TwoStateQuantumEmbedding QICLean
+lake env lean ResetAudit.lean
 lake env lean ../verification/PublicationAudit.lean
 ```
 
-使用 Lean `v4.35.0`，Mathlib 的精确提交固定在 `lake-manifest.json`。公开主定理的公理审计只允许 `propext`、`Classical.choice` 和 `Quot.sound`。定理对应表同时说明形式化声明的数学含义与适用范围。
+使用 Lean `v4.35.0`，Mathlib 及依赖版本固定在 `lean/lake-manifest.json`。主要结果的公理依赖仅为 `propext`、`Classical.choice` 和 `Quot.sound`。[验证记录](verification/README.md)分别说明此前 9149 项公开包构建，以及包含重置结果的已记录 9182 项整合构建。
 
-## 编译论文
+## 编译重置论文
 
-LaTeX 环境需包含 `ctex`、Fandol 字体及通常的 AMS 宏包：
+LaTeX 环境需包含 `revtex4-2`、AMS 宏包、`ctex` 和 Fandol 字体。两份源码旁需保留 [reset_gain_comparison.pdf](paper/reset_gain_comparison.pdf) 和 [reset_convergence.pdf](paper/reset_convergence.pdf)。各编译两遍以解析引用：
 
 ```sh
 cd paper
-latexmk -pdf -interaction=nonstopmode -halt-on-error manuscript.tex
-latexmk -xelatex -interaction=nonstopmode -halt-on-error manuscript_zh.tex
+pdflatex -interaction=nonstopmode -halt-on-error reset_manuscript.tex
+pdflatex -interaction=nonstopmode -halt-on-error reset_manuscript.tex
+xelatex -interaction=nonstopmode -halt-on-error reset_manuscript_zh.tex
+xelatex -interaction=nonstopmode -halt-on-error reset_manuscript_zh.tex
 ```
 
-## 署名与来源
-
-论文及项目专用证明署名 Tingyu Zhang。第三方 QICLean 源文件保留原作者和 Apache-2.0 许可，详见[来源说明](lean/vendor/QICLean/README.md)及 [NOTICE.md](NOTICE.md)。
+第三方 QICLean 源码保留原作者及 Apache-2.0 许可，详见[来源说明](lean/vendor/QICLean/README.md)与 [NOTICE.md](NOTICE.md)。

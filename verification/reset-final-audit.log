@@ -1,0 +1,58 @@
+TwoStateQuantumEmbedding.ResetFinal.reset_sharp_law : ResetEndpoint.ResetLaw
+TwoStateQuantumEmbedding.ResetFinal.diagonal_reset_sharp_law : ResetEndpoint.DiagonalResetLaw
+TwoStateQuantumEmbedding.ResetFinal.actual_stationary_saturation (N : ℕ → ℕ) (H : ℕ → QubitMatrix)
+  (J : (n : ℕ) → Fin (N n) → QubitMatrix) (t : ℕ → ℝ) (ρ : ℕ → QubitMatrix) (hH : ∀ (n : ℕ), Matrix.IsHermitian (H n))
+  (ht : ∀ (n : ℕ), 0 ≤ t n)
+  (hρ : ∀ (n : ℕ), Matrix.PosSemidef (ρ n) ∧ Matrix.trace (ρ n) = 1 ∧ gkslAction (H n) (J n) (ρ n) = 0)
+  (hε : Tendsto (fun n => ResetFinal.outputError (finiteOutput (H n) (J n) (t n))) atTop (𝓝[>] 0))
+  (hsat :
+    Tendsto
+      (fun n =>
+        Real.log (1 / ResetFinal.outputError (finiteOutput (H n) (J n) (t n))) /
+            ResetFinal.outputError (finiteOutput (H n) (J n) (t n)) *
+          ResetFinal.outputGain (finiteOutput (H n) (J n) (t n)))
+      atTop (𝓝 (4 / Real.exp 1))) :
+  ∃ ν p U,
+    (∀ᶠ (n : ℕ) in atTop,
+        0 ≤ ν n ∧
+          ν n < 1 / 2 ∧
+            0 ≤ p n ∧
+              p n < 1 / 2 ∧
+                Matrix.conjTranspose (U n) * U n = 1 ∧
+                  U n * Matrix.conjTranspose (U n) = 1 ∧
+                    ρ n = PureStationary.conjugate (U n) (ResetMixed.state 1 (ν n) 0) ∧
+                      p n = Complex.normSq (U n 0 1)) ∧
+      Tendsto (fun n => p n / ResetFinal.outputError (finiteOutput (H n) (J n) (t n))) atTop (𝓝 1) ∧
+        Tendsto (fun n => ν n / ResetFinal.outputError (finiteOutput (H n) (J n) (t n))) atTop (𝓝 0) ∧
+          Tendsto (fun n => ‖ρ n 0 1‖ ^ 2 / ResetFinal.outputError (finiteOutput (H n) (J n) (t n))) atTop (𝓝 1) ∧
+            Tendsto (fun n => (1 - (ρ n * ρ n).trace.re) / ResetFinal.outputError (finiteOutput (H n) (J n) (t n)))
+              atTop (𝓝 0)
+TwoStateQuantumEmbedding.ResetDisplayedAsymptotics.displayed_finite_matching (η : ℝ) (hη : 0 < η) :
+  ∃ ε₀ > 0,
+    ∀ ε ∈ Set.Ioo 0 ε₀,
+      ∃ L a,
+        4 < L ∧
+          ResetDisplayedFamily.displayedError L = ε ∧
+            finiteOutput 0 (ResetDisplayedFamily.displayedJumps L) 1 = (a, 1 - ε) ∧
+              (a, 1 - ε) ∈ finiteOutputs ∧ |Real.log (1 / ε) / ε * (ε - a) - 4 / Real.exp 1| < η
+TwoStateQuantumEmbedding.ResetDiagonalFamily.every_small_actual_error_unit (η : ℝ) (hη : 0 < η) :
+  ∃ ε₀ > 0,
+    ∀ ε ∈ Set.Ioo 0 ε₀,
+      ∃ H J ν a,
+        Matrix.IsHermitian H ∧
+          ν ∈ Set.Ioo 0 1 ∧
+            gkslAction H J (ResetDiagonalFamily.diagonalState ν) = 0 ∧
+              finiteOutput H J 1 = (a, 1 - ε) ∧ |Real.log (1 / ε) ^ 2 / ε * (ε - a) - 64 / Real.exp 1 ^ 2| < η
+'TwoStateQuantumEmbedding.ResetFinal.reset_sharp_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TwoStateQuantumEmbedding.ResetFinal.diagonal_reset_sharp_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TwoStateQuantumEmbedding.ResetFinal.actual_stationary_saturation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TwoStateQuantumEmbedding.ResetDisplayedAsymptotics.displayed_finite_matching' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'TwoStateQuantumEmbedding.ResetDiagonalFamily.every_small_actual_error_unit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

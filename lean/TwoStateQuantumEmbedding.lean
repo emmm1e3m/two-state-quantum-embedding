@@ -68,4 +68,6 @@ import TwoStateQuantumEmbedding.HamiltonianHessian
 import TwoStateQuantumEmbedding.DriftGradient
 import TwoStateQuantumEmbedding.CompactAttainment
 
-/-! 两态量子嵌入的形式化验证入口。已验证交换端点主定理及辅助结果；公开稿范围见 theorem-map.md。 -/
+import TwoStateQuantumEmbedding.ResetSharpLaws
+
+/-! 两态量子嵌入的形式化验证入口。含交换端点与重置端点结果；范围分别见 ../theorem-map.md 和 ../reset-theorem-map.md。 -/

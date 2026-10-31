@@ -1,15 +1,22 @@
 # Lean proofs / Lean 证明
 
-This is the checked source accompanying the English and Chinese manuscripts in `../paper/`. For the exact statement coverage, see [theorem-map.md](../theorem-map.md). The library includes supporting and conditional lemmas as well as the paper's main results; the latter are identified explicitly in the map and audit.
+This shared library accompanies the latest reset paper and the earlier swap-endpoint paper. Exact statement coverage is listed in the [reset theorem map](../reset-theorem-map.md) and [swap theorem map](../theorem-map.md).
 
-本目录为公开中英文论文所用的已验证源码。定理覆盖范围见[对应表](../theorem-map.md)；库中还保留辅助及条件性引理，论文主结果由映射表与公理审计明确列出。
+From this directory, run:
 
 ```sh
 lake exe cache get
 lake build TwoStateQuantumEmbedding QICLean
+lake env lean ResetAudit.lean
 lake env lean ../verification/PublicationAudit.lean
 ```
 
-Lean `v4.35.0`; Mathlib commit `56a005855ea17e0b0958f73ec801ae140b0a1679`, fixed by the manifest. Build caches are excluded from this repository.
+Set `LEAN_NUM_THREADS=2` for a memory-bounded build. Lean is `v4.35.0`; the manifest pins Mathlib to `56a005855ea17e0b0958f73ec801ae140b0a1679` and fixes its dependencies. Build caches are excluded.
 
-QICLean's 31 source modules retain upstream attribution and Apache-2.0 licensing. See [provenance and compatibility patch](vendor/QICLean/README.md).
+`ResetAudit.lean` unfolds the two sharp reset laws to limits of the original maximum-gain functions and audits the laws, arbitrary-stationary-state saturation, and both displayed matching constructions. `PublicationAudit.lean` retains the earlier swap-paper audit. Principal results in both audits depend only on `propext`, `Classical.choice`, and `Quot.sound`.
+
+[Verification evidence](../verification/README.md) separates the previous 9149-job public-package build from the recorded 9182-job integrated build containing the reset results. Preparing the updated package did not rerun these builds.
+
+本库同时保留新重置论文与旧交换端点论文的证明。两份映射说明精确覆盖范围，两份审计分别检查相应主结果；库内辅助及条件性引理不自动构成论文主结论。
+
+QICLean's 31 vendored modules retain upstream attribution and Apache-2.0 licensing. See [provenance and compatibility patch](vendor/QICLean/README.md).

@@ -1,28 +1,25 @@
 # Verification evidence / 验证证据
 
-The checked declarations and their precise paper statements are listed in [theorem-map.md](../theorem-map.md).
+The [reset theorem map](../reset-theorem-map.md) and [swap theorem map](../theorem-map.md) specify which mathematical statements the two papers share with the Lean development.
 
-From `lean/`, run:
+| Recorded evidence | Build | Audit |
+| --- | --- | --- |
+| Earlier swap-paper public package | [9149 jobs, exit 0](build.log) | [70 declarations](PublicationAudit.log), checked by [PublicationAudit.lean](PublicationAudit.lean) |
+| Integrated source project including the reset results | [9182 jobs, exit 0](reset-final-build.log) | [Five principal endpoints](reset-final-audit.log), checked by [ResetAudit.lean](../lean/ResetAudit.lean) |
+
+Both recorded audits use only `propext`, `Classical.choice`, and `Quot.sound`. The reset audit directly unfolds both sharp laws to limits of the original closed-region gain functions; it also checks arbitrary-stationary-state saturation and the two displayed matching constructions.
+
+These logs record separate completed builds. Preparing the updated release checked the source inventory and dependency closure; it did **not** rerun either full build. The earlier [results.json](results.json) and [bilingual checks](bilingual-checks.json) describe the swap-paper release. The reset evidence has its own [verification note](reset-verification.md) and [machine-readable summary](reset-verification.json).
+
+To reproduce both proof audits from `lean/`:
 
 ```sh
+lake exe cache get
 lake build TwoStateQuantumEmbedding QICLean
+lake env lean ResetAudit.lean
 lake env lean ../verification/PublicationAudit.lean
 ```
 
-`PublicationAudit.lean` prints the types and transitive axiom dependencies of the principal results and semantic bridges. Only `propext`, `Classical.choice`, and `Quot.sound` are admitted in the release audit. The sources contain no `sorry`, `admit`, added axioms, or `native_decide` shortcuts.
+Use Lean `v4.35.0` and the fixed `lake-manifest.json`; set `LEAN_NUM_THREADS=2` to bound concurrency. Paper layout, literature discussion, and plotted numerical curves are separate from the Lean endpoint certificates.
 
-The build uses Lean `v4.35.0` and the dependency revisions in `lean/lake-manifest.json`. `LEAN_NUM_THREADS=2` was used for the rebuild of the publication package. The dependency cache was reused; the project-specific and vendored QICLean modules were rebuilt in the publication directory. Build caches are not distributed.
-
-The source is also reviewed for correspondence with the original fixed-basis, time-independent, single-qubit GKSL problem. In particular, the main theorems use the actual closure `Q2` and the actual slice minimum `lowerBoundary`; a candidate curve is not substituted into either definition.
-
-论文与形式化声明的精确对应见[定理映射](../theorem-map.md)。公理审计检查主要结果及原始模型语义桥的传递依赖，仅允许三个标准基础公理。公开包重建使用固定版本的数学库缓存，并在公开目录重新编译项目自身与 QICLean 模块；缓存不随源码发布。
-
-论文中的开放问题、后续方向及被明确列为未完成的研究不属于本次验证声明。定理表述和源代码的语义对应已经单独审阅，PDF 排版另行检查。
-
-## This release / 本次结果
-
-- [Build log](build.log): successful rebuild, 9149 jobs.
-- [Axiom audit](PublicationAudit.log): 70 declarations, only the three standard axioms above.
-- [Bilingual correspondence](bilingual-checks.json): matching mathematical content, labels, references, formal declaration names, and bibliography.
-- Both PDFs have 20 pages; all 40 pages were visually inspected. The two source files compile without layout or reference warnings.
-- [Machine-readable summary](results.json).
+旧 9149 项日志来自交换端点公开包的重建；新 9182 项日志来自已完成的重置成果整合工程构建。本轮仅整理公开包，未重新执行这两次构建。旧 JSON 与双语检查继续描述旧论文，新重置证据单独保存，避免混用验证范围。
