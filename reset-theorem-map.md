@@ -30,6 +30,6 @@ lake env lean ResetAudit.lean
 
 Lean is pinned to `v4.35.0`; [lake-manifest.json](lean/lake-manifest.json) fixes Mathlib and its dependencies. For a memory-bounded build, set `LEAN_NUM_THREADS=2` before the commands (`$env:LEAN_NUM_THREADS='2'` in PowerShell). The audit can also be run with `lake env lean -j 1 ResetAudit.lean`.
 
-The [recorded integrated build](verification/reset-final-build.log) completed 9182 jobs, and the [recorded reset audit](verification/reset-final-audit.log) succeeded with only `propext`, `Classical.choice`, and `Quot.sound`. These logs are retained evidence from the integrated source project; the [verification note](verification/reset-verification.md) distinguishes that build from this release's packaging checks.
+The [audit guide](verification/README.md) describes the checks and records the expected endpoint output. All five audited declarations use only `propext`, `Classical.choice`, and `Quot.sound`.
 
-The formal map covers the mathematical endpoints above. Literature priority, conversion to earlier parameterizations, the fixed-jump-norm interpretation, and the plotted numerical curves are assessed separately in the manuscript and are not additional Lean-certified endpoints. The earlier swap-endpoint paper and its [theorem map](theorem-map.md) remain available in the same repository.
+The formal map covers the mathematical endpoints above. Literature priority, conversion to earlier parameterizations, the fixed-jump-norm interpretation, and the plotted numerical curves are assessed separately in the manuscript.
