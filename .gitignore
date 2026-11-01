@@ -7,3 +7,8 @@ paper/*.fdb_latexmk
 paper/*.fls
 paper/*.synctex.gz
 __pycache__/
+paper/*.bbl
+paper/*.blg
+paper/*Notes.bib
+paper/reset_gain_comparison.png
+paper/reset_convergence.png

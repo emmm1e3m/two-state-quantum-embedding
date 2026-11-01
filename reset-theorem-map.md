@@ -1,6 +1,6 @@
 # Reset-paper theorem map
 
-This map accompanies *Sharp reset-error boundaries for time-homogeneous qubit dynamics*, by Tingyu Zhang and Yan Cen: [English paper](paper/reset_manuscript.pdf), [Chinese paper](paper/reset_manuscript_zh.pdf), and [LaTeX source](paper/reset_manuscript.tex).
+This map accompanies *Sharp reset-error asymptotics for time-homogeneous qubit dynamics*, by Tingyu Zhang and Yan Cen: [English paper](paper/reset_manuscript.pdf), [Chinese paper](paper/reset_manuscript_zh.pdf), and [LaTeX source](paper/reset_manuscript.tex).
 
 The model uses a fixed preparation–measurement basis and arbitrary finite collections of time-independent qubit GKSL jump operators, Hermitian Hamiltonians, and nonnegative times. For the output table `T(a,b) = [[a,1-b],[1-a,b]]`, the actual disturbance is `ε = 1-b` and the gain is `ε-a`. The two sharp laws optimize at fixed actual `ε` over the corresponding probability closures.
 
