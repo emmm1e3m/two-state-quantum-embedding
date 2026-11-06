@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Please cite the manuscript when using these results or proofs."
-title: "Sharp reset-error asymptotics for time-homogeneous qubit dynamics"
+title: "Sharp bounds on population-order reversal in autonomous qubit reset"
 type: software
 authors:
   - family-names: Zhang
@@ -8,7 +8,7 @@ authors:
   - family-names: Cen
     given-names: Yan
 version: 0.1.0
-date-released: 2026-11-01
+date-released: 2026-11-06
 repository-code: "https://github.com/emmm1e3m/two-state-quantum-embedding"
 keywords:
   - quantum reset

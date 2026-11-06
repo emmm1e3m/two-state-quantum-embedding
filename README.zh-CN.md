@@ -1,4 +1,4 @@
-# 时间齐次量子比特动力学的尖锐重置误差渐近律
+# 自治量子比特重置中布居排序反转的尖锐界
 
 **Tingyu Zhang、Yan Cen** · 通讯作者：**Yan Cen**
 
@@ -12,9 +12,11 @@ $$G(\epsilon)\sim\frac{4}{e}\frac{\epsilon}{\log(1/\epsilon)}.$$
 
 $$G_{\mathrm{diag}}(\epsilon)\sim\frac{64}{e^2}\frac{\epsilon}{\log^2(1/\epsilon)}.$$
 
+细化上界将首项反转的比例与每个稳态的相干模平方联系起来，并约束最坏输入的完整态迹距离误差：达到首项最优反转时，该误差必为 `sqrt(ε)` 量级，且存在匹配构造。这些是渐近约束，不能直接当作有限误差阈值。时间轨迹图展示了布居交叉时相干性如何保留输入可区分度。
+
 ## 论文与图表
 
-[中文源码](paper/reset_manuscript_zh.tex)和[英文源码](paper/reset_manuscript.tex)共用[英文图注](paper/reset_captions.tex)、[BibTeX 书目](paper/reset_references.bib)及两幅 PDF 图。致谢、数据与代码可用性、声明保留占位，供作者核定。
+[中文源码](paper/reset_manuscript_zh.tex)和[英文源码](paper/reset_manuscript.tex)共用[英文图注](paper/reset_captions.tex)、[BibTeX 书目](paper/reset_references.bib)及三幅 PDF 图。致谢、数据与代码可用性、声明保留占位，供作者核定。
 
 TeX 环境需含 REVTeX 4.2、AMS 宏包、`ctex` 和 Fandol 字体：
 
@@ -30,7 +32,7 @@ xelatex -interaction=nonstopmode -halt-on-error reset_manuscript_zh.tex
 xelatex -interaction=nonstopmode -halt-on-error reset_manuscript_zh.tex
 ```
 
-[图表说明](paper/README_figures.md)包含随附数据及 `plot_reset_figures.py` 的用法。在含 NumPy、Matplotlib 的 Python 环境中运行该脚本，即可从 CSV 重绘两幅图。
+[图表说明](paper/README_figures.md)包含随附数据及 `plot_reset_figures.py` 的用法。在含 NumPy、Matplotlib 的 Python 环境中，`plot_reset_figures.py` 重绘两幅渐近图，`plot_reset_trajectories.py` 重绘布居交叉机制图。图表说明还给出了轨迹的独立计算方法。
 
 ## 形式化证明
 

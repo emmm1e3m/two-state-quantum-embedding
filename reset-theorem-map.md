@@ -1,6 +1,6 @@
 # Reset-paper theorem map
 
-This map accompanies *Sharp reset-error asymptotics for time-homogeneous qubit dynamics*, by Tingyu Zhang and Yan Cen: [English paper](paper/reset_manuscript.pdf), [Chinese paper](paper/reset_manuscript_zh.pdf), and [LaTeX source](paper/reset_manuscript.tex).
+This map accompanies *Sharp bounds on population-order reversal in autonomous qubit reset*, by Tingyu Zhang and Yan Cen: [English paper](paper/reset_manuscript.pdf), [Chinese paper](paper/reset_manuscript_zh.pdf), and [LaTeX source](paper/reset_manuscript.tex).
 
 The model uses a fixed preparation–measurement basis and arbitrary finite collections of time-independent qubit GKSL jump operators, Hermitian Hamiltonians, and nonnegative times. For the output table `T(a,b) = [[a,1-b],[1-a,b]]`, the actual disturbance is `ε = 1-b` and the gain is `ε-a`. The two sharp laws optimize at fixed actual `ε` over the corresponding probability closures.
 
@@ -33,3 +33,8 @@ Lean is pinned to `v4.35.0`; [lake-manifest.json](lean/lake-manifest.json) fixes
 The [audit guide](verification/README.md) describes the checks and records the expected endpoint output. All five audited declarations use only `propext`, `Classical.choice`, and `Quot.sound`.
 
 The formal map covers the mathematical endpoints above. Literature priority, conversion to earlier parameterizations, the fixed-jump-norm interpretation, and the plotted numerical curves are assessed separately in the manuscript.
+
+The continuous stationary-coherence-fraction relation, its mixed-state matching
+construction, the worst-case trace-distance tradeoff, and the dephasing analysis
+are analytic deductions proved in the manuscript. They are not additional Lean
+theorems in this package. The existing formal endpoints above are unchanged.

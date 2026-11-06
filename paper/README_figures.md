@@ -76,3 +76,35 @@ $\Delta L_\epsilon/\epsilon$ for the pure stationary state construction
 and the dashed limit $4/e$. Panel (b) shows
 $\Delta L_\epsilon^2/\epsilon$ for the diagonal stationary state
 construction and the dashed limit $64/e^2$. All logarithms are natural.
+
+## Population crossings and quantum distinguishability
+
+`reset_trajectories.csv` gives the two explicit generators at the same actual
+readout disturbance `epsilon_star = P(0|1; t_r) = 1e-4`, with `t_r = 1`.
+The four-panel figure is `reset_trajectories.pdf` (7.0 by 4.65 inches).
+The upper panels show the two input-conditioned populations crossing; the
+lower panels compare population distance with quantum trace distance.
+The trajectories illustrate the mechanisms and are not finite-error optima.
+
+To redraw from the saved CSV, using NumPy and Matplotlib:
+
+```sh
+python plot_reset_trajectories.py
+```
+
+To recompute the data and independent checks, also using SciPy:
+
+```sh
+python trajectory_analysis.py
+python plot_reset_trajectories.py
+```
+
+Both scripts use paths relative to their own locations. Computation uses
+double precision. The reduced two-dimensional evolution is checked against
+a directly constructed four-dimensional GKSL propagator; the largest
+absolute discrepancy is below 3.1e-16 for the supplied checks. The script
+also checks stationarity, trace-distance monotonicity on its sampling grid,
+and the exact partial-dephasing relation at the crossing. The analytic
+arguments in the paper establish those properties beyond the sampled points.
+The check output is `trajectory_checks.json`. Zero population distance on
+the logarithmic axes is marked by an annotation, without a positive floor.

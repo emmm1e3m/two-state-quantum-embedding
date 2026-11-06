@@ -1,4 +1,4 @@
-# Sharp reset-error asymptotics for time-homogeneous qubit dynamics
+# Sharp bounds on population-order reversal in autonomous qubit reset
 
 **Tingyu Zhang and Yan Cen** · Corresponding author: **Yan Cen**
 
@@ -12,9 +12,11 @@ For generators admitting a stationary state diagonal in the preparation–measur
 
 $$G_{\mathrm{diag}}(\epsilon)\sim\frac{64}{e^2}\frac{\epsilon}{\log^2(1/\epsilon)}.$$
 
+The refined bound connects a fraction of the leading population reversal to the squared coherence of every stationary state. It also bounds the worst-case trace-distance reset error: saturation requires an error of order `sqrt(ε)`, with a matching construction. These are asymptotic constraints, not finite-error thresholds. The time-trajectory figure shows how coherence preserves input distinguishability when populations cross.
+
 ## Paper and figures
 
-The [English source](paper/reset_manuscript.tex) and [Chinese source](paper/reset_manuscript_zh.tex) share [captions](paper/reset_captions.tex), a [BibTeX database](paper/reset_references.bib), and two figure PDFs. Acknowledgments, data/code availability, and declarations contain placeholders for author completion.
+The [English source](paper/reset_manuscript.tex) and [Chinese source](paper/reset_manuscript_zh.tex) share [captions](paper/reset_captions.tex), a [BibTeX database](paper/reset_references.bib), and three figure PDFs. Acknowledgments, data/code availability, and declarations contain placeholders for author completion.
 
 Use a TeX distribution with REVTeX 4.2, AMS packages, `ctex`, and Fandol fonts:
 
@@ -30,7 +32,7 @@ xelatex -interaction=nonstopmode -halt-on-error reset_manuscript_zh.tex
 xelatex -interaction=nonstopmode -halt-on-error reset_manuscript_zh.tex
 ```
 
-The [figure guide](paper/README_figures.md) describes the supplied data and `plot_reset_figures.py`. Running the script with Python, NumPy, and Matplotlib redraws both figures from the saved CSV files.
+The [figure guide](paper/README_figures.md) describes the supplied data and `plot_reset_figures.py`. With Python, NumPy, and Matplotlib, `plot_reset_figures.py` redraws the two asymptotic figures and `plot_reset_trajectories.py` redraws the population-crossing figure. The guide also describes the independent trajectory calculation.
 
 ## Formal proofs
 

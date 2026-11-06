@@ -12,3 +12,5 @@ paper/*.blg
 paper/*Notes.bib
 paper/reset_gain_comparison.png
 paper/reset_convergence.png
+paper/reset_trajectories.png
+paper/trajectory_checks.json
