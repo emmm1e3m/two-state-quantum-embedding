@@ -35,14 +35,14 @@
 \affiliation{Department of Physics, Fudan University, Shanghai, China}
 
 \begin{abstract}
-布居测量只能揭示量子弛豫的一部分，因为相干性能够保留布居中不再呈现的信息。在量子比特重置附近，这引出两个问题：自治动力学能够在多大程度上反转布居排序，这种反转又需要怎样的稳态相干性？对于向 $\ket1$ 的重置，记 $a=P(0|0)$、$\eps=P(0|1)$。在所有时间无关的量子比特 Lindblad 生成元及其概率闭包中，固定实际扰动时的最大反转量满足 $G(\eps)=\max(\eps-a)\sim(4/e)\eps/\log(1/\eps)$。若要求生成元存在一个在制备—测量基中对角的稳态，尖锐尺度则降为 $G_{\rm diag}(\eps)\sim(64/e^2)\eps/\log^2(1/\eps)$。一致上界与显式单跳跃算符构造共同确立了这两条渐近规律。细化的上界进一步定量刻画了布居反转在重置极限下对每个稳态的相干性和纯度所施加的约束，并揭示了相应的物理代价：达到布居反转的首项最优值，要求最坏情形下的迹距离重置误差为 $\sqrt\eps$ 量级，相比之下，非相干弛豫在相同扰动下可趋近误差 $\eps$。布居交叉与退相位干预揭示了由相干性承载的剩余输入可区分度。这些结果将齐次量子嵌入的尖锐边界与布居反转所需的稳态资源及其完整态误差代价联系起来。
+布居测量只能揭示量子弛豫的一部分，相干性仍可保留布居中不再呈现的信息。在量子比特重置附近，自治动力学能在多大程度上反转布居排序，又需要怎样的稳态相干性？对于向 $\ket1$ 的重置，记 $a=P(0|0)$、$\eps=P(0|1)$。在所有时间无关的量子比特 Lindblad 生成元及其概率闭包中，固定实际扰动的最大反转量满足 $G(\eps)=\max(\eps-a)\sim(4/e)\eps/\log(1/\eps)$。要求存在制备—测量基中的对角稳态时，尖锐尺度降为 $G_{\rm diag}(\eps)\sim(64/e^2)\eps/\log^2(1/\eps)$。一致上界与显式单跳跃算符构造确立了这两条渐近规律。细化上界将反转量转化为对每个稳态相干性和纯度的约束，并揭示完整态代价：达到首项最优反转量要求最坏情形迹距离重置误差为 $\sqrt\eps$ 量级；非相干弛豫在相同扰动下则可趋近误差 $\eps$。这些结果将齐次量子嵌入的尖锐边界与反转所需的稳态资源及完整态误差代价联系起来。
 
 \end{abstract}
 \maketitle
 
 \section{引言}\label{sec:setting}
 
-自治弛豫通过固定的开放系统生成元趋近稳态。在经典两态系统中，两组初始布居的大小关系在整个弛豫过程中保持不变。量子比特则具有额外的演化路径：布居差可以转移为相干性，随后又回到可测的布居中。因此，即使量子演化仍具有 Markov 性，两条初始布居轨迹也可以交叉。在重置附近，两种输入的最终布居都已接近目标值，问题因而集中于残余的输入依赖：单个固定生成元能够使这一依赖发生多大的反转？
+自治弛豫通过固定的开放系统生成元趋近稳态。经典两态弛豫始终保持两组初始布居的大小关系。量子比特则允许布居差转移为相干性，再回到可测的布居中，因此两条布居轨迹即使在 Markov 动力学下也能交叉。重置附近，两种输入的最终布居均已接近目标值：单个固定生成元能使残余的输入依赖发生多大的反转？这一反转量可由两个条件布居测得，用于考察自治性如何限制弛豫中的相干性利用。
 
 相应的齐次量子嵌入问题关注哪些条件概率表能够由时间无关的量子 Markov 动力学生成。Shahbeigi 等人给出了解析排除区域和由数值计算得到的候选边界 \cite{Shahbeigi2024}。其四参数单跳跃算符族为本文的构造提供了直接基础，但该族在所有生成元中的最优性尚未确立。本文得到的尖锐重置端点界分别适用于完整生成元类，以及存在制备—测量基中对角稳态的生成元类。
 
@@ -98,9 +98,11 @@
 
 记 $\mathcal Q_{\rm diag}$ 为如下有限实现的概率闭包：其生成元至少存在一个在制备—测量基中对角的稳态。该类允许瞬态相干性及布居—相干耦合，不要求稳态唯一，也不要求演化保持所有对角态的对角性。在式 \eqref{eq:G} 中以 $\mathcal Q_{\rm diag}$ 替换 $\Q$，即定义 $G_{\rm diag}$。
 
-\section{布居反转界}\label{sec:results}\label{sec:diagonal}
+\section{反转界及其物理代价}\label{sec:results}\label{sec:diagonal}
 
-在完美重置附近，上述两类动力学具有不同的渐近边界。
+\subsection{尖锐反转规律}
+
+在固定的小扰动下，稳态相干性使最大可实现反转量相差一个对数因子。两类动力学的尖锐边界如下。
 
 \begin{theorem}[自治重置的尖锐规律]\label{thm:main}
 对于完整的时间无关量子比特 GKSL 概率闭包，有
@@ -139,47 +141,16 @@ q(t)=\exp[-\int_0^t(k_{01}(s)+k_{10}(s))\,ds]\ge0.
 \]
 含时量子比特 GKSL 控制可以实现所有两态随机转移表 \cite{KorzekwaLostaglio2021}。上述比较采用相同的系统维数、制备—测量基和条件概率任务。
 
-达到不受限的首项最优值，还对实现序列中各生成元的所有稳态提出了结构要求。对于满足 $a\le\eps$ 且误差足够小的实现，每个稳态都可在其本征基中写为
-
-\begin{equation}\label{eq:stationary}
- \begin{gathered}
- \rho_*=\nu\proj e+(1-\nu)\proj g,\\
- 0\le\nu<\tfrac12,\qquad p=|\langle0|g\rangle|^2.
- \end{gathered}
-\end{equation}
-其中，$\nu$ 是稳态的较小本征值，$p$ 则刻画占优本征向量相对于目标态 $\ket1$ 的倾斜程度。
-
-\begin{corollary}[稳态误差预算的饱和]\label{cor:saturation}
-考虑一列参数逐项有限的量子比特 GKSL 实现，其实际误差为 $a_n,\eps_n$，其中 $\eps_n\downarrow0$，且
-\begin{equation}\label{eq:saturation}
- \frac{\log(1/\eps_n)}{\eps_n}(\eps_n-a_n)\longrightarrow\frac4e.
-\end{equation}
-对每个充分大的 $n$，任取一个稳态，并按式 \eqref{eq:stationary} 定义 $\nu_n,p_n$。则
-\begin{equation}\label{eq:rigidity}
- \frac{\nu_n}{\eps_n}\longrightarrow0,
- \qquad\frac{p_n}{\eps_n}\longrightarrow1.
-\end{equation}
-\end{corollary}
-在固定测量基中，这给出
-\begin{equation}\label{eq:coherence-purity}
- \begin{gathered}
- \left|\bra0\rho_{*,n}\ket1\right|^2
- =(1-2\nu_n)^2p_n(1-p_n)\sim\eps_n,\\
- 1-\tr(\rho_{*,n}^2)=2\nu_n(1-\nu_n)=o(\eps_n).
- \end{gathered}
-\end{equation}
-稳态相干性虽然在重置极限下趋于零，其模平方却占据布居误差预算的首项，纯度缺陷则为更低阶量。第 \ref{sec:universal} 章证明了有限生成元实现序列的这些必要条件。
 两类最优反转量之比满足
 \begin{equation}\label{eq:ratio}
  \frac{G_{\rm diag}(\eps)}{G(\eps)}
  \sim\frac{16}{e\log(1/\eps)}\longrightarrow0.
 \end{equation}
-因此，任意满足
-$\liminf\log(1/\eps)(\eps-a)/\eps>0$
-的有限生成元序列，从某一项起均不存在测量基中的对角稳态。否则，相应子列满足定理 \ref{thm:diagonal}，其缩放后的反转量必趋于零。因此，要达到不受限首项尺度的一个渐近非零比例，稳态相干性是必要的；仅有瞬态相干性时仍可实现较小尺度的反转。
+对角稳态允许瞬态相干性产生反转，而达到不受限首项最优值的任意渐近非零比例则需要稳态相干性。下面的界定量刻画这一要求及其对重置精度的代价。
 
+\subsection{稳态相干性与重置精度}
 
-同一上界还可定量约束未达到完全饱和的情形。对于满足 $\Delta=\eps-a\ge0$ 的有限实现，定义归一化反转量，以及任意稳态的相干性模平方和纯度缺陷：
+反转量还可用于推断产生它的动力学必须保留多少稳态相干性。对于满足 $\Delta=\eps-a\ge0$ 的有限实现，定义归一化反转量，以及任意稳态的相干性模平方和纯度缺陷：
 \begin{equation}\label{eq:resource-definitions}
  \begin{gathered}
  r_\eps=\frac e4\frac{\log(1/\eps)}\eps\Delta,\qquad
@@ -187,80 +158,107 @@ $\liminf\log(1/\eps)(\eps-a)/\eps>0$
  I_*=1-\tr(\rho_*^2).
  \end{gathered}
 \end{equation}
-记 $s_*=\bra0\rho_*\ket0$，精确恒等式 $C_*+I_*/2=s_*(1-s_*)$ 将稳态布居测量的方差分解为这两项贡献。第 \ref{sec:universal} 章的细化上界给出如下在 $\eps\downarrow0$ 时一致成立的估计：
+这一归一化使不受限首项最优值对应于 $r_\eps\to1$。记 $s_*=\bra0\rho_*\ket0$。恒等式 $C_*+I_*/2=s_*(1-s_*)$ 将稳态布居测量的方差分解为相干性与混合度的贡献。第 \ref{sec:universal} 章的细化上界给出如下估计，其在 $\eps\downarrow0$ 时对所有有限实现及其全部稳态一致成立：
 \begin{equation}\label{eq:coherence-fraction}
  r_\eps\le\frac{C_*}{\eps}+o(1),\qquad
  \frac{C_*}{\eps}+\frac{I_*}{2\eps}\le1+o(1).
 \end{equation}
-事实上，稳态误差预算蕴含 $C_*=p+O(\eps^2)$、$I_*/2=\nu+O(\eps^2)$，而式 \eqref{eq:physicalupper} 给出 $r_\eps\le p/\eps+o(1)$。因此，对于满足 $r_\eps\to\eta>0$ 的序列，稳态相干性模平方的首项至少为 $\eta\eps$，纯度缺陷则至多为 $2(1-\eta)\eps+o(\eps)$。这些约束对任意选取的稳态均成立，而且均为尖锐的：对每个固定的 $\eta\in[0,1]$，单跳跃算符构造的混态推广使每个充分小的实际扰动均有相应实现，且该实现族满足 $r_\eps\to\eta$、$C_*/\eps\to\eta$ 和 $I_*/(2\eps)\to1-\eta$，见附录 \ref{app:coherence-fraction}。这些关系描述渐近序列；解释有限误差数据时仍须保留其中的余项。
+第一个不等式限制反转所需的最小相干贡献，第二个限制相干性与混合度共享的预算。若 $r_\eps\to\eta>0$，每个稳态的相干性模平方首项至少为 $\eta\eps$，纯度缺陷至多为 $2(1-\eta)\eps+o(\eps)$。对每个固定的 $\eta\in[0,1]$，附录 \ref{app:coherence-fraction} 的构造在每个充分小的实际扰动下实现 $r_\eps\to\eta$、$C_*/\eps\to\eta$ 和 $I_*/(2\eps)\to1-\eta$，故两项预算均为尖锐的。有限误差下仍须保留渐近余项。
 
-同一稳态相干性还限制了完整量子态的重置精度。对于有限实现的实际信道 $\Phi=e^{\mathcal L}$，定义所有量子比特输入上的最坏情形迹距离误差：
+同一稳态相干性还限制了完整量子态的重置精度。对于实际信道 $\Phi=e^{\mathcal L}$，定义所有量子比特输入上的最坏情形迹距离误差：
 \begin{equation}\label{eq:trace-reset-error}
  E_{\rm tr}(\Phi)=\sup_\rho\tfrac12\|\Phi(\rho)-\proj1\|_1.
 \end{equation}
-稳态本身也是允许的输入，因此 $E_{\rm tr}(\Phi)\ge\tfrac12\|\rho_*-\proj1\|_1\ge\sqrt{C_*}$。由式 \eqref{eq:coherence-fraction} 可得
+稳态本身也是允许的输入，且演化后保持不变，因此
+\begin{equation}\label{eq:trace-reset-bounds}
+ \begin{gathered}
+ E_{\rm tr}(\Phi)\ge\tfrac12\|\rho_*-\proj1\|_1
+ =\sqrt{s_*^2+C_*}\ge\sqrt{C_*},\\
+ E_{\rm tr}(\Phi)\le\sqrt{a+\eps}.
+ \end{gathered}
+\end{equation}
+上界利用了 $\Phi^*(\proj0)$ 的正性：任意输出的非目标态布居均不超过该效应算符的迹 $a+\eps$；输出态与纯目标态之间的迹距离又不超过非目标态布居的平方根。将稳态给出的下界与式 \eqref{eq:coherence-fraction} 结合，得到
 \begin{equation}\label{eq:population-state-tradeoff}
  \frac{E_{\rm tr}(\Phi)^2}{\eps}\ge r_\eps-o(1).
 \end{equation}
-对每个固定的 $0<\eta\le1$，匹配构造还满足 $E_{\rm tr}^2/\eps\to\eta$，因而这一权衡在首项上是尖锐的。第 \ref{sec:discussion} 章进一步讨论了它对布居最优重置精度的影响。
+对每个固定的 $0<\eta\le1$，同一匹配构造还满足 $E_{\rm tr}^2/\eps\to\eta$，因此这一权衡在首项上也是尖锐的。
 
-\section{最优构造与相干性转移}\label{sec:mechanisms}
+完全饱和对应于 $r_\eps\to1$。此时式 \eqref{eq:coherence-fraction} 要求每个稳态均满足 $C_*\sim\eps$、$I_*=o(\eps)$，即相干性模平方占据误差预算的首项，混合度的贡献则为更低阶。由此与式 \eqref{eq:trace-reset-bounds} 可得
+\begin{equation}\label{eq:saturation-trace-cost}
+ [1-o(1)]\sqrt\eps\le E_{\rm tr}(\Phi)\le\sqrt{2\eps}.
+\end{equation}
+纯稳态构造达到 $E_{\rm tr}(\Phi)\sim\sqrt\eps$。随着重置精度提高，稳态相干性虽然趋于零，其对完整态误差的贡献仍在渐近尺度上大于布居扰动。推论 \ref{cor:saturation} 给出相应的稳态本征值与本征向量极限；第 \ref{sec:discussion} 章将这一代价与普通非相干弛豫比较。
 
-两种渐近界分别由不同的布居—相干耦合路径达到。图 \ref{fig:gain-comparison} 在同一尺度上比较了实际扰动 $\eps$ 相同的显式实现。这些构造给出各自最优值的可实现下界；在有限误差下，构造之间的大小关系未必与两个优化类别之间的大小关系相同。
+\section{相干性转移与最优构造}\label{sec:mechanisms}
 
-\begin{figure}[tbp]
+两种尖锐尺度对应不同的布居—相干转移路径。先考察布居交叉时剩余的输入可区分度，再给出达到两条渐近界的具体动力学。
+
+\subsection{布居交叉时的输入可区分度}
+
+布居排序可以在量子可区分度不增加的条件下发生反转。在测量基中，将两个演化输入态之差写为
+\begin{equation}\label{eq:distinguishability}
+ \begin{gathered}
+ \delta\rho(t)=\rho_0(t)-\rho_1(t)
+ =\begin{pmatrix}q(t)&c(t)\\c(t)^*&-q(t)\end{pmatrix},\\
+ D_{\rm pop}(t)=|q(t)|,\\
+ D_{\rm tr}(t)=\tfrac12\|\delta\rho(t)\|_1
+ =\sqrt{q(t)^2+|c(t)|^2}.
+ \end{gathered}
+\end{equation}
+量子迹距离 $D_{\rm tr}$ 在半群演化下单调不增。有限交叉时刻 $t_c$ 满足 $q(t_c)=0$、$c(t_c)\ne0$：有限时间矩阵指数可逆，不能将两个不同输入映为同一量子态。因此，剩余输入可区分度完全由相干性承载，后续布居分离满足 $|q(t)|\le|c(t_c)|$，其中 $t\ge t_c$。两条对数规律限制了给定小扰动下这种可区分度能以反向布居排序呈现的大小。图 \ref{fig:trajectories} 在相同实际读出扰动 $\eps_\star=10^{-4}$ 下展示后述两种构造：上方两图显示布居交叉，下方两图显示剩余的量子可区分度。
+
+退相位干预可以单独检验这一机制。在 $t_c$ 对两条轨迹施加相同信道 $\mathcal Z_\lambda$，保持布居不变，将相干项乘以 $\lambda\in[0,1]$，随后恢复原有演化。由于 $\mathcal Z_\lambda[\delta\rho(t_c)]=\lambda\delta\rho(t_c)$，线性性精确给出
+\begin{equation}\label{eq:dephasing-probe}
+ q_\lambda(t)=\lambda q(t)\qquad(t\ge t_c).
+\end{equation}
+完全退相位会消除后续的布居反转。这一干预用于检验相干性的贡献，不属于定义 $G$ 的自治优化过程。布居可区分度与量子可区分度之间的区别，正对应于文献 \cite{Smirne2019,Benatti2024} 研究的相干辅助机制。
+
+\begin{figure*}[t]
  \centering
- \includegraphics[width=\columnwidth]{reset_gain_comparison.pdf}
- \caption{\ResetGainCaption}
- \label{fig:gain-comparison}
-\end{figure}
+ \includegraphics[width=\textwidth]{reset_trajectories.pdf}
+ \caption{\ResetTrajectoriesCaption}
+ \label{fig:trajectories}
+\end{figure*}
 
 \subsection{倾斜纯稳态}
 
-对于满足 $p=|\langle0|g\rangle|^2$ 的稳态本征向量，定义读出系数
+稳态本征基相对于测量基的倾斜，使本征基中的相干性可以直接进入布居读出。对于满足 $a\le\eps$ 且误差足够小的有限实现，每个稳态都可写为
+\begin{equation}\label{eq:stationary}
+ \begin{gathered}
+ \rho_*=\nu\proj e+(1-\nu)\proj g,\\
+ 0\le\nu<\tfrac12,\qquad p=|\langle0|g\rangle|^2.
+ \end{gathered}
+\end{equation}
+其中，$\nu$ 是稳态的较小本征值，$p$ 刻画占优本征向量相对于目标态 $\ket1$ 的倾斜程度。先考虑 $\nu=0$ 的纯稳态，并选择
+\begin{equation}\label{eq:familybasis}
+ \ket g=\sqrt p\ket0+\sqrt{1-p}\ket1,\qquad
+ \ket e=\sqrt{1-p}\ket0-\sqrt p\ket1,
+\end{equation}
+定义相应的读出系数
 \begin{equation}\label{eq:vw}
  \begin{gathered}
  v=1-2p,\qquad w=2\sqrt{p(1-p)},\\
  V=v^2,\quad W=w^2,\quad R=vw.
  \end{gathered}
 \end{equation}
-令 $L\to\infty$，并定义
-\begin{equation}\label{eq:familyparams}
- p=e^{-L},\qquad A=L+\log L+1-\log4,\qquad B=A/L.
-\end{equation}
-取正交归一态
-\begin{equation}\label{eq:familybasis}
- \ket g=\sqrt p\ket0+\sqrt{1-p}\ket1,\qquad
- \ket e=\sqrt{1-p}\ket0-\sqrt p\ket1,
-\end{equation}
-在有序基 $(e,g)$ 中，选择单个跳跃算符并令哈密顿量为零：
+对于状态 $\rho$，令 $n=\bra e\rho\ket e$、$z=\bra e\rho\ket g$，则测得的布居为 $P_0=p+vn+w\operatorname{Re}z$。系数 $w$ 使稳态本征基中的相干性直接参与这一布居测量。
+
+在有序基 $(e,g)$ 中，取正速率 $A,B$，选择单个跳跃算符并令哈密顿量为零：
 \begin{equation}\label{eq:familyjump}
  J=\begin{pmatrix}-\sqrt B&0\\\sqrt A&0\end{pmatrix},\qquad H=0.
 \end{equation}
-对于每个充分大的有限 $L$，该生成元均以 $\proj g$ 为稳态。对状态 $\rho$，定义布居 $n=\bra e\rho\ket e$ 和相干项 $z=\bra e\rho\ket g$。测得的布居为 $P_0=p+vn+w\operatorname{Re}z$，其动力学满足
+该生成元以 $\proj g$ 为稳态，其动力学满足
 \begin{equation}\label{eq:triangular}
  \dot n=-An,\qquad
  \dot z=-\sqrt{AB}\,n-\Gamma z,\qquad \Gamma=(A+B)/2.
 \end{equation}
-令
-\begin{equation}\label{eq:familykernels}
- \begin{gathered}
- F=e^{-A},\qquad S=e^{-\Gamma},\\
- J_0=\int_0^1e^{-At}e^{-\Gamma(1-t)}\,dt
- =\frac{S-F}{A-\Gamma}.
- \end{gathered}
+布居独立衰减，项 $-\sqrt{AB}\,n$ 则将布居转移至相干性。对于两种输入之差 $\delta\rho$，令 $u=\bra e\delta\rho\ket e$、$z=\bra e\delta\rho\ket g$。读出关系为 $q=vu+w\operatorname{Re}z$，初值为 $(u(0),z(0))=(v,w)$；由布居产生的负相干贡献可以压过剩余的正布居差，从而使 $q$ 改变符号。
+
+为达到尖锐界，令 $L\to\infty$，并取
+\begin{equation}\label{eq:familyparams}
+ p=e^{-L},\qquad A=L+\log L+1-\log4,\qquad B=A/L.
 \end{equation}
-对于两个输入态之差，令 $u$ 和 $z$ 分别表示上述布居坐标和相干坐标的差。于是 $q=vu+w\operatorname{Re}z$，且 $(u(0),z(0))=(v,w)$。直接求解可得
-\begin{equation}\label{eq:familyq}
- q=v^2F+w^2S-vw\sqrt{AB}\,J_0.
-\end{equation}
-对于输入 $\ket1$，初始布居和相干项分别为 $n(0)=p$、$z(0)=-w/2$，因此测得的实际扰动为
-\begin{equation}\label{eq:actualepsilon}
- \eps(L)=p+vpF-\frac{w^2}{2}S-pw\sqrt{AB}\,J_0.
-\end{equation}
-式 \eqref{eq:familyq} 中的残余布居项和相干项均为正，布居向相干的转移则产生负交叉项。稳态本征基的微小倾斜使相干性直接贡献于布居测量。取 $A\sim L$、$B/A=1/L$ 和 $\eps\sim e^{-L}$ 后，负交叉项的首项大小为残余布居项的两倍，从而得到
-$\Delta\sim(4/e)\eps/\log(1/\eps)$。
-附录 \ref{app:unrestricted-sharpness} 给出显式展开，并证明该族覆盖所有充分小的正实际扰动 $\eps$。
+此时 $A\sim L$、$B/A=1/L$，且实际扰动满足 $\eps\sim e^{-L}$。精确解中的负交叉项在首项上是残余正布居项的两倍，从而得到 $\Delta\sim(4/e)\eps/\log(1/\eps)$。附录 \ref{app:unrestricted-sharpness} 给出精确响应及渐近展开，并证明该族覆盖每个充分小的正实际扰动 $\eps$。
 
 上述 GKSL 表示中 $H=0$，但跳跃算符本身包含相干振幅。对跳跃算符作恒等分量平移时，耗散子与哈密顿量之间的项会重新分配，因此仅凭这一表示不能判断所需的相干物理资源。
 
@@ -294,38 +292,29 @@ $\Delta\sim(4/e)\eps/\log(1/\eps)$。
 \end{equation}
 其中 $\chi=\sqrt{\nu/(1-\nu)}$，且 $\alpha,r_0,c_0,\lambda_+>0$；显式 GKSL 实现及其系数见附录 \ref{app:stationary} 和 \ref{app:diagonal}。输入差从 $(u,z)=(1,0)$ 出发，测得的行列式为 $q=u(1)$。布居先通过 $-c_0u$ 产生相干，再由 $r_0z$ 将相干反馈至布居。即使稳态相干性为零，这种负反馈仍能瞬态反转布居之差。
 
-对于渐近最优构造，$\tau=B/A$ 与 $1/\log(1/\eps)$ 同阶。在这一区域内，对角稳态构造的负慢模振幅首项为 $8\sqrt\nu\,\tau$，倾斜纯稳态构造中直接读出的对应振幅则为 $4\sqrt{p\tau}$。与之竞争的正布居模的衰减速率约为慢模的两倍。在首项近似下，对二者之差进行优化，得到慢模振幅平方的四分之一乘以 $e^{-\tau L}$。这一指数因子源于慢、快模衰减速率之比相对于 $1/2$ 的 $O(\tau)$ 修正，其中两种构造分别取 $L=\log(1/\nu)$ 和 $\log(1/p)$。因此，反转量的首项分别为 $16\nu\tau^2e^{-\tau L}$ 和 $4p\tau e^{-\tau L}$，在 $\tau L=2$ 和 $\tau L=1$ 时达到最大值。多出的一个 $\tau$ 因子对应额外的逆对数抑制。附录 \ref{app:diagonal} 证明了整个受限类的一致上界，并给出匹配的 GKSL 实现。特别地，匹配族满足
-$\nu-a\sim(64/e^2)\nu/\log^2(1/\nu)$。
+对角稳态允许瞬态相干性，$-c_0u$ 项即可立即产生相干。在这一情形中，相干性需要通过反馈重新进入布居，才能改变测得的输入排序。
 
-对角稳态允许瞬态相干性，$-c_0u$ 项即可立即产生相干。因此，两条定理区分了稳态相干性所支持的直接读出与纯粹依赖瞬态相干性的反馈机制。
+\subsection{两个对数尺度的来源}
 
+不同的耦合路径使反转量依赖于速率比 $\tau=B/A$ 的不同幂次。在渐近最优区域，倾斜纯稳态构造与对角稳态构造的负慢模振幅首项分别为 $4\sqrt{p\tau}$ 和 $8\sqrt\nu\,\tau$。与之竞争的正布居模衰减约为慢模的两倍。对整体衰减与慢模之间的竞争进行优化，分别得到以下两项首阶反转贡献：
+\begin{equation}\label{eq:mechanism-scales}
+ \begin{aligned}
+ \text{tilted:}\quad &4p\tau e^{-\tau L},
+ &L&=\log(1/p),\\
+ \text{diagonal:}\quad &16\nu\tau^2e^{-\tau L},
+ &L&=\log(1/\nu).
+ \end{aligned}
+\end{equation}
+其中，第一行对应倾斜纯稳态，第二行对应对角稳态。指数因子保留了慢、快模衰减速率之比的 $O(\tau)$ 修正。两式分别在 $\tau L=1$ 和 $\tau L=2$ 处达到最大值。由于两个最优速率比均与 $1/L$ 同阶，对角稳态情形中多出的一个 $\tau$ 因子就产生了额外的逆对数抑制。结合 $\eps\sim p$ 或 $\eps\sim\nu$，两式分别给出系数 $4/e$ 和 $64/e^2$。
 
-\begin{figure*}[t]
+这两种构造解释了不同尺度的来源。它们在各自完整类别中的最优性，则由第 \ref{sec:universal} 章及附录 \ref{app:diagonal} 的一致上界确立。对角匹配族特别满足 $\nu-a\sim(64/e^2)\nu/\log^2(1/\nu)$。图 \ref{fig:gain-comparison} 比较实际扰动相同的显式实现。这些曲线是可实现下界；在有限误差下，两条构造曲线的大小关系未必与两个优化类别之间的大小关系相同。
+
+\begin{figure}[tbp]
  \centering
- \includegraphics[width=\textwidth]{reset_trajectories.pdf}
- \caption{\ResetTrajectoriesCaption}
- \label{fig:trajectories}
-\end{figure*}
-
-\subsection{布居交叉时的输入可区分度}
-
-这两种构造说明，布居排序可以在量子可区分度不增加的条件下发生反转。在测量基中，将两个演化输入态之差写为
-\begin{equation}\label{eq:distinguishability}
- \begin{gathered}
- \delta\rho(t)=\rho_0(t)-\rho_1(t)
- =\begin{pmatrix}q(t)&c(t)\\c(t)^*&-q(t)\end{pmatrix},\\
- D_{\rm pop}(t)=|q(t)|,\\
- D_{\rm tr}(t)=\tfrac12\|\delta\rho(t)\|_1
- =\sqrt{q(t)^2+|c(t)|^2}.
- \end{gathered}
-\end{equation}
-量子迹距离 $D_{\rm tr}$ 在半群演化下单调不增。在有限的布居交叉时刻 $t_c$，有 $q(t_c)=0$，但 $c(t_c)\ne0$：有限时间的矩阵指数可逆，不能将两个不同的输入态映为同一量子态。此时，全部剩余输入可区分度均由相干性承载。交叉后的布居分离满足 $|q(t)|\le|c(t_c)|$，其中 $t\ge t_c$。两条对数规律限制了在给定小扰动下，这部分可区分度能够以反向布居排序呈现的大小。图 \ref{fig:trajectories} 在相同的实际读出扰动 $\eps_\star=10^{-4}$ 下展示这两种机制：上方两图分辨了布居交叉，下方两图则显示了仍然保留的量子可区分度。
-
-退相位干预可以单独检验这一机制。在 $t_c$ 对两条轨迹施加相同信道 $\mathcal Z_\lambda$，保持布居不变，将相干项乘以 $\lambda\in[0,1]$，随后恢复原有演化。由于 $\mathcal Z_\lambda[\delta\rho(t_c)]=\lambda\delta\rho(t_c)$，线性性精确给出
-\begin{equation}\label{eq:dephasing-probe}
- q_\lambda(t)=\lambda q(t)\qquad(t\ge t_c).
-\end{equation}
-完全退相位会消除后续的布居反转。这一干预用于检验相干性的贡献，不属于定义 $G$ 的自治优化过程。布居可区分度与量子可区分度之间的区别，正对应于文献 \cite{Smirne2019,Benatti2024} 研究的相干辅助机制。
+ \includegraphics[width=\columnwidth]{reset_gain_comparison.pdf}
+ \caption{\ResetGainCaption}
+ \label{fig:gain-comparison}
+\end{figure}
 
 \section{普适上界}\label{sec:universal}
 
@@ -398,6 +387,8 @@ $K=\bigl(\begin{smallmatrix}-\alpha&r_0\\c_0&-\lambda\end{smallmatrix}\bigr)$，
 \end{equation}
 最后一步使用了 $\varrho(\eps)=\eps[1+O(\sqrt\eps)]$。若 $a>\eps$，上界自然成立。
 
+这一细化系数也证明了式 \eqref{eq:coherence-fraction} 中的稳态相干约束。在预算 $p+\nu=O(\eps)$ 下，稳态恒等式给出 $C_*=(1-2\nu)^2p(1-p)=p+O(\eps^2)$ 和 $I_*/2=\nu(1-\nu)=\nu+O(\eps^2)$。将式 \eqref{eq:physicalupper} 的第一个不等式乘以 $(e/4)\log(1/\eps)/\eps$，得到 $r_\eps\le C_*/\eps+o(1)$；预算约束则给出式 \eqref{eq:coherence-fraction} 的第二个不等式。两者对每个稳态一致成立。
+
 具体而言，一致性是指：对每个 $\delta>0$，存在 $\eps_\delta>0$，使每个有限生成元均满足
 \begin{equation}\label{eq:finiteuniform}
  \eps-a\le\left(\frac4e+\delta\right)
@@ -405,38 +396,48 @@ $K=\bigl(\begin{smallmatrix}-\alpha&r_0\\c_0&-\lambda\end{smallmatrix}\bigr)$，
 \end{equation}
 固定概率闭包中满足 $0<\eps<\eps_\delta$ 的一点，并用有限实现逼近。逼近项最终进入同一误差区间。由右端关于 $\eps$ 的连续性，取极限便将式 \eqref{eq:finiteuniform} 推广至 $\Q$。
 
-第 \ref{sec:mechanisms} 章的纯稳态构造，结合附录 \ref{app:unrestricted-sharpness} 对实际误差及其连续性的分析，给出匹配下界，完成定理 \ref{thm:main} 的证明。保留系数 $4p/e$ 还可证明推论 \ref{cor:saturation}：
+第 \ref{sec:mechanisms} 章的纯稳态构造，结合附录 \ref{app:unrestricted-sharpness} 对实际误差及其连续性的分析，给出匹配下界，完成定理 \ref{thm:main} 的证明。在完全饱和时，相干预算的条件可写成稳态本征值与倾斜参数的如下精确极限。
+
+\begin{corollary}[稳态误差预算的饱和]\label{cor:saturation}
+考虑一列参数逐项有限的量子比特 GKSL 实现，其实际误差为 $a_n,\eps_n$，其中 $\eps_n\downarrow0$，且
+\begin{equation}\label{eq:saturation}
+ \frac{\log(1/\eps_n)}{\eps_n}(\eps_n-a_n)\longrightarrow\frac4e.
+\end{equation}
+对每个充分大的 $n$，任取一个稳态，并按式 \eqref{eq:stationary} 定义 $\nu_n,p_n$。则
+\begin{equation}\label{eq:rigidity}
+ \frac{\nu_n}{\eps_n}\longrightarrow0,
+ \qquad\frac{p_n}{\eps_n}\longrightarrow1.
+\end{equation}
+\end{corollary}
 
 \begin{proof}
 对所有充分大的 $n$，有 $a_n<\eps_n$。误差预算给出
 $p_n+\nu_n\le\eps_n[1+o(1)]$。将式 \eqref{eq:physicalupper} 中第一个精细不等式乘以 $\log(1/\eps_n)/\eps_n$，结合式 \eqref{eq:saturation}，可得 $\liminf p_n/\eps_n\ge1$。由非负性和误差预算即得两个极限。
 \end{proof}
-式 \eqref{eq:coherence-purity} 中的相干性与纯度恒等式，直接由稳态本征值及重叠概率 $p_n$ 得到。
+由稳态本征值及重叠概率 $p_n$，在固定测量基中得到
+\begin{equation}\label{eq:coherence-purity}
+ \begin{gathered}
+ \left|\bra0\rho_{*,n}\ket1\right|^2
+ =(1-2\nu_n)^2p_n(1-p_n)\sim\eps_n,\\
+ 1-\tr(\rho_{*,n}^2)=2\nu_n(1-\nu_n)=o(\eps_n).
+ \end{gathered}
+\end{equation}
+这正是第 \ref{sec:results} 章中 $C_*\sim\eps$、$I_*=o(\eps)$ 的完全饱和情形。
 
 对于对角稳态类，$p=0$ 使相干贡献仅来自往返反馈。附录 \ref{app:diagonal} 将保留符号的比较估计细化至 $\nu/\log^2(1/\nu)$ 尺度，证明对所有速率比一致成立的上界，并构造匹配的 GKSL 生成元。随后利用式 \eqref{eq:diagonal-exact} 将 $\nu$ 转换为实际扰动 $\eps$，再应用相同的概率闭包论证，即完成定理 \ref{thm:diagonal} 的证明。
 
 
 \section{讨论}\label{sec:discussion}
 
-端点规律将条件布居测量转化为对稳态相干性的约束。式 \eqref{eq:coherence-fraction} 给出：达到首项最优反转量的某一比例，至少需要多少相干性占据误差预算。对角稳态规律则描述了仅依靠瞬态相干性能够实现的较小反转量。当首项完全饱和时，每个稳态都必须趋近纯态，并满足 $C_*\sim\eps$。稳态相干性在这一极限下趋于零，同时仍是达到较大渐近尺度所必需的资源。
+布居反转将有限时刻的条件概率与稳态结构联系起来。由式 \eqref{eq:coherence-fraction}，不受限首项反转量的固定非零比例要求每个稳态保留相应相干份额，并限制混合程度；对角稳态下，瞬态相干性仅能达到较小尺度。因此，即使相干性随重置误差趋零，它仍决定可达到的渐近边界。
 
-式 \eqref{eq:population-state-tradeoff} 中的完整态误差权衡源于一个事实：重置信道也必须作用于自身的稳态。更具体地，
-\begin{equation}\label{eq:trace-reset-bounds}
- \begin{gathered}
- E_{\rm tr}(\Phi)\ge\tfrac12\|\rho_*-\proj1\|_1
- =\sqrt{\nu^2+(1-2\nu)p}\ge\sqrt{C_*},\\
- E_{\rm tr}(\Phi)\le\sqrt{a+\eps}.
- \end{gathered}
-\end{equation}
-其中，上界利用了 $\Phi^*(\proj0)$ 的正性：任意输出的非目标态布居均不超过该效应算符的迹 $a+\eps$；输出态与纯目标态之间的迹距离又不超过非目标态布居的平方根。稳态给出的下界与式 \eqref{eq:coherence-fraction} 共同推出式 \eqref{eq:population-state-tradeoff}。再结合上述上界，可知每一列达到不受限布居规律首项最优值的实现都满足
-\begin{equation}\label{eq:saturation-trace-cost}
- [1-o(1)]\sqrt\eps\le E_{\rm tr}(\Phi)\le\sqrt{2\eps}.
-\end{equation}
-纯稳态构造达到下界的首项系数，即 $E_{\rm tr}(\Phi)\sim\sqrt\eps$，证明见附录 \ref{app:unrestricted-sharpness}。作为比较，非相干量子比特弛豫在相同实际扰动下可以趋近替换信道 $\rho\mapsto\diag(\eps,1-\eps)$，该信道满足 $\Delta=0$ 和 $E_{\rm tr}=\eps$。因此，使条件布居反转最大化所要求的完整态误差，在渐近尺度上大于这一非相干极限。两者的差异来自残余稳态相干性。仅以布居读出评价重置效果，因而可能偏向那些相对于目标态保留了较大相干误差的动力学。在最终输出上额外施加一次退相位操作，可以保持这两个测得的概率不变，同时将最坏情形下的迹距离误差降至不超过 $a+\eps\le2\eps$。这一额外操作超出了固定生成元的重置任务，说明较大的完整态误差源于自治实现的结构约束。
+完整态误差揭示了这一相干结构的代价。在相同实际扰动下，反转最优序列的最坏情形迹距离误差为 $\sqrt\eps$ 量级，非相干弛豫却可趋近替换信道 $\rho\mapsto\diag(\eps,1-\eps)$，后者满足 $\Delta=0$ 和 $E_{\rm tr}=\eps$。两者的差别来自残余稳态相干性：布居测量只记录对角元，完整态误差还包含与目标态不一致的相干项。因此，布居反转边界同时刻画了条件布居控制与完整态逼近精度之间的权衡。
 
-自治性还施加了另一重限制。含时控制可以先向 $\ket0$ 阻尼，使输入 $\ket1$ 在 $\ket1$ 中保留布居 $\eps$，随后施加酉交换。这给出 $a=0$、$P(0|1)=\eps$，从而达到 $G_{\rm td}(\eps)=\eps$。在相同系统维数和测量基下，固定生成元所能达到的反转量仅占这一数值的渐近零比例。这里比较的是可实现的概率，不对时间或耦合强度施加上界。
+最终输出上的额外完全退相位保持两个测得的概率不变，并使迹距离误差等于非目标态布居，故最坏情形值不超过 $a+\eps\le2\eps$。这一步超出固定生成元任务，说明较大的完整态误差与自治实现结构有关。与第 \ref{sec:mechanisms} 章的交叉时刻干预相比，最终退相位保留布居反转并降低相干误差，交叉时退相位则阻断后续反转。两种干预分别识别了最终表现为输出误差的相干性与演化中承载剩余输入信息的相干性。
 
-两种达到渐近界的构造都包含于已有四参数族或其概率闭包中。该族取 $H=X$，其中 $X$ 为 Pauli $x$ 矩阵，秩一跳跃算符连接形如 $(\cos\theta,i\sin\theta)^T$ 的态 \cite{Shahbeigi2024}。纯稳态族属于其概率闭包，对角稳态族则在误差足够小时直接属于该族；相应变换见附录 \ref{app:prior-family}。本文的上界确立了这些构造在重置端点的最优性。已有排除界在重置附近给出 $a\ge(\eps/2)^{10}[1+o(1)]$，定理 \ref{thm:main} 则确定了 $a/\eps\to1$ 及其首项修正。附录 \ref{app:exclusions} 给出了充分小 $\eps$ 下新增的排除区域 $\eps/2<a<3\eps/4$。
+自治性还限制了反转量本身。含时控制可以先向 $\ket0$ 阻尼，使输入 $\ket1$ 在 $\ket1$ 中保留布居 $\eps$，随后施加酉交换，得到 $a=0$、$P(0|1)=\eps$，从而达到 $G_{\rm td}(\eps)=\eps$。在相同系统维数和测量基下，固定生成元所能达到的反转量仅占这一数值的渐近零比例。这一比较针对可实现概率，未对时间或耦合强度施加上界。
+
+两种达到渐近界的构造以文献 \cite{Shahbeigi2024} 的四参数族为基础：纯稳态族属于其概率闭包，对角稳态族在误差足够小时属于该族本身。附录 \ref{app:prior-family} 给出对应变换。本文的普适上界确立了它们在重置端点的最优性，并将此前的必要界 $a\ge(\eps/2)^{10}[1+o(1)]$ 推进为 $a/\eps\to1$ 及其首项修正。新增排除区域的精确比较见附录 \ref{app:exclusions}。
 
 有限误差下的最优曲线，以及相干性约束在有限误差下的定量形式，仍有待确定。这类估计可将渐近的稳态结构推断转化为适用于指定实验误差的界。
 
@@ -773,9 +774,23 @@ $\rho\tau\sqrt\eta$、$\rho^{3/2}\sqrt\tau$ 和 $\rho^2$。除以 $\rho\tau$ 后
 
 \subsection{固定误差的匹配构造}\label{app:unrestricted-sharpness}\label{sec:sharpness}
 
-式 \eqref{eq:familyparams}--\eqref{eq:actualepsilon} 已给出精确生成元、输入概率及积分核。本节推导其渐近式，并说明构造覆盖每个充分小的实际误差，从而完成定理 \ref{thm:main} 的下界部分。
-
-式 \eqref{eq:familyparams} 中的参数选择给出
+对于第 \ref{sec:mechanisms} 章的纯稳态构造，精确解给出固定实际扰动下的匹配下界。定义传播核
+\begin{equation}\label{eq:familykernels}
+ \begin{gathered}
+ F=e^{-A},\qquad S=e^{-\Gamma},\\
+ J_0=\int_0^1e^{-At}e^{-\Gamma(1-t)}\,dt
+ =\frac{S-F}{A-\Gamma}.
+ \end{gathered}
+\end{equation}
+对于两个输入态之差，令 $u$ 和 $z$ 分别表示稳态本征基中的布居与相干坐标差。初值为 $(u(0),z(0))=(v,w)$，读出为 $q=vu+w\operatorname{Re}z$，因此
+\begin{equation}\label{eq:familyq}
+ q=v^2F+w^2S-vw\sqrt{AB}\,J_0.
+\end{equation}
+对于输入 $\ket1$，初始布居和相干项分别为 $n(0)=p$、$z(0)=-w/2$，实际扰动为
+\begin{equation}\label{eq:actualepsilon}
+ \eps(L)=p+vpF-\frac{w^2}{2}S-pw\sqrt{AB}\,J_0.
+\end{equation}
+式 \eqref{eq:familyq} 的前两项是剩余的正布居与相干贡献，负交叉项来自布居向相干的转移。参数选择 \eqref{eq:familyparams} 给出
 \begin{equation}\label{eq:familyasymptotics}
  \begin{gathered}
  F=\frac{4p}{eL},\qquad
@@ -967,7 +982,7 @@ $-q(x_*)=\mathcal D_0(\beta_-,d_-)$，其中 $\beta_-=\gamma_-/\gamma_+$。这�
 \begin{equation}\label{eq:diag-lower}
  -q(x_*)=\left(\frac{64}{e^2}+o(1)\right)\frac\nu{L^2}.
 \end{equation}
-实际扰动精确满足 $\eps(\nu)=\nu[1-q(x_*)]\sim\nu$。该函数为正、连续且趋于零，因而式 \eqref{eq:actualepsilon} 所用的连通值域论证同样表明，该族覆盖每个充分小的正 $\eps$。这给出与式 \eqref{eq:diag-optimized} 匹配的下界，完成定理 \ref{thm:diagonal} 的证明。图 \ref{fig:convergence} 展示了两种构造趋近各自渐近常数的过程。
+实际扰动精确满足 $\eps(\nu)=\nu[1-q(x_*)]\sim\nu$。该函数为正、连续且趋于零，因而附录 \ref{app:unrestricted-sharpness} 的连通值域论证同样表明，该族覆盖每个充分小的正 $\eps$。这给出与式 \eqref{eq:diag-optimized} 匹配的下界，完成定理 \ref{thm:diagonal} 的证明。图 \ref{fig:convergence} 展示了两种构造趋近各自渐近常数的过程。
 
 图 \ref{fig:gain-comparison} 和 \ref{fig:convergence} 的曲线由显式解以 100 位十进制精度计算得到。图 \ref{fig:gain-comparison} 通过反解各族参数，将两种构造匹配到相同的实际误差；图 \ref{fig:convergence} 则在两个坐标轴中均使用每个采样实现的实际误差。
 
@@ -979,7 +994,7 @@ $-q(x_*)=\mathcal D_0(\beta_-,d_-)$，其中 $\beta_-=\gamma_-/\gamma_+$。这�
 \end{figure}
 
 
-\subsection{指定稳态相干比例}\label{app:coherence-fraction}
+\section{指定稳态相干比例}\label{app:coherence-fraction}
 
 对于首项最优反转量的每个固定比例，式 \eqref{eq:coherence-fraction} 和 \eqref{eq:population-state-tradeoff} 中的物理约束均可达到。固定 $\eta\in(0,1]$，令 $L\to\infty$，并取
 \begin{equation}\label{eq:fraction-family}
@@ -1028,7 +1043,7 @@ $\lambda_{f,s}=(\alpha_0+\beta_0\pm g_0)/2$。
 $\sup_\rho\tfrac12\|\Phi(\rho)-\rho_*\|_1=O_\eta(\sqrt{\sigma/L})$。
 又因 $\tfrac12\|\rho_*-\proj1\|_1\sim\sqrt{\eta\sigma}$，以稳态为输入并应用三角不等式，得到 $E_{\rm tr}^2/\eps\to\eta$。
 
-函数 $\eps(L)$ 连续，在 $L\ge L_0$ 时恒正，其中 $L_0$ 充分大，且当 $L\to\infty$ 时趋于零。因此，式 \eqref{eq:actualepsilon} 之后关于连续像连通性的论证保证了每个充分小的实际 $\eps$ 都有有限实现，且上述极限保持成立。对于 $\eta=0$，对角稳态构造给出 $C_*=0$、$I_*/(2\eps)\to1$ 和 $r_\eps\to0$。这些结论针对固定的 $\eta$，不包含 $\eta$ 随 $\eps$ 一同趋于零时的一致过渡规律。
+函数 $\eps(L)$ 连续，在 $L\ge L_0$ 时恒正，其中 $L_0$ 充分大，且当 $L\to\infty$ 时趋于零。因此，附录 \ref{app:unrestricted-sharpness} 中关于连续像连通性的论证保证了每个充分小的实际 $\eps$ 都有有限实现，且上述极限保持成立。对于 $\eta=0$，对角稳态构造给出 $C_*=0$、$I_*/(2\eps)\to1$ 和 $r_\eps\to0$。这些结论针对固定的 $\eta$，不包含 $\eta$ 随 $\eps$ 一同趋于零时的一致过渡规律。
 
 \section{与四参数族的关系}\label{app:prior-family}
 
