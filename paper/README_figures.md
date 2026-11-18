@@ -15,6 +15,7 @@ The script reads the accompanying data and saves four files beside itself:
 | Reversal fractions at matched disturbance | `reset_gain_comparison.pdf` | `reset_gain_comparison.png` | 3.4 by 3.55 inches |
 | Asymptotic convergence | `reset_convergence.pdf` | `reset_convergence.png` | 3.4 by 4.6 inches |
 
+All three figures use DejaVu Sans for text and matching mathematical fonts.
 The PDFs contain vector curves and embedded fonts. The PNGs are exported at
 300 dpi. The script uses paths relative to its own location and can be run
 from any working directory. It only redraws the saved data.

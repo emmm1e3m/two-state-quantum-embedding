@@ -17,7 +17,7 @@ def main():
     with (HERE / "reset_trajectories.csv").open(encoding="utf-8", newline="") as stream:
         rows = list(csv.DictReader(stream))
     plt.rcParams.update({
-        "font.family": "serif", "font.size": 9,
+        "font.family": "DejaVu Sans", "font.size": 9,
         "axes.labelsize": 9, "axes.titlesize": 9.5, "legend.fontsize": 8,
         "xtick.labelsize": 8, "ytick.labelsize": 8,
         "pdf.fonttype": 42, "ps.fonttype": 42,
