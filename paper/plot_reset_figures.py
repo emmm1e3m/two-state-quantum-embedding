@@ -51,28 +51,28 @@ def plot_gain_comparison():
     )
     fig, ax = plt.subplots(figsize=(3.4, 3.55), layout="constrained")
     for family, color, marker, label in (
-        ("pure", BLUE, "o", "Pure stationary state"),
-        ("diagonal", OCHRE, "s", "Diagonal stationary state"),
+        ("pure", BLUE, "o", "Tilted pure state"),
+        ("diagonal", OCHRE, "s", "Diagonal state"),
     ):
         values = curves[family]
         ax.plot(
             values[:, 0], values[:, 1], color=color, marker=marker,
-            markevery=22, markersize=3.5, markerfacecolor="white",
+            markevery=10, markersize=3.5, markerfacecolor="white",
             markeredgewidth=0.8, label=label,
         )
 
     x = curves["pure"][:, 0]
     ax.plot(x, 4 / (np.e * x), color=BLUE, ls=DASHES, lw=1.0,
-            label=r"$4/(eL_\epsilon)$ (asymptotic)")
+            label=r"$4/(eL_\epsilon)$")
     ax.plot(x, 64 / (np.e**2 * x**2), color=OCHRE, ls=DASHES, lw=1.0,
-            label=r"$64/(e^2L_\epsilon^2)$ (asymptotic)")
+            label=r"$64/(e^2L_\epsilon^2)$")
     ax.set_xscale("log")
     ax.set_yscale("log")
-    ax.set_xlim(x[0], x[-1])
-    ax.set_ylim(2e-7, 0.3)
+    ax.set_xlim(x[0], 100)
+    ax.set_ylim(1e-3, 0.3)
     ax.set_xlabel(r"Actual error coordinate $L_\epsilon=\ln(1/\epsilon)$")
     ax.set_ylabel(r"Reversal fraction $\Delta/\epsilon$")
-    ax.xaxis.set_major_locator(FixedLocator([10, 30, 100, 300, 1000]))
+    ax.xaxis.set_major_locator(FixedLocator([10, 20, 50, 100]))
     ax.xaxis.set_major_formatter(ScalarFormatter())
     ax.xaxis.set_minor_locator(NullLocator())
     ax.yaxis.set_minor_locator(NullLocator())
@@ -82,8 +82,9 @@ def plot_gain_comparison():
               bbox_to_anchor=(0.02, 0.035))
 
     top = ax.secondary_xaxis("top")
-    top.set_xticks([n * np.log(10) for n in (3, 10, 100, 1000)])
-    top.set_xticklabels([r"$10^{-3}$", r"$10^{-10}$", r"$10^{-100}$", r"$10^{-1000}$"])
+    powers = (3, 5, 10, 20, 40)
+    top.set_xticks([n * np.log(10) for n in powers])
+    top.set_xticklabels([rf"$10^{{-{n}}}$" for n in powers])
     top.xaxis.set_minor_locator(NullLocator())
     top.set_xlabel(r"Actual disturbance $\epsilon$", labelpad=5)
     top.tick_params(direction="out", length=3, width=0.6)
@@ -107,7 +108,7 @@ def plot_convergence():
     axes[0].legend(loc="lower right", frameon=False, fontsize=9,
                    handlelength=2.4, borderpad=0.1)
     axes[0].text(0.025, 0.88, "(a)", transform=axes[0].transAxes,
-                 va="top", fontweight="bold")
+                 va="top")
 
     axes[1].plot(diagonal[:, 0], diagonal[:, 2], color=OCHRE,
                  label="Diagonal stationary state")
@@ -117,7 +118,7 @@ def plot_convergence():
     axes[1].legend(loc="upper right", frameon=False, fontsize=9,
                    handlelength=2.4, borderpad=0.1)
     axes[1].text(0.025, 0.97, "(b)", transform=axes[1].transAxes,
-                 va="top", fontweight="bold")
+                 va="top")
 
     for ax in axes:
         ax.set_xscale("log", base=2)
@@ -133,6 +134,7 @@ def plot_convergence():
 def main():
     plt.rcParams.update({
         "font.family": "DejaVu Sans",
+        "mathtext.fontset": "dejavusans",
         "font.size": 9,
         "axes.labelsize": 9.5,
         "legend.fontsize": 9,

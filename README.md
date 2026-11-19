@@ -16,7 +16,7 @@ The refined bound connects a fraction of the leading population reversal to the 
 
 ## Paper and figures
 
-The [English source](paper/reset_manuscript.tex) and [Chinese source](paper/reset_manuscript_zh.tex) share [captions](paper/reset_captions.tex), a [BibTeX database](paper/reset_references.bib), and three figure PDFs. Acknowledgments, data/code availability, and declarations contain placeholders for author completion.
+The [English source](paper/reset_manuscript.tex) and [Chinese source](paper/reset_manuscript_zh.tex) share [captions](paper/reset_captions.tex), a [BibTeX database](paper/reset_references.bib), and three figure PDFs. The acknowledgments disclose the use of Codex for Lean transcription and grammar checking. The data and code availability statement awaits author confirmation.
 
 Use a TeX distribution with REVTeX 4.2, AMS packages, `ctex`, and Fandol fonts:
 

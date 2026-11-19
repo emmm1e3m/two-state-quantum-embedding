@@ -16,7 +16,7 @@ $$G_{\mathrm{diag}}(\epsilon)\sim\frac{64}{e^2}\frac{\epsilon}{\log^2(1/\epsilon
 
 ## 论文与图表
 
-[中文源码](paper/reset_manuscript_zh.tex)和[英文源码](paper/reset_manuscript.tex)共用[英文图注](paper/reset_captions.tex)、[BibTeX 书目](paper/reset_references.bib)及三幅 PDF 图。致谢、数据与代码可用性、声明保留占位，供作者核定。
+[中文源码](paper/reset_manuscript_zh.tex)和[英文源码](paper/reset_manuscript.tex)共用[英文图注](paper/reset_captions.tex)、[BibTeX 书目](paper/reset_references.bib)及三幅 PDF 图。致谢说明了 Codex 在 Lean 转写和语法检查中的用途；数据与代码可用性声明待作者核定。
 
 TeX 环境需含 REVTeX 4.2、AMS 宏包、`ctex` 和 Fandol 字体：
 

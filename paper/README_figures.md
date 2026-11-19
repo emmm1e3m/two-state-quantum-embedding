@@ -17,7 +17,7 @@ The script reads the accompanying data and saves four files beside itself:
 
 All three figures use DejaVu Sans for text and matching mathematical fonts.
 The PDFs contain vector curves and embedded fonts. The PNGs are exported at
-300 dpi. The script uses paths relative to its own location and can be run
+300 dpi for these two figures and 240 dpi for the trajectory figure. The script uses paths relative to its own location and can be run
 from any working directory. It only redraws the saved data.
 
 ## Data and numerical precision
@@ -69,7 +69,8 @@ be converted to floating-point numbers.
 In the comparison figure, solid curves with sparse open circles and
 open squares denote the pure and diagonal stationary state
 constructions, respectively. The markers distinguish the constructions
-and do not encode uncertainty. Dashed curves show
+and do not encode uncertainty. The view is restricted to the region up to
+$L_\epsilon=100$ and above $\Delta/\epsilon=10^{-3}$. Dashed curves show
 $4/(eL_\epsilon)$ and $64/(e^2L_\epsilon^2)$, respectively.
 
 In the convergence figure, panel (a) shows
@@ -107,5 +108,6 @@ absolute discrepancy is below 3.1e-16 for the supplied checks. The script
 also checks stationarity, trace-distance monotonicity on its sampling grid,
 and the exact partial-dephasing relation at the crossing. The analytic
 arguments in the paper establish those properties beyond the sampled points.
-The check output is `trajectory_checks.json`. Zero population distance on
-the logarithmic axes is marked by an annotation, without a positive floor.
+The check output is `trajectory_checks.json`. A solid dot marks zero population distance at the crossing. On the lower
+panels the vertical scale is linear from zero to $10^{-3}$ and logarithmic
+above that value, in units of the readout disturbance.

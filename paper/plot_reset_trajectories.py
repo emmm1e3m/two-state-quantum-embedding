@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.ticker import MultipleLocator, LogLocator, NullLocator
+from matplotlib.ticker import MultipleLocator, NullLocator
 
 HERE = Path(__file__).resolve().parent
 BLUE = "#226A98"
@@ -17,7 +17,7 @@ def main():
     with (HERE / "reset_trajectories.csv").open(encoding="utf-8", newline="") as stream:
         rows = list(csv.DictReader(stream))
     plt.rcParams.update({
-        "font.family": "DejaVu Sans", "font.size": 9,
+        "font.family": "DejaVu Sans", "mathtext.fontset": "dejavusans", "font.size": 9,
         "axes.labelsize": 9, "axes.titlesize": 9.5, "legend.fontsize": 8,
         "xtick.labelsize": 8, "ytick.labelsize": 8,
         "pdf.fonttype": 42, "ps.fonttype": 42,
@@ -49,13 +49,15 @@ def main():
         top.yaxis.set_major_locator(MultipleLocator(.2))
         bottom.plot(t, dq, color=BLUE, label=r"Trace distance $D_{\mathrm{tr}}$")
         bottom.plot(t, dp, color=OCHRE, label=r"Population distance $D_{\mathrm{pop}}$")
-        bottom.set_yscale("log")
-        bottom.set_ylim(.001, 100)
-        bottom.yaxis.set_major_locator(LogLocator(base=10, numticks=6))
+        # 在零附近保留线性区，交叉点才能标在真实的零值处。
+        bottom.set_yscale("symlog", linthresh=.001, linscale=.58)
+        bottom.set_ylim(0, 100)
+        bottom.set_yticks([0, .001, .01, .1, 1, 10, 100],
+                          ["0"] + [rf"$10^{{{k}}}$" for k in range(-3, 3)])
         bottom.yaxis.set_minor_locator(NullLocator())
-        bottom.annotate(r"$D_{\mathrm{pop}}(t_c)=0$", xy=(tc, .00115), xytext=(tc+.15, .0030),
-                        fontsize=8, color="#555555",
-                        arrowprops=dict(arrowstyle="-", color="#777777", lw=.65))
+        bottom.plot(tc, 0, "o", color=OCHRE, ms=4, clip_on=False, zorder=4)
+        bottom.annotate(r"$D_{\mathrm{pop}}(t_c)=0$", xy=(tc, 0), xytext=(5, 3),
+                        textcoords="offset points", fontsize=8, color="#333333")
         bottom.set_xlabel(r"Time $t/t_{\mathrm{r}}$")
         for row, ax in enumerate((top, bottom)):
             ax.axvline(tc, color="#777777", ls=(0, (2, 2)), lw=.8, zorder=0)
@@ -70,7 +72,7 @@ def main():
     axs[0, 0].set_ylabel(r"Population $P(0|j;t)/\epsilon_\star$")
     axs[1, 0].set_ylabel(r"Distance / $\epsilon_\star$")
     axs[0, 0].legend(loc="upper right", frameon=False)
-    axs[1, 0].legend(loc="upper right", frameon=False)
+    axs[1, 0].legend(loc="lower right", bbox_to_anchor=(1, .07), frameon=False)
     fig.savefig(HERE/"reset_trajectories.pdf")
     fig.savefig(HERE/"reset_trajectories.png", dpi=240)
     plt.close(fig)

@@ -2,7 +2,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern,amsthm,mathtools}
-\usepackage{microtype,graphicx,booktabs}
+\usepackage{microtype,graphicx,booktabs,capt-of}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \hypersetup{pdfauthor={Tingyu Zhang and Yan Cen},pdftitle={Sharp bounds on population-order reversal in autonomous qubit reset}}
 \newtheoremstyle{aps}{\topsep}{\topsep}{\normalfont}{\parindent}{\itshape}{.}{ }{}
@@ -31,21 +31,25 @@
 
 
 \begin{abstract}
-Population measurements reveal only part of quantum relaxation, because coherence can preserve information that is absent from the populations. Near qubit reset, this raises the question of how strongly autonomous dynamics can reverse population order and what stationary coherence such a reversal requires. For reset toward $\ket1$, let $a=P(0|0)$ and $\eps=P(0|1)$. Over all time-independent qubit Lindblad dynamics, allowing probability tables to be approximated to arbitrary accuracy, the largest reversal at fixed actual disturbance obeys $G(\eps)=\max(\eps-a)\sim(4/e)\eps/\log(1/\eps)$. Requiring a stationary state diagonal in the preparation--measurement basis reduces the sharp scale to $G_{\rm diag}(\eps)\sim(64/e^2)\eps/\log^2(1/\eps)$. Uniform upper bounds and explicit single-jump constructions establish both laws. The refined bound quantifies how a measured reversal constrains the coherence and purity of every stationary state. It also implies a physical tradeoff: leading-order optimal population reversal requires a worst-case trace-distance reset error of order $\sqrt\eps$, whereas incoherent relaxation can approach error $\eps$ at the same disturbance. These results connect sharp homogeneous-embedding bounds to the stationary resources and full-state cost of population reversal.
+
+Population measurements provide partial information about quantum relaxation. Two inputs whose populations have become equal can remain distinguishable through their off-diagonal elements, allowing the population order to reverse. For a qubit reset toward $\ket1$, let $a=P(0|0)$ and $\eps=P(0|1)$ be the final populations of $\ket0$ for the two basis inputs. We consider time-independent Lindblad dynamics and allow transition tables to be approximated arbitrarily closely. At fixed disturbance $\eps$ of the target input, the largest reversal $\eps-a$ is asymptotic to $(4/e)\eps/\log(1/\eps)$ as $\eps\downarrow0$. Requiring at least one stationary state diagonal in the preparation and measurement basis reduces the maximum to $(64/e^2)\eps/\log^2(1/\eps)$ to leading order. A single-jump construction attains the leading term in each case. If the observed reversal approaches a fraction $\eta>0$ of the unrestricted maximum along a sequence of finite realizations near reset, the squared off-diagonal element of every stationary state is at least $[\eta-o(1)]\eps$. At the leading optimum, the unwanted population is asymptotic to $\eps$ for both basis inputs, while the worst-case trace-distance reset error over all inputs is of order $\sqrt\eps$.
+
 \end{abstract}
 \maketitle
 
 \section{Introduction}\label{sec:setting}
 
-Reset removes input dependence while bringing a system close to a target state. Engineered dissipation makes relaxation a resource for this task \cite{Kraus2008,Verstraete2009}, but small residual populations can conceal coherence. The classical embedding problem asks whether an observed stochastic table can arise from fixed transition rates \cite{Kingman1962,Davies2010}. For two states, even time-dependent classical rates preserve the order of input-conditioned populations. Quantum dynamics can reverse this order by transferring population differences into coherence and back. Near reset, the size of this reversal probes how much input dependence one fixed generator can recover in the measured populations.
+Reset brings a system close to a prescribed target state and removes its dependence on the input. Engineered dissipation can drive a quantum system toward a desired state \cite{Kraus2008,Verstraete2009}. For a qubit with target $\ket1$, a direct test is to prepare $\ket0$ and $\ket1$ separately, evolve them under identical conditions, and measure the residual population of $\ket0$. Denote the two readings by $a=P(0|0)$ and $\eps=P(0|1)$. Both vanish for an ideal reset. If $a<\eps$, the input that started in the unwanted state ends with less population in it. The initial population order has been reversed. With only an upper tolerance on the disturbance, ordinary damping toward $\ket1$ can bring both readings arbitrarily close to zero. Fixing the disturbance $\eps$ actually incurred by the target input lets us ask how far the residual population $a$ can fall below it.
 
-Quantum dynamical semigroups obey the Gorini--Kossakowski--Sudarshan--Lindblad (GKSL) equation \cite{GKS1976,Lindblad1976}. Channel-embedding criteria test whether a complete quantum channel is the exponential of a valid generator \cite{WolfEisert2008}, while divisibility theory distinguishes fixed-generator evolution from evolution with changing generators \cite{WolfCirac2008,Davalos2019}. A measured population table leaves the coherence dynamics undetermined. Its embeddability therefore requires optimization over quantum channels compatible with the observed data.
+The classical embedding problem asks whether an observed stochastic table can arise from fixed transition rates \cite{Kingman1962,Davies2010}. Classical two-state dynamics preserves the initial ordering of the two conditional populations even when the rates vary in time. In a qubit, these populations can coincide and later separate in reverse order. At the crossing, the off-diagonal entries can still distinguish the two states, allowing subsequent evolution to recover information about the input in the populations. The same role of coherence appears in multitime measurement statistics \cite{Smirne2019} and in the recovery of classical distinguishability \cite{Benatti2024}.
 
-With time-dependent qubit control, every two-state stochastic table is attainable to arbitrary accuracy \cite{KorzekwaLostaglio2021}. For one fixed generator, Shahbeigi \emph{et al.}\ established analytic exclusion regions and a four-parameter single-jump family matching the numerically observed boundary \cite{Shahbeigi2024}; its boundary optimality remained unproved. We resolve the leading boundary near reset toward $\ket1$. Writing $a=P(0|0)$ and $\eps=P(0|1)$, we maximize the reversal $\Delta=\eps-a$ at fixed actual disturbance $\eps\downarrow0$. This requires a bound uniform over arbitrary Hamiltonians, jump collections, and unbounded rate sequences. The matching constructions build on the family of Ref.~\cite{Shahbeigi2024}.
+Channels with different actions on coherences can yield the same readings $(a,\eps)$, so embedding criteria for a complete quantum channel \cite{WolfEisert2008} do not directly bound the reversal. Allowing the generator to vary in time or requiring it to remain fixed throughout relaxation gives distinct dynamical constraints \cite{WolfCirac2008,Davalos2019}. Time-dependent qubit control can approximate every two-state stochastic table to arbitrary accuracy \cite{KorzekwaLostaglio2021}. For a fixed Gorini--Kossakowski--Sudarshan--Lindblad (GKSL) generator \cite{GKS1976,Lindblad1976}, analytic exclusion regions and a four-parameter single-jump family matching the numerical boundary are known \cite{Shahbeigi2024}. Near reset, the earlier exclusion bound still allows $a/\eps$ to tend to zero. Determining how far $a$ can fall below $\eps$ requires a bound that also covers generators outside the candidate family, including sequences whose duration, transition rates, or Hamiltonian strength grow without bound as the disturbance decreases.
 
-Coherence is defined here in the preparation--measurement basis \cite{Streltsov2017}. Its generation and conversion into populations underlie nonclassical Markovian multitime statistics \cite{Smirne2019} and the recovery of classical distinguishability during trace-distance-contracting quantum evolution \cite{Benatti2024}. A diagonal stationary state can still support transient coherence, so population reversal alone does not settle whether stationary coherence is needed. The sharp reset boundary allows us to quantify this requirement and its consequence for full-state accuracy.
+We measure coherence in the preparation and measurement basis \cite{Streltsov2017}. Even with a stationary state diagonal in this basis, relaxation can generate transient coherence and convert it back into a population difference. A reversal alone therefore does not establish stationary coherence. To infer a property of the stationary state from the two readings, we compare the largest reversal compatible with a diagonal stationary state to the maximum over all autonomous dynamics.
 
-Over the probability closure of time-independent qubit dynamics, we prove that the maximal reversal is asymptotic to $(4/e)\eps/\log(1/\eps)$. Requiring at least one diagonal stationary state reduces it to $(64/e^2)\eps/\log^2(1/\eps)$. A stationary-state budget and a population--coherence comparison give uniform upper bounds; finite single-jump constructions attain both laws at every sufficiently small actual disturbance. The refined bound constrains the coherence and purity of every stationary state of a finite realization. Saturating the unrestricted law requires a worst-case trace-distance reset error of order $\sqrt\eps$, whereas incoherent relaxation can approach error $\eps$. Thus the optimal population reversal carries a quantifiable cost in full-state reset accuracy.
+Let $G(\eps)$ denote the maximum of $\eps-a$ at fixed disturbance in the closure of the transition tables generated by time-independent qubit GKSL dynamics. The two readings constrain the eigenvalues of every stationary state and the tilt of its eigenbasis relative to the measurement basis. Bounding the coupling between populations and coherences under these constraints gives $G(\eps)\sim(4/e)\eps/\log(1/\eps)$ as $\eps\downarrow0$. If the generator must have at least one diagonal stationary state, the corresponding maximum is asymptotic to $(64/e^2)\eps/\log^2(1/\eps)$. For each class, an explicit single-jump construction attains the leading term at every sufficiently small disturbance. In the first construction, tilting a pure stationary state slightly away from the target allows population measurements to detect transient coherence in the stationary eigenbasis directly. In the second, the stationary state is diagonal in the measurement basis, so transient coherence must first be converted back into a population difference.
+
+Consider a sequence of finite realizations with $\eps\downarrow0$ for which the reversal approaches a fraction $\eta>0$ of $G(\eps)$. For every stationary state $\rho_*$, the squared off-diagonal element $|\bra0\rho_*\ket1|^2$ is at least $[\eta-o(1)]\eps$, and the purity deficit $1-\tr(\rho_*^2)$ is at most $[2(1-\eta)+o(1)]\eps$. Since a stationary state is itself a possible input, the worst-case trace-distance reset error $E_{\rm tr}$ over all inputs obeys $E_{\rm tr}^2\ge[\eta-o(1)]\eps$. For each fixed $0<\eta\le1$, a single family of generators attains both stationary-state bounds to leading order and gives $E_{\rm tr}^2\sim\eta\eps$. The Lean formalization covers both asymptotic laws, their attainment to leading order by the single-jump constructions, and the stationary-state structure at saturation of the unrestricted law.
 
 \section{Model}\label{sec:model}
 
@@ -92,13 +96,16 @@ At fixed actual disturbance, define
 \end{equation}
 The maximum exists because $\Q$ is compact and its fixed-$\eps$ slice is nonempty: classical relaxation to population $\eps$ gives $a=\eps$ in the closure. In particular, $0\le G(\eps)\le\eps$.
 
-Let $\mathcal Q_{\rm diag}$ be the probability closure of finite realizations whose generator admits at least one stationary state diagonal in the preparation--measurement basis. This class permits transient coherence and population--coherence coupling; a unique stationary state and preservation of all diagonal states are not required. Define $G_{\rm diag}$ by \eqref{eq:G} with $\Q$ replaced by $\mathcal Q_{\rm diag}$.
+Let $\mathcal Q_{\rm diag}$ be the probability closure of finite realizations whose generator admits at least one stationary state diagonal in the preparation--measurement basis. This class permits transient coherence and population--coherence coupling; a unique stationary state and preservation of all diagonal states are not required. At the same fixed disturbance its largest reversal is
+\begin{equation}\label{eq:G-diag}
+ G_{\rm diag}(\eps)=\max\{\eps-a:(a,1-\eps)\in\mathcal Q_{\rm diag}\}.
+\end{equation}
 
 \section{Reversal bounds and their physical cost}\label{sec:results}\label{sec:diagonal}
 
-\subsection{Sharp reversal laws}
+At fixed disturbance $\eps$, an observed reversal greater than $G_{\rm diag}(\eps)$ rules out every generator that admits a diagonal stationary state. The two reversal laws below give the size of this threshold relative to the unrestricted maximum near reset.
 
-At fixed small disturbance, stationary coherence changes the largest attainable reversal by a logarithmic factor. The two sharp boundaries are as follows.
+\subsection{Sharp reversal laws}
 
 \begin{theorem}[Sharp autonomous reset law]\label{thm:main}
 For the full time-independent qubit GKSL probability closure,
@@ -111,18 +118,41 @@ Equivalently, the lower reset boundary is
  =\eps\left[1-\frac{4/e+o(1)}{\log(1/\eps)}\right].
 \end{equation}
 \end{theorem}
+\begin{proof}[Proof sketch]
+For $a\le\eps$, let $p$ be the population of $\ket0$ in the dominant eigenvector of a stationary state. The two measured errors bound $p$ by $\eps[1+o(1)]$. A uniform estimate on the coupled evolution of population and coherence gives $\Delta\le(4/e+o(1))\eps/\log(1/\eps)$ in Eq.~\eqref{eq:physicalupper}. Uniformity over all finite generators extends the bound to the probability closure.
+
+For a matching lower bound, take a single jump operator with a pure stationary state. With the rates in Eq.~\eqref{eq:familyparams}, the negative contribution of coherence to the population difference is twice the residual positive population term to leading order. The reversal is therefore $\Delta=(4/e+o(1))p/\log(1/p)$. The actual disturbance $\eps(p)\sim p$ is continuous and positive, so the family covers every sufficiently small positive disturbance as $p\downarrow0$. Appendix~\ref{app:unrestricted-sharpness} derives the reversal and the actual disturbance of this family from its exact evolution.
+\end{proof}
 
 \begin{theorem}[Diagonal-stationary-state law]\label{thm:diagonal}
-The restricted class has the sharp endpoint asymptotic
+For the probability closure of generators admitting a stationary state diagonal in the measurement basis, as $\eps\downarrow0$,
 \begin{equation}\label{eq:diagonal-law}
  G_{\rm diag}(\eps)=\left(\frac{64}{e^2}+o(1)\right)
  \frac\eps{\log^2(1/\eps)}.
 \end{equation}
 \end{theorem}
+\begin{proof}[Proof sketch]
+Consider a finite realization with $\Delta>0$, and let $\nu$ be the population of $\ket0$ in a diagonal stationary state. Stationarity gives $\nu=\eps/(1+\Delta)\le\eps$. Both basis inputs start with zero coherence, so a coherent contribution to the population difference requires transfer from population into coherence and back. Write $L=\log(1/\nu)$. After optimizing the overall rate, the leading upper bound is the maximum of $16\nu\tau^2e^{-\tau L}$. Here $\tau$ is the ratio of the sum of the squared moduli of the diagonal jump-entry differences to the dissipative $\ket0\to\ket1$ transition rate. The maximum occurs at $\tau=2/L$, and the other rate regimes contribute $o(\nu/L^2)$. Since $\nu\le\eps$ and $x/\log^2(1/x)$ increases near zero, this gives the stated upper bound. Uniformity extends it to the closure.
 
-Both laws imply $a/\eps\to1$ on the optimal boundary. The two input-conditioned errors agree to leading order, while their smaller difference $\eps-a$ measures the population-order reversal. This difference is a vanishing fraction of the actual disturbance in the perfect-reset limit.
+A single jump operator and a Hamiltonian can be chosen so that the two transfers produce negative feedback on the population difference. At $\tau=2/L$, optimizing the overall rate gives $\Delta=(64/e^2+o(1))\nu/L^2$. The actual disturbance $\eps(\nu)=\nu(1+\Delta)\sim\nu$ is continuous and positive, so the construction covers every sufficiently small positive disturbance. The uniform feedback estimates and the exact solution for the matching generator are given in Appendix~\ref{app:diagonal}.
+\end{proof}
 
-The autonomous laws lie between the classical and time-dependent quantum limits:
+The rescaled curves illustrate how the two constructions approach the sharp constants. Write $L_\eps=\log(1/\eps)$. In Fig.~\ref{fig:convergence}(a), $\Delta L_\eps/\eps$ for the tilted pure-state family approaches $4/e$. In Fig.~\ref{fig:convergence}(b), $\Delta L_\eps^2/\eps$ for the diagonal-state family approaches $64/e^2$. Both coordinates use the actual disturbance of each realization. The dashed lines mark the analytic limits.
+
+\par\medskip\noindent\begin{minipage}[b]{\columnwidth}
+ \centering
+ \includegraphics[width=\columnwidth]{reset_convergence.pdf}
+ \captionof{figure}{\ResetConvergenceCaption}
+ \label{fig:convergence}
+\end{minipage}\par\medskip
+
+Both laws imply $a/\eps\to1$ on the optimal boundary. The two input-conditioned errors agree to leading order, while their smaller difference $\eps-a$ measures the population-order reversal. This difference is a vanishing fraction of the actual disturbance in the perfect-reset limit. It excludes a region of positive area beyond the earlier analytic exclusion bound. A comparison of the two regions is given in Appendix~\ref{app:exclusions}.
+
+For comparison with classical two-state dynamics and time-dependent qubit control, keep the same preparation--measurement basis, fixed actual disturbance, and probability-closure convention. Denote the corresponding maxima by $G_{\rm cl}$ and $G_{\rm td}$. Even with time-dependent classical transition rates, the population difference obeys
+\[
+q(t)=\exp\!\left[-\int_0^t(k_{01}(s)+k_{10}(s))\,ds\right]\ge0.
+\]
+Time-dependent qubit control can approximate every two-state stochastic table arbitrarily closely \cite{KorzekwaLostaglio2021}, including those with $a=0$. The four cases therefore give
 \begin{equation}\label{eq:three}
  \begin{aligned}
  G_{\rm cl}(\eps)&=0,&
@@ -131,20 +161,18 @@ The autonomous laws lie between the classical and time-dependent quantum limits:
  G_{\rm td}(\eps)&=\eps.
  \end{aligned}
 \end{equation}
-Here $G_{\rm cl}$ and $G_{\rm td}$ denote the same fixed-error optimization, with the same probability-closure convention, for classical two-state dynamics and time-dependent qubit GKSL control, respectively. Even with time-dependent classical rates,
-$q(t)=\exp[-\int_0^t(k_{01}(s)+k_{10}(s))\,ds]\ge0$.
-Time-dependent qubit GKSL control permits every two-state stochastic table \cite{KorzekwaLostaglio2021}. All four comparisons use the same system dimension, preparation--measurement basis, and probability task.
-
-Within autonomous dynamics,
+Within autonomous dynamics, requiring a diagonal stationary state reduces the maximum reversal by a logarithmic factor:
 \begin{equation}\label{eq:ratio}
  \frac{G_{\rm diag}(\eps)}{G(\eps)}
  \sim\frac{16}{e\log(1/\eps)}\longrightarrow0.
 \end{equation}
 Thus transient coherence can produce reversal even with a diagonal stationary state, but a nonzero fraction of the unrestricted leading optimum requires stationary coherence. The following bounds quantify this requirement and its cost in reset accuracy.
 
+
+
 \subsection{Stationary coherence and reset accuracy}
 
-For a finite realization with $\Delta=\eps-a\ge0$, define the normalized reversal, squared coherence, and impurity of any stationary state by
+Consider a finite realization with $\Delta=\eps-a\ge0$ and any of its stationary states $\rho_*$. We measure coherence in the fixed preparation--measurement basis \cite{Baumgratz2014}. The normalized reversal, squared magnitude of the stationary off-diagonal element, and impurity are
 \begin{equation}\label{eq:resource-definitions}
  \begin{gathered}
  r_\eps=\frac e4\frac{\log(1/\eps)}\eps\Delta,\qquad
@@ -152,12 +180,12 @@ For a finite realization with $\Delta=\eps-a\ge0$, define the normalized reversa
  I_*=1-\tr(\rho_*^2).
  \end{gathered}
 \end{equation}
-Coherence is defined relative to the fixed preparation--measurement basis \cite{Baumgratz2014}. The normalization makes $r_\eps\to1$ at the unrestricted leading optimum. For $s_*=\bra0\rho_*\ket0$, the identity $C_*+I_*/2=s_*(1-s_*)$ decomposes the stationary population variance into coherent and mixed contributions. The refined upper bound in Section~\ref{sec:universal} gives, uniformly over finite realizations and all their stationary states as $\eps\downarrow0$,
+At the unrestricted leading optimum, $r_\eps\to1$. Writing $s_*=\bra0\rho_*\ket0$, the identity $C_*+I_*/2=s_*(1-s_*)$ resolves the stationary population variance into contributions from coherence and mixedness. The actual disturbance limits both contributions. As $\eps\downarrow0$, the bounds are
 \begin{equation}\label{eq:coherence-fraction}
  r_\eps\le\frac{C_*}{\eps}+o(1),\qquad
  \frac{C_*}{\eps}+\frac{I_*}{2\eps}\le1+o(1).
 \end{equation}
-The first inequality sets the minimum coherent contribution needed for a given reversal; the second limits the budget shared by coherence and mixedness. A sequence with $r_\eps\to\eta>0$ therefore requires $C_*\ge\eta\eps+o(\eps)$ and $I_*\le2(1-\eta)\eps+o(\eps)$. For each fixed $\eta\in[0,1]$, the mixed-state construction in Appendix~\ref{app:coherence-fraction} attains both bounds to leading order at every sufficiently small actual disturbance. The remainders in these relations must be retained when interpreting finite-error data.
+The remainders are uniform over the finite realizations under consideration and all their stationary states. The first inequality bounds the coherence required for a prescribed reversal, and the second bounds the budget shared by coherence and mixedness. If $r_\eps\to\eta>0$, every stationary state satisfies $C_*\ge\eta\eps+o(\eps)$ and $I_*\le2(1-\eta)\eps+o(\eps)$. Both bounds are attainable together. For each fixed $\eta\in[0,1]$, there is a construction at every sufficiently small actual disturbance with $r_\eps\to\eta$, $C_*/\eps\to\eta$, and $I_*/(2\eps)\to1-\eta$. Its construction and verification are given in Appendix~\ref{app:coherence-fraction}.
 
 The same coherence also limits full-state reset accuracy. For the actual finite channel $\Phi=e^{\mathcal L}$, define the worst-case trace-distance error over all qubit inputs,
 \begin{equation}\label{eq:trace-reset-error}
@@ -171,7 +199,7 @@ Reset must act on its own stationary state, which remains unchanged under $\Phi$
  E_{\rm tr}(\Phi)\le\sqrt{a+\eps}.
  \end{gathered}
 \end{equation}
-For the upper bound, positivity of $\Phi^*(\proj0)$ bounds every output's unwanted population by the trace $a+\eps$ of that effect. The trace distance to a pure target is at most the square root of this population, by the Fuchs--van de Graaf inequality \cite{FuchsVanDeGraaf1999}. Combining the stationary-state lower bound with Eq.~\eqref{eq:coherence-fraction} yields the resource--accuracy tradeoff
+For the upper bound, positivity of $\Phi^*(\proj0)$ bounds every output's unwanted population by the trace $a+\eps$ of that effect. The trace distance to a pure target is at most the square root of this population \cite{FuchsVanDeGraaf1999}. Combining the stationary-state lower bound with Eq.~\eqref{eq:coherence-fraction} yields the resource--accuracy tradeoff
 \begin{equation}\label{eq:population-state-tradeoff}
  \frac{E_{\rm tr}(\Phi)^2}{\eps}\ge r_\eps-o(1).
 \end{equation}
@@ -181,15 +209,15 @@ Complete saturation is the limiting case $r_\eps\to1$: every stationary state ha
 \begin{equation}\label{eq:saturation-trace-cost}
  [1-o(1)]\sqrt\eps\le E_{\rm tr}(\Phi)\le\sqrt{2\eps}.
 \end{equation}
-The pure-state construction attains $E_{\rm tr}\sim\sqrt\eps$. Stationary coherence vanishes as reset becomes more accurate, yet its contribution to the full-state error remains parametrically larger than the population disturbance. Corollary~\ref{cor:saturation} gives the corresponding eigenvalue and eigenvector limits; Section~\ref{sec:discussion} compares this cost with ordinary incoherent relaxation.
+The pure-state construction attains $E_{\rm tr}\sim\sqrt\eps$. Stationary coherence vanishes as reset becomes more accurate, yet its contribution to the full-state error remains parametrically larger than the population disturbance.
 
 \section{Coherence transfer and optimal constructions}\label{sec:mechanisms}
 
-The two optimal scales arise from different ways of converting coherence into measured population. A population crossing first reveals where the remaining input dependence resides; explicit generators then show how it is read out.
+The two optimal scales arise from different ways of converting coherence into measured population. In this section we trace the input dependence through a population crossing and construct a generator for each readout mechanism. The transformations relating both constructions to the four-parameter family used in numerical boundary searches \cite{Shahbeigi2024} are given in Appendix~\ref{app:prior-family}.
 
 \subsection{Input distinguishability at a population crossing}
 
-Population order can reverse while quantum distinguishability continues to decrease. Write the difference between the two evolving inputs in the measurement basis as
+When the two populations cross, the off-diagonal elements still distinguish the two quantum states. Their subsequent evolution can therefore separate the populations again in reverse order. Write the difference between the two evolving inputs in the measurement basis as
 \begin{equation}\label{eq:distinguishability}
  \begin{gathered}
  \delta\rho(t)=\rho_0(t)-\rho_1(t)
@@ -199,7 +227,18 @@ Population order can reverse while quantum distinguishability continues to decre
  =\sqrt{q(t)^2+|c(t)|^2}.
  \end{gathered}
 \end{equation}
-The quantum trace distance $D_{\rm tr}$ is nonincreasing under the semigroup. At a finite population crossing $t_c$, $q(t_c)=0$, yet $c(t_c)\ne0$: the finite matrix exponential is invertible and cannot map the two distinct input states to the same state. All remaining input distinguishability is then in coherence. Subsequent population separation satisfies $|q(t)|\le|c(t_c)|$ for $t\ge t_c$. The two logarithmic laws bound how much of this distinguishability can appear as reversed population order at a prescribed small disturbance. Figure~\ref{fig:trajectories} illustrates the two constructions developed below at the same actual readout disturbance $\eps_\star=10^{-4}$. The upper panels resolve the population crossing, while the lower panels show the surviving quantum distinguishability.
+Figure~\ref{fig:trajectories} compares the two constructions at the same actual readout disturbance $\eps_\star=10^{-4}$. The population distance vanishes at each crossing, where the quantum trace distance is still about $35.7\eps_\star$ for the tilted pure state and $30.1\eps_\star$ for the diagonal state. After the crossing the population distance grows again as the quantum trace distance continues to fall.
+
+\onecolumngrid
+\noindent\begin{minipage}[b]{\textwidth}
+ \centering
+ \includegraphics[width=0.95\textwidth]{reset_trajectories.pdf}
+ \captionof{figure}{\ResetTrajectoriesCaption}
+ \label{fig:trajectories}
+\end{minipage}\par
+\twocolumngrid
+
+The quantum trace distance $D_{\rm tr}$ is nonincreasing under the semigroup. At a finite population crossing $t_c$, $q(t_c)=0$, yet $c(t_c)\ne0$: the finite matrix exponential is invertible and cannot map the two distinct input states to the same state. All remaining input distinguishability is then in coherence. Subsequent population separation satisfies $|q(t)|\le|c(t_c)|$ for $t\ge t_c$. The two logarithmic laws bound how much of this distinguishability can appear as reversed population order at a prescribed small disturbance.
 
 A dephasing intervention isolates this mechanism. At $t_c$, apply the same channel $\mathcal Z_\lambda$ to both trajectories, leaving populations unchanged and multiplying coherences by $\lambda\in[0,1]$, and then resume the original evolution. Since $\mathcal Z_\lambda[\delta\rho(t_c)]=\lambda\delta\rho(t_c)$, linearity gives exactly
 \begin{equation}\label{eq:dephasing-probe}
@@ -207,28 +246,23 @@ A dephasing intervention isolates this mechanism. At $t_c$, apply the same chann
 \end{equation}
 Complete dephasing erases the later reversal. This intervention tests the coherence contribution; it is not part of the autonomous optimization defining $G$. The distinction between population and quantum distinguishability is the coherence-assisted mechanism studied in Refs.~\cite{Smirne2019,Benatti2024}.
 
-\begin{figure*}[t]
- \centering
- \includegraphics[width=\textwidth]{reset_trajectories.pdf}
- \caption{\ResetTrajectoriesCaption}
- \label{fig:trajectories}
-\end{figure*}
+
 
 \subsection{Tilted pure stationary state}
 
-For a finite realization with $a\le\eps$ sufficiently small, write any stationary state in its eigenbasis as
+In this subsection we tilt a pure stationary state slightly away from the target so that the measurement directly reads out coherence generated from a population difference. To specify the tilt, consider any stationary state of a finite realization with $a\le\eps$ and sufficiently small $\eps$. In its eigenbasis, write
 \begin{equation}\label{eq:stationary}
  \begin{gathered}
  \rho_*=\nu\proj e+(1-\nu)\proj g,\\
  0\le\nu<\tfrac12,\qquad p=|\langle0|g\rangle|^2.
  \end{gathered}
 \end{equation}
-Here $\nu$ is its smaller eigenvalue, and $p$ measures the tilt of the dominant eigenvector away from the target state $\ket1$. A pure stationary state, $\nu=0$, already suffices to attain the unrestricted boundary.
-
-Choose orthonormal vectors
+Here $\nu$ is its smaller eigenvalue, and $p$ measures the tilt of the dominant eigenvector away from the target state $\ket1$. To attain the unrestricted leading boundary, set $\nu=0$ and choose the orthonormal vectors
 \begin{equation}\label{eq:familybasis}
- \ket g=\sqrt p\ket0+\sqrt{1-p}\ket1,\qquad
- \ket e=\sqrt{1-p}\ket0-\sqrt p\ket1,
+ \begin{aligned}
+ \ket g&=\sqrt p\ket0+\sqrt{1-p}\ket1,\\
+ \ket e&=\sqrt{1-p}\ket0-\sqrt p\ket1,
+ \end{aligned}
 \end{equation}
 and define the readout coefficients
 \begin{equation}\label{eq:vw}
@@ -243,16 +277,23 @@ Writing $n=\bra e\rho\ket e$ and $z=\bra e\rho\ket g$, the measured population i
 \end{equation}
 The state $\proj g$ is a dark stationary state \cite{Kraus2008}, and the dynamics is triangular:
 \begin{equation}\label{eq:triangular}
- \dot n=-An,\qquad
- \dot z=-\sqrt{AB}\,n-\Gamma z,\qquad \Gamma=(A+B)/2.
+ \begin{aligned}
+ \dot n&=-An,\\
+ \dot z&=-\sqrt{AB}\,n-\Gamma z,\\
+ \Gamma&=(A+B)/2.
+ \end{aligned}
 \end{equation}
 Population decays independently, while the term $-\sqrt{AB}\,n$ transfers it into coherence. For the input difference $\delta\rho$, let $u=\bra e\delta\rho\ket e$ and $z=\bra e\delta\rho\ket g$. Then $q=vu+w\operatorname{Re}z$ and $(u(0),z(0))=(v,w)$. The transferred coherence therefore contributes negatively to $q$ and can overcome the surviving positive population difference.
 
 To attain the optimal scale, let $L\to\infty$ and choose
 \begin{equation}\label{eq:familyparams}
- p=e^{-L},\qquad A=L+\log L+1-\log4,\qquad B=A/L.
+ \begin{aligned}
+ p&=e^{-L},\\
+ A&=L+\log L+1-\log4,\\
+ B&=A/L.
+ \end{aligned}
 \end{equation}
-Then the actual disturbance satisfies $\eps\sim e^{-L}$. At readout, the negative transfer contribution has twice the leading magnitude of the surviving population contribution, giving $\Delta\sim(4/e)\eps/\log(1/\eps)$. Appendix~\ref{app:unrestricted-sharpness} gives the exact response, its asymptotics, and coverage of every sufficiently small actual disturbance.
+Then the actual disturbance satisfies $\eps\sim e^{-L}$. At readout, the negative transfer contribution has twice the leading magnitude of the surviving population contribution, giving $\Delta\sim(4/e)\eps/\log(1/\eps)$. The actual disturbance varies continuously with the parameter and tends to zero, so the family covers every sufficiently small positive disturbance. The exact response and its expansion are given in the final subsection of Appendix~\ref{app:envelope}.
 
 The representation \eqref{eq:familyjump} has $H=0$, while the jump contains coherent amplitudes. Identity shifts of the jump redistribute terms between the dissipator and Hamiltonian, so the value of $H$ alone does not characterize the coherent resources of the dynamics.
 
@@ -268,7 +309,7 @@ The rescaled dynamics gives the same channel with $\|J_{\rm phys}\|^2=\kappa$. T
 
 \subsection{Diagonal stationary state}
 
-When $\rho_*=\diag(\nu,1-\nu)$ in the measurement basis, stationarity gives
+If the generator admits a diagonal stationary state $\rho_*=\diag(\nu,1-\nu)$, preserving its populations requires
 \begin{equation}\label{eq:diagonal-exact}
  a=\nu+(1-\nu)q,\qquad \eps=\nu(1-q).
 \end{equation}
@@ -284,9 +325,18 @@ For the difference $\delta\rho$ between the two input trajectories, let $u=\delt
  \begin{pmatrix}-\alpha&r_0\\-c_0&-\lambda_+\end{pmatrix}\binom uz,
  \qquad\lambda_+=\frac{A(1+\chi)^2+B}{2},
 \end{equation}
-where $\chi=\sqrt{\nu/(1-\nu)}$ and $\alpha,r_0,c_0,\lambda_+>0$. Appendices~\ref{app:stationary} and \ref{app:diagonal} specify the coefficients and the explicit GKSL realization. The input difference starts at $(u,z)=(1,0)$, and the measured determinant is $q=u(1)$. Population generates coherence through $-c_0u$, which then feeds back through $r_0z$ and can reverse the population difference. Coherence contributes through this return path, while the tilted construction reads it out directly through $w$.
+where $\chi=\sqrt{\nu/(1-\nu)}$ and $\alpha,r_0,c_0,\lambda_+>0$. The jump, Hamiltonian, and derivation of their coefficients are given in Appendix~\ref{app:diagonal}. The input difference starts at $(u,z)=(1,0)$, and the measured determinant is $q=u(1)$. Population generates coherence through $-c_0u$, which then feeds back through $r_0z$ and can reverse the population difference. Coherence contributes through this return path, while the tilted construction reads it out directly through $w$.
 
 \subsection{Origin of the two logarithmic scales}
+
+In this subsection we compare the slow modes of the two constructions to explain the extra logarithmic suppression. Figure~\ref{fig:gain-comparison} compares the achieved reversal fractions $\Delta/\eps$ at matched finite disturbance. At $\eps=10^{-3}$ the tilted pure-state and diagonal-state constructions give approximately $0.192$ and $0.205$, respectively. At smaller disturbances the tilted construction overtakes the diagonal one. Each solid curve is an attainable lower bound for its class. The explicit solutions were evaluated with 100-digit arithmetic, solving separately for the family parameters at each common disturbance.
+
+\par\medskip\noindent\begin{minipage}[b]{\columnwidth}
+ \centering
+ \includegraphics[width=\columnwidth]{reset_gain_comparison.pdf}
+ \captionof{figure}{\ResetGainCaption}
+ \label{fig:gain-comparison}
+\end{minipage}\par\medskip
 
 The different coupling paths produce different powers of the rate ratio $\tau=B/A$. In the asymptotically optimal regime, the negative slow-mode amplitude is $4\sqrt{p\tau}$ for the tilted pure-state construction and $8\sqrt\nu\,\tau$ for the diagonal construction, to leading order. The competing positive population mode decays about twice as fast. Balancing the two modes makes the squared slow-mode amplitude enter the optimized reversal, together with a correction from their decay-rate ratio:
 \begin{equation}\label{eq:mechanism-scales}
@@ -299,60 +349,71 @@ The different coupling paths produce different powers of the rate ratio $\tau=B/
 \end{equation}
 The $O(\tau)$ correction to the slow-to-fast decay-rate ratio acts on the logarithmic scale $L$, producing the factor $e^{-\tau L}$ after optimization over the overall rate. Maximizing the two expressions gives $\tau L=1$ and $\tau L=2$, respectively. Since both optimal ratios are of order $1/L$, the extra factor of $\tau$ in the diagonal case supplies the additional inverse logarithm. With $\eps\sim p$ or $\eps\sim\nu$, these expressions give the coefficients $4/e$ and $64/e^2$.
 
-The two constructions explain the distinct scales. Their optimality over the full respective classes follows from the uniform bounds in Section~\ref{sec:universal} and Appendix~\ref{app:diagonal}. In the diagonal matching family, $\nu-a\sim(64/e^2)\nu/\log^2(1/\nu)$. Figure~\ref{fig:gain-comparison} compares explicit realizations at the same actual disturbance. The curves are attainable lower bounds; their ordering at finite error can differ from that of the optimized classes.
 
-\begin{figure}[tbp]
- \centering
- \includegraphics[width=\columnwidth]{reset_gain_comparison.pdf}
- \caption{\ResetGainCaption}
- \label{fig:gain-comparison}
-\end{figure}
 
 \section{Universal upper bounds}\label{sec:universal}
 
-Optimality follows by first confining the stationary parameters $p,\nu$ to the measured-error budget, then bounding the transient reversal through a population--coherence comparison. Optimizing its envelope over the dynamical rates gives an upper bound valid for arbitrary generators.
+The measured errors first constrain the eigenvalues and eigenvectors of every stationary state. Within this range, a comparison of population--coherence couplings followed by optimization over all dynamical rates gives the leading coefficient of the boundary.
 
 \subsection{Stationary-state constraint}
 
-Every finite-dimensional GKSL generator has a stationary density matrix, obtained from a convergent subsequence of long-time orbit averages. For any fixed point $\rho_*$ of the channel $\Phi=e^{\mathcal L}$, set $s_*=\bra0\rho_*\ket0$. The positive effect $\Phi^*(\proj0)$ has diagonal entries $a,\eps$, so the magnitude of its off-diagonal entry is at most $\sqrt{a\eps}$. Positivity of $\rho_*$ and stationarity give
-$s_*\le(\sqrt{as_*}+\sqrt{\eps(1-s_*)})^2$, and therefore
+A stationary state for any finite-dimensional GKSL generator exists as a subsequential limit of long-time orbit averages. Consider any fixed point $\rho_*$ of the channel $\Phi=e^{\mathcal L}$, and write $s_*=\bra0\rho_*\ket0$ for its unwanted population. The positive effect $\Phi^*(\proj0)$ has diagonal entries $a,\eps$, so its off-diagonal entry has magnitude at most $\sqrt{a\eps}$. Positivity also bounds the off-diagonal entry of $\rho_*$. The fixed-point condition then gives
+\[
+ s_*\le\bigl(\sqrt{as_*}+\sqrt{\eps(1-s_*)}\bigr)^2,
+\]
+which implies
 \begin{equation}\label{eq:budget-cross}
  [(1-\sqrt a)^2+\eps]s_*\le\eps.
 \end{equation}
-With \eqref{eq:stationary}, $s_*=\nu+(1-2\nu)p$. In the relevant region $a\le\eps\downarrow0$, the exact inversion in Appendix~\ref{app:stationary} yields
+In the reversal region $a\le\eps<1/4$, this gives $s_*\le b_*=\eps/(1-2\sqrt\eps+2\eps)<1/2$. Write $\nu$ for the smaller stationary eigenvalue and $p$ for the population of $\ket0$ in the dominant eigenvector. The identity $s_*=\nu+(1-2\nu)p$ and the inequality $2\nu p\le(p+\nu)^2/2$ convert the bound on $s_*$ into
 \begin{equation}\label{eq:budget-leading}
- p+\nu\le\varrho(\eps)=\eps[1+O(\sqrt\eps)].
+ \begin{aligned}
+ p+\nu&\le\varrho(\eps):=1-\sqrt{1-2b_*}\\
+      &=\eps[1+O(\sqrt\eps)].
+ \end{aligned}
 \end{equation}
-Thus the two small measured errors force every stationary state close to the target, with $p,\nu=O(\eps)$. The remaining optimization is local in these stationary parameters, while the dynamical rates remain unrestricted.
+Thus two small measured errors constrain both the mixedness and the tilt of every stationary state. The remaining optimization only needs $p,\nu=O(\eps)$, while the dynamical rates can still be arbitrarily large.
 
 \subsection{Population--coherence comparison}
 
-In an arbitrary stationary eigenbasis, set $u=\bra e\rho\ket e-\nu$ and $z=\bra e\rho\ket g$. Their homogeneous equations have the form
+This subsection bounds how much transient coherence can reverse the population difference. In a stationary eigenbasis $(e,g)$, set $u=\bra e\rho\ket e-\nu$ and $z=\bra e\rho\ket g$. Eliminating the constant terms by stationarity gives
 \begin{equation}\label{eq:core-system}
- \dot u=-\alpha u+\operatorname{Re}(R_0z^*),\qquad
- \dot z=\widetilde C u+Ez^*-(\Gamma+i\omega)z.
+ \begin{aligned}
+ \dot u&=-\alpha u+\operatorname{Re}(R_0z^*),\\
+ \dot z&=\widetilde C u+Ez^*-(\Gamma+i\omega)z .
+ \end{aligned}
 \end{equation}
-Appendix~\ref{app:stationary} derives these equations for arbitrary jump collections and Hamiltonians and gives the exact coefficients in \eqref{eq:ueq}--\eqref{eq:zeq}. The equations retain both population feedback and coupling to the conjugate coherence.
-
-The frequency term $-i\omega z$ does not contribute directly to the derivative of $|z|$, making the comparison uniform in $\omega$. Gram positivity bounds the coupling strengths by nonnegative constants $r_0,c_0$ and the coherence damping from below by $\lambda$. These auxiliary coefficients define the comparison matrix
-$K=\bigl(\begin{smallmatrix}-\alpha&r_0\\c_0&-\lambda\end{smallmatrix}\bigr)$
-with nonnegative off-diagonal entries and parameters given in \eqref{eq:comparison-coeff}. Its evolution bounds $|u|,|z|$ from above by relaxing the physical constraints on their couplings. Choose the relative phase of $e,g$ so that the off-diagonal entry of $\proj0$ is nonnegative. The input difference obeys the same equations, with $(u(0),z(0))=(v,w)$ and $q=vu+w\operatorname{Re}z$, using \eqref{eq:vw}. Combining the modulus comparison with the population variation-of-constants formula gives a lower bound on $q$, hence an upper bound on the reversal:
+Here $\widetilde C$ and $R_0$ describe transfer between population and coherence in the two directions, and $E$ couples to the conjugate coherence. Shift the identity components of the jump operators, preserving the generator, to set all their $gg$ entries to zero. Write $A=\sum_\mu|(J_\mu)_{ge}|^2$ and $B=\sum_\mu|(J_\mu)_{ee}|^2$. Positivity of the Gram matrix of jump entries gives $|\widetilde C|\le c_0$, $|R_0|\le r_0$, and $\Gamma-|E|\ge\lambda$, with
+\[
+ \begin{aligned}
+ \chi&=\sqrt{\nu/(1-\nu)}, &\alpha&=A(1+\chi^2),\\
+ c_0&=\frac{(1+\chi^2)\sqrt{AB}}{1-\chi},&
+ r_0&=\frac{2\chi\sqrt{AB}}{1-\chi},\\
+ \lambda&=\tfrac12[A(1-\chi)^2+B].&&
+ \end{aligned}
+\]
+The frequency term $-i\omega z$ does not contribute to the derivative of $|z|$, so these estimates hold for all $\omega$. Define
+\[
+ K=\begin{pmatrix}-\alpha&r_0\\c_0&-\lambda\end{pmatrix},
+ \qquad \binom{X(t)}{Z(t)}=e^{tK}\binom vw ,
+\]
+where $v=1-2p$ and $w=2\sqrt{p(1-p)}$. Choosing the relative phase of the eigenvectors makes $(v,w)$ the initial condition for the difference of the two basis inputs, with readout $q=vu+w\operatorname{Re}z$. The off-diagonal entries of $K$ are nonnegative, so componentwise comparison gives $|u|\le X$ and $|z|\le Z$. To retain competition between the positive population term and the negative coherence contribution, apply variation of constants to the signed population difference:
+\[
+ \begin{aligned}
+ u(t)&\ge ve^{-\alpha t}
+       -r_0\int_0^t e^{-\alpha(t-s)}Z(s)\,ds\\
+     &=2ve^{-\alpha t}-X(t).
+ \end{aligned}
+\]
+Together with $\operatorname{Re}z\ge-Z$ and $v,w\ge0$, this yields
 \begin{equation}\label{eq:comparison}
- q(t)\ge 2Ve^{-\alpha t}
- -(v,w)e^{tK}\binom vw\qquad(t\ge0).
+ q(t)\ge 2Ve^{-\alpha t}-(v,w)e^{tK}\binom vw
+ \qquad(t\ge0),
 \end{equation}
-
-The positive free population decay is retained, so it still competes with the negative coherence transient. Appendix~\ref{app:stationary} gives the comparison proof.
-
-The rate parameters $A,B$ are defined in \eqref{eq:coefficients} from the jump entries in a stationary eigenbasis, after an identity shift sets the $gg$ entries to zero. For the pure-state construction, they coincide with the rates in \eqref{eq:familyjump}. At time one, define
+where $V=v^2$. The coefficient reduction for arbitrary jump operators and the detailed comparison argument are given in Appendix~\ref{app:stationary}. At the observation time $t=1$, write $[x]_+=\max(x,0)$. Then the reversal $(\eps-a)_+$ of every finite realization is bounded by the envelope
 \begin{equation}\label{eq:envelope}
- \begin{gathered}
- \mathcal E(p,\nu,A,B)
- =\pos{(v,w)e^K\binom vw-2Ve^{-\alpha}},
- \\ [x]_+=\max(x,0).
- \end{gathered}
+ \mathcal E(p,\nu,A,B)=\pos{(v,w)e^K\binom vw-2Ve^{-\alpha}}.
 \end{equation}
-Then $(\eps-a)_+\le\mathcal E$ for every finite realization in this regime.
 
 \begin{proposition}[Sharp uniform envelope]\label{prop:envelope}
 Let $p,\nu\ge0$, $p+\nu\le\rho$, and $A,B\ge0$. With the definitions above, as $\rho\downarrow0$,
@@ -362,34 +423,41 @@ Let $p,\nu\ge0$, $p+\nu\le\rho$, and $A,B\ge0$. With the definitions above, as $
 \end{equation}
 The remainder is a function of $\rho$ alone and is uniform in all four parameters.
 \end{proposition}
+\begin{proof}[Proof sketch]
+Put $L=\log(1/\rho)$. If $A=0$ there is no population transfer and the envelope vanishes for sufficiently small $\rho$. For $A>0$, fixing the rate ratio $\tau=B/A$ leaves the overall decay scale free to vary with $A$. The leading contribution comes from $\rho^{1/4}\le\tau\le L^{-1/2}$. In this window the fast and slow decay modes bound the envelope by $[Qx^\theta-Px]_+$, where $x=e^{-\alpha}$, $Q$ is the slow-mode weight, $P=1+O(\sqrt\rho)$, and $\theta$ is the slow decay rate divided by $\alpha$. Maximizing over $x$ gives a factor $Q^{1/(1-\theta)}$.
 
-The leading contribution comes from a small window of the rate ratio $\tau=B/A$, where the comparison envelope has the same slow--fast competition as Eq.~\eqref{eq:mechanism-scales}. With $L=\log(1/\rho)$, optimizing the overall rate and using $p+\nu\le\rho$ give
+The slow-mode weight satisfies $Q^2/4\le 4p\tau+o(\rho\tau)$. The exponent $1/(1-\theta)$ approaches two. Its excess over two gives a factor at most $[1+o(1)]e^{-\tau L}$, and the prefactor in the exact maximum tends to $1/4$. Hence
 \begin{equation}\label{eq:leading-core}
  \mathcal E\le[4p+o(\rho)]\tau e^{-\tau L}
  \le\frac{4p/e+o(\rho)}L.
 \end{equation}
-The factor $\tau e^{-\tau L}$ is maximized at $\tau L=1$. Appendix~\ref{app:envelope} establishes this estimate uniformly and bounds the remaining rate ratios, including zero rates, repeated eigenvalues, and arbitrarily large rates. Their contributions are $o(\rho/L)$.
+The last inequality uses the maximum of $\tau e^{-\tau L}$ at $\tau=1/L$. Over the remaining rate ratios the envelope is uniformly $o(\rho/L)$, including zero rates, coincident decay rates, and unbounded ratios. The estimates for the individual rate regimes are derived in Appendix~\ref{app:envelope}.
+\end{proof}
 
 \subsection{Sharp asymptotics and saturation}
 
-For a finite realization with $a\le\eps$, choose any stationary state. Lemma~\ref{lem:budget} gives $p+\nu\le\varrho(\eps)$, and Lemma~\ref{lem:comparison} and Proposition~\ref{prop:envelope} then yield
+This subsection converts the envelope into a bound at measured disturbance $\eps$ and determines what saturation requires of every stationary state. For a finite realization with $a\le\eps$, choose any stationary state. Substituting $p+\nu\le\varrho(\eps)=\eps[1+O(\sqrt\eps)]$ in Proposition~\ref{prop:envelope} gives
 \begin{equation}\label{eq:physicalupper}
- \eps-a\le\frac{4p/e+o(\varrho(\eps))}{\log(1/\varrho(\eps))}
- \le\left(\frac4e+o(1)\right)\frac\eps{\log(1/\eps)}.
+ \begin{aligned}
+ \eps-a&\le\frac{4p/e+o(\varrho(\eps))}{\log(1/\varrho(\eps))}\\
+ &\le\left(\frac4e+o(1)\right)\frac\eps{\log(1/\eps)} .
+ \end{aligned}
 \end{equation}
-The last step uses $\varrho(\eps)=\eps[1+O(\sqrt\eps)]$. If $a>\eps$, the upper bound is immediate.
-
-This refined coefficient also proves the stationary-coherence bound in Eq.~\eqref{eq:coherence-fraction}. Under the budget $p+\nu=O(\eps)$, the exact stationary-state identities give $C_*=(1-2\nu)^2p(1-p)=p+O(\eps^2)$ and $I_*/2=\nu(1-\nu)=\nu+O(\eps^2)$. Multiplying the first inequality in Eq.~\eqref{eq:physicalupper} by $(e/4)\log(1/\eps)/\eps$ yields $r_\eps\le C_*/\eps+o(1)$; the budget gives the second inequality in Eq.~\eqref{eq:coherence-fraction}. Both hold uniformly for every stationary state.
-
-
-Uniformity means that, for every $\delta>0$, there is an $\eps_\delta>0$ such that every finite generator obeys
+For $a>\eps$ the left-hand side is negative and the bound holds immediately. To extend the bound to the probability closure, take any $\delta>0$. The uniform remainder supplies a common $\eps_\delta>0$ such that all finite generators satisfy
 \begin{equation}\label{eq:finiteuniform}
  \eps-a\le\left(\frac4e+\delta\right)
  \frac\eps{\log(1/\eps)}\qquad(0<\eps<\eps_\delta).
 \end{equation}
-Fix a point in the probability closure with $0<\eps<\eps_\delta$ and approximate it by finite realizations. The approximants eventually lie in the same error interval. Continuity of the right-hand side in $\eps$ then extends \eqref{eq:finiteuniform} to $\Q$.
+Fix a point of the closure whose actual disturbance lies in this open interval. Its finite approximants eventually lie in the same interval. Continuity of the right-hand side in $\eps$ therefore gives the same bound for the limiting table.
 
-The pure-state construction in Section~\ref{sec:mechanisms} supplies the matching lower bound, with its actual disturbance and coverage established in Appendix~\ref{app:unrestricted-sharpness}, completing Theorem~\ref{thm:main}. The complete-saturation case of Eq.~\eqref{eq:coherence-fraction} has the following spectral form.
+For a finite realization, retaining $p$ in the first line of Eq.~\eqref{eq:physicalupper} gives more information about the stationary state. Since $p,\nu=O(\eps)$, converting from the stationary eigenbasis to the measurement basis gives
+\[
+ \begin{aligned}
+ C_*&=(1-2\nu)^2p(1-p)=p+O(\eps^2),\\
+ I_*/2&=\nu(1-\nu)=\nu+O(\eps^2).
+ \end{aligned}
+\]
+Normalizing the reversal bound by $(e/4)\log(1/\eps)/\eps$ and replacing $p$ by $C_*+O(\eps^2)$ gives $r_\eps\le C_*/\eps+o(1)$. Using both identities in the stationary-state budget gives $(C_*+I_*/2)/\eps\le1+o(1)$. The former inequality sets the minimum coherent contribution required by the reversal, while the latter bounds the sum of coherence and mixedness. Both apply to every stationary state. At complete saturation they also determine its spectral structure.
 
 \begin{corollary}[Stationary-state saturation]\label{cor:saturation}
 Consider a sequence of finite qubit GKSL realizations with actual errors $a_n,\eps_n$, where $\eps_n\downarrow0$ and
@@ -408,51 +476,43 @@ For all sufficiently large $n$, $a_n<\eps_n$. The budget gives
 $p_n+\nu_n\le\eps_n[1+o(1)]$. The refined first inequality of \eqref{eq:physicalupper}, multiplied by $\log(1/\eps_n)/\eps_n$, and \eqref{eq:saturation} force $\liminf p_n/\eps_n\ge1$. Both limits follow from nonnegativity and the budget.
 \end{proof}
 
-For the diagonal class, $p=0$ leaves only feedback from population through coherence and back into population. Appendix~\ref{app:diagonal} refines the comparison to the scale $\nu/\log^2(1/\nu)$, proves a uniform bound over all rate ratios, and constructs a matching GKSL generator. Equation~\eqref{eq:diagonal-exact} converts $\nu$ to the actual disturbance $\eps$, and the same probability-closure argument completes Theorem~\ref{thm:diagonal}.
-
-
 \section{Discussion}\label{sec:discussion}
 
-The full-state tradeoff distinguishes optimal population reversal from accurate quantum-state reset. At the same actual disturbance $\eps$, incoherent relaxation can approach the replacement channel $\rho\mapsto\diag(\eps,1-\eps)$, with $\Delta=0$ and $E_{\rm tr}=\eps$. A sequence saturating the population-reversal law has $E_{\rm tr}$ of order $\sqrt\eps$, as established in Section~\ref{sec:results}. Saturating the reversal bound therefore requires a larger coherent contribution to the full-state error, even though both conditional populations are close to the target.
+Near reset, preparing the two basis states and reading out their populations in the same basis can reveal a property of the stationary state. For readings $a,\eps$ produced by a fixed generator, compare the measured reversal $\eps-a$ with the scale $(4/e)\eps/\log(1/\eps)$. If their ratio tends to $\eta>0$ along a sequence of experiments with decreasing actual disturbance, the squared off-diagonal element of every stationary state is at least $[\eta-o(1)]\eps$. A measured nonzero limiting fraction thus excludes a diagonal stationary state for all sufficiently small disturbances along that sequence. Observing a population crossing on its own would not support that inference. Applying this inference to a particular finite disturbance would require control of the asymptotic remainder.
 
-The role of the implementation constraint is visible through an additional final dephasing step. This operation preserves both measured probabilities and makes the trace-distance error equal to the unwanted population, so its worst-case value is at most $a+\eps\le2\eps$. The operation lies outside the single fixed-generator task. It removes the larger full-state error without altering the observed reversal, whereas dephasing at the population crossing removes the reversal itself, as in Eq.~\eqref{eq:dephasing-probe}. The two interventions distinguish the coherence carrying residual input information during evolution from the coherence remaining as output error.
+The relevant reset accuracy depends on how the qubit will be used. For a readout in the preparation basis with equally probable basis inputs, the average failure probability is $\eps-\Delta/2$. Increasing the reversal at fixed $\eps$ reduces this average. If subsequent operations use the qubit coherently, its full-state distance to the target also matters. Incoherent relaxation can approach the replacement channel $\rho\mapsto\diag(\eps,1-\eps)$, which has zero reversal and worst-case trace-distance error $\eps$. Autonomous evolution attaining the leading optimal reversal requires an error of order $\sqrt\eps$. Measuring only the final populations for the two basis inputs misses this larger error.
 
-Autonomy also limits the reversal itself. Time-dependent control can first damp toward $\ket0$, leaving population $\eps$ in $\ket1$ for input $\ket1$, and then apply a unitary swap. This gives $a=0$ and $P(0|1)=\eps$, hence $G_{\rm td}(\eps)=\eps$. A fixed generator reaches only a vanishing fraction of this value. This comparison concerns attainable probabilities at the same system dimension and measurement basis, without a time or coupling-strength bound.
+The effect of complete dephasing depends on when it is applied. At the population crossing, all remaining differences between the two states reside in their off-diagonal entries. Dephasing at that instant makes the states identical and eliminates the subsequent reversal. Dephasing just before readout preserves the reversal already present and reduces the trace distance to the target to the unwanted population. For $a\le\eps$, this error is at most $a+\eps\le2\eps$ for every input. Final dephasing requires an operation in addition to the original relaxation. If only one fixed generator is allowed, the least full-state error compatible with a specified finite disturbance and reversal remains open.
 
-The attaining families build on the four-parameter ansatz of Ref.~\cite{Shahbeigi2024}: the pure-state family lies in its probability closure, and the diagonal family belongs to it at sufficiently small error. Appendix~\ref{app:prior-family} gives the explicit transformations. The universal upper bounds establish their endpoint optimality. The earlier exclusion bound implies only $a\ge(\eps/2)^{10}[1+o(1)]$ near reset, whereas Theorem~\ref{thm:main} determines $a/\eps\to1$ and its leading correction; Appendix~\ref{app:exclusions} makes the comparison precise.
+Time-dependent control can also change the reversal itself. First damp toward $\ket0$ until input $\ket1$ retains population $\eps$ in $\ket1$, then swap the basis states. This gives $a=0$ and $P(0|1)=\eps$, hence a reversal equal to $\eps$. With the same system dimension and measurement basis, the ratio of the largest fixed-generator reversal to this value is only $[4/e+o(1)]/\log(1/\eps)$. Even with no upper bound on coupling strength or duration, keeping the generator fixed during each reset limits the population difference that can be observed at readout.
 
-The finite-error optimal curve and quantitative finite-error versions of the coherence constraint remain open. Such estimates would turn the asymptotic structural inference into bounds usable at specified experimental errors.
+These endpoint laws also clarify the physical significance of the earlier numerical boundary. Both attaining constructions are related to the four-parameter family of Ref.~\cite{Shahbeigi2024}. The tilted pure-state family lies in its probability closure, and the diagonal family belongs to it at sufficiently small error. The earlier exclusion bound gives $a\ge(\eps/2)^{10}[1+o(1)]$. The uniform upper bound on the reversal forces $a/\eps\to1$ on the optimal boundary and determines the leading difference between the two errors. Thus even with the best choice of fixed generator, both conditional errors approach zero with the same leading term on that boundary. The full optimal curve at finite disturbance remains open.
 
 \section{Conclusions}\label{sec:conclusions}
 
-Time-independent qubit dynamics permits a sharply limited reversal of population order near reset. Its optimal scale is $\eps/\log(1/\eps)$, with coefficient $4/e$; admitting a diagonal stationary state reduces it to $\eps/\log^2(1/\eps)$, with coefficient $64/e^2$. These laws also constrain the coherence and purity of every stationary state. A finite fraction of the leading population reversal requires stationary coherence, and full saturation entails a worst-case trace-distance reset error of order $\sqrt\eps$.
+On the optimal boundary near reset toward $\ket1$, the unwanted populations $a$ and $\eps$ for the two basis inputs agree to leading order. Autonomous relaxation can bring $a$ below $\eps$, but even for the optimal choice of generator the difference is a vanishing fraction of $\eps$. If at least one stationary state is diagonal, transient coherence can still reverse the population order, but the ratio of the maximal reversal in this class to the unrestricted optimum is asymptotic to $16/[e\log(1/\eps)]$. Thus, if the observed reversal approaches a positive fraction of the unrestricted optimum along a sequence of finite realizations with vanishing disturbance, every stationary state must have coherence for all sufficiently small disturbances along the sequence.
+
+At saturation of the unrestricted law, the two population readings imply that the squared off-diagonal element of every stationary state is asymptotic to $\eps$ and its purity deficit is $o(\eps)$. For equally probable basis inputs, increasing the reversal at fixed disturbance lowers the probability of reading out the unwanted state. If the full output state must be close to the target for every input, the coherence that survives for a stationary input also matters. At the leading optimum the worst-case trace-distance error is of order $\sqrt\eps$, whereas incoherent relaxation at the same disturbance can approach a replacement channel with zero reversal and trace-distance error $\eps$.
 
 \begin{acknowledgments}
-{\hyphenpenalty=10000 [ACKNOWLEDGMENTS AND FUNDING TO BE COMPLETED]\par}
+We used OpenAI Codex (GPT-6 Astra) to assist in translating the mathematical proofs in this paper into Lean code and to check the manuscript for grammatical errors. All AI outputs were reviewed by the authors.
 \end{acknowledgments}
 
 \section*{Data and code availability}
 {\hyphenpenalty=10000 [DATA AND CODE AVAILABILITY TO BE CONFIRMED]\par}
 
-\section*{Declarations}
-{\hyphenpenalty=10000 [DECLARATIONS TO BE CONFIRMED]\par}
-
-
 \appendix
 
 \section{Stationary-state reduction}\label{app:stationary}\label{sec:comparison}
 
-This appendix derives the stationary error budget and the population--coherence comparison used in Section~\ref{sec:universal}.
+This appendix bounds the eigenvalues and eigenvectors of each stationary state using the two conditional populations. In the stationary eigenbasis, the resulting equations give a reversal bound uniform in the Hamiltonian frequency.
 
 \subsection{Stationary-state constraint}
 
-Every finite-dimensional GKSL generator has a stationary density matrix. Compactness gives a convergent subsequence of the time averages of any orbit, and
-$\mathcal L(t^{-1}\int_0^t e^{s\mathcal L}(\rho)\,ds)
-=(e^{t\mathcal L}(\rho)-\rho)/t\to0$.
-The following lemma bounds every such state in terms of the two measured errors.
+This subsection uses the nontarget population of a channel fixed point to bound both its smaller eigenvalue $\nu$ and the tilt $p$ of its dominant eigenvector. The bound applies to every stationary state of the generator, which is fixed by the channel at any evolution time.
 
 \begin{lemma}[Stationary error budget]\label{lem:budget}
-Let $\Phi$ be a qubit channel with the probabilities in \eqref{eq:table}. For any fixed point $\rho_*$ of $\Phi$, write $s_* =\bra0\rho_*\ket0$. Then the inequality \eqref{eq:budget-cross} holds.
+Let $\Phi$ be a qubit channel with the probabilities in \eqref{eq:table}. For any fixed point $\rho_*$ of $\Phi$, write $s_* =\bra0\rho_*\ket0$. Then $[(1-\sqrt a)^2+\eps]s_*\le\eps$.
 If $a\le\eps<1/4$, diagonalize
 $\rho_*$ as in \eqref{eq:stationary}.
 Then $p,\nu<1/2$ and
@@ -479,12 +539,12 @@ and the right-hand side increases on $[0,1)$, inversion yields \eqref{eq:rhoepsi
 
 \subsection{Population--coherence dynamics}
 
-Fix an arbitrary stationary state and use the eigenbasis $(e,g)$ from \eqref{eq:stationary}. Subtracting each jump's $gg$ entry times the identity, with the corresponding Hamiltonian adjustment, preserves the generator and gives
+This subsection derives the population--coherence couplings in the eigenbasis $(e,g)$ of an arbitrary stationary state. Subtracting the $gg$ entry of each jump times the identity, adjusting the Hamiltonian accordingly, and dropping its scalar part gives an equivalent representation
 \begin{equation}\label{eq:gauge}
  J_\mu=\begin{pmatrix}x_\mu&y_\mu\\z_\mu&0\end{pmatrix},\qquad
  H=\begin{pmatrix}\omega/2&h\\h^*&-\omega/2\end{pmatrix}.
 \end{equation}
-An irrelevant scalar multiple of the identity has also been removed from $H$. Define
+Define
 \begin{align}\label{eq:coefficients}
  A&=\sum_\mu|z_\mu|^2,& B&=\sum_\mu|x_\mu|^2,&
  U&=\sum_\mu|y_\mu|^2,\nonumber\\
@@ -526,11 +586,10 @@ and the measured determinant at time $t$ is
 \begin{equation}\label{eq:readq}
  q(t)=v u(t)+w\operatorname{Re}z(t).
 \end{equation}
-The basis change therefore transforms the preparation and measurement axes together.
 
 \subsection{Positive comparison}
 
-Introduce
+This subsection bounds the magnitudes of both population and coherence differences with a real matrix having nonnegative off-diagonal entries, while retaining the sign of the free population decay. Define
 \begin{equation}\label{eq:comparison-coeff}
  \begin{gathered}
  \chi=\sqrt{\frac\nu{1-\nu}},\quad \alpha=A(1+\chi^2),\quad
@@ -558,7 +617,7 @@ Equations~\eqref{eq:ueq}--\eqref{eq:coefficient-bounds} give upper right Dini-de
  D^+|u|\le-\alpha|u|+r_0|z|,\qquad
  D^+|z|\le c_0|u|-\lambda|z|.
 \]
-The term $-i\omega z$ contributes zero to the derivative of $|z|$. At a zero of $u$ or $z$, the corresponding modulus derivative gives the same inequality. Since $K$ has nonnegative off-diagonal entries, its exponential has nonnegative entries. The componentwise comparison principle therefore gives $|u|\le X$ and $|z|\le Z$ for $(X,Z)^T=e^{tK}(v,w)^T$. This principle follows by adding a strictly positive perturbation to the comparison initial data and derivative, excluding a first contact, and then removing the perturbation.
+The frequency term $-i\omega z$ makes no contribution to the derivative of $|z|$, and the upper right derivative obeys the same bounds where either modulus vanishes. Since the off-diagonal entries of $K$ are nonnegative, componentwise comparison gives $|u|\le X$ and $|z|\le Z$ for $(X,Z)^T=e^{tK}(v,w)^T$.
 
 The variation-of-constants formula for the population gives the stronger lower bound
 \begin{align*}
@@ -568,15 +627,15 @@ The variation-of-constants formula for the population gives the stronger lower b
 Substitute this and $\operatorname{Re}z\ge-Z$ into \eqref{eq:readq}; $v,w\ge0$ yields \eqref{eq:comparison}.
 \end{proof}
 
-The free population decay in \eqref{eq:comparison} supplies the positive term that competes with the coherence transient; replacing $u$ by $-|u|$ would discard this term. At time one, the comparison gives the envelope \eqref{eq:envelope}, with $(\eps-a)_+\le\mathcal E$.
+At $t=1$, taking the positive part of the bound on $-q$ gives the reversal envelope $(\eps-a)_+\le\mathcal E$.
 
 \section{Uniform envelope bound}\label{app:envelope}\label{sec:envelope}
 
-The proof of Proposition~\ref{prop:envelope} separates four ranges of the rate ratio. Throughout this appendix, $C_{\rm b}$ denotes a finite universal constant that may increase between estimates. All thresholds depend only on $\rho$.
+This appendix proves the uniform envelope bound in Proposition~\ref{prop:envelope} and computes the actual disturbance of the tilted pure-state construction. The proof separates four ranges of the rate ratio, only one of which contributes at leading order. The universal constant $C_{\rm b}$ may increase between estimates, and all thresholds depend only on $\rho$.
 
 \subsection{Dimensionless formulation}
 
-If $A=0$, then $r_0=c_0=\alpha=0$ and
+This subsection separates the overall rate $A$ from the ratio $B/A$ so that the overall rate can be optimized first. If $A=0$, then $r_0=c_0=\alpha=0$ and
 $\mathcal E=[We^{-B/2}-V]_+=0$ for small $\rho$. For $A>0$, write
 \begin{align}
  \tau&=B/A,& \mathfrak a&=1+\chi^2,&
@@ -603,7 +662,7 @@ the roots satisfy $0<\beta\le\min(\mathfrak a,\ell)$ and $\gamma\ge\max(\mathfra
 \begin{equation}\label{eq:beta-lower}
  \beta\ge(1-\sqrt\kappa)\min(\mathfrak a,\ell).
 \end{equation}
-To see this, set $t=(1-\sqrt\kappa)\min(\mathfrak a,\ell)$. Both $\mathfrak a-t\ge\sqrt\kappa\,\mathfrak a$ and $\ell-t\ge\sqrt\kappa\,\ell$, so $(\mathfrak a-t)(\ell-t)\ge h_0$; the smaller root of this characteristic equation is $\beta$.
+At $t=(1-\sqrt\kappa)\min(\mathfrak a,\ell)$, the product $(\mathfrak a-t)(\ell-t)\ge\kappa\mathfrak a\ell\ge h_0$, so $t$ is bounded above by the smaller root $\beta$.
 
 For $0\le\tau\le1/2$, the spectral separation satisfies
 \begin{equation}\label{eq:gap}
@@ -632,9 +691,7 @@ Put $\theta=\beta/\mathfrak a$. Equations~\eqref{eq:gap} and \eqref{eq:rates} gi
 \begin{equation}\label{eq:theta}
  \frac{1+\tau}{2}-C_{\rm b}\chi\le\theta\le\frac{1+\tau}{2}.
 \end{equation}
-For the upper inequality one can use
-$\ell/\mathfrak a=(1+\tau)/2-\chi/(1+\chi^2)-\tau\chi^2/[2(1+\chi^2)]$.
-The lower inequality follows by subtracting $(\gamma-\mathfrak a)/\mathfrak a=O(\chi\tau)$.
+Indeed, $\ell/\mathfrak a$ lies below $(1+\tau)/2$ by $O(\chi)$, and $\ell-\beta=\gamma-\mathfrak a=O(\chi\tau)$.
 
 For $Q>0$, the maximum of $Qx^\theta-Px$ over $x=e^{-\mathfrak a A}\in[0,1]$ occurs in the interior because $\theta Q<P$. Its exact value is
 \begin{equation}\label{eq:D}
@@ -645,7 +702,7 @@ For $Q=0$, the envelope vanishes. Equation~\eqref{eq:D} optimizes over all overa
 
 \subsection{Large rate ratios}
 
-For $\tau\ge1/2$, small $\rho$ ensures
+This subsection controls the envelope for $\tau\ge1/2$ with a convolution bound that remains uniform at coincident decay rates and unbounded rate ratios. Small $\rho$ ensures
 \begin{equation}\label{eq:large-beta}
  \beta\ge7/10,\qquad 1\le\mathfrak a\le101/100,
 \end{equation}
@@ -685,7 +742,7 @@ This estimate includes coincident decay rates and arbitrarily large $B/A$.
 
 \subsection{Intermediate and small rate ratios}
 
-Set
+This subsection bounds the intermediate and very small rate ratios. The decay exponent suppresses the reversal in the former range, while the slow-mode weight is already small enough in the latter. Set
 \begin{equation}\label{eq:Leta}
  L=\log(1/\rho),\qquad\eta=L^{-1/2}.
 \end{equation}
@@ -697,8 +754,7 @@ All remaining factors in \eqref{eq:D} are uniformly bounded. Thus
  D_{\max}\le C_{\rm b}(C_{\rm b}\sqrt\rho)^{2/(1-\tau+C_{\rm b}\sqrt\rho)}
  \le C_{\rm b}\rho e^{-\sqrt L/2}.
 \end{equation}
-For the last step, the logarithm after division by $\rho$ is at most
-$C_{\rm b}-L(\tau-C_{\rm b}\sqrt\rho)/(1-\tau+C_{\rm b}\sqrt\rho)\le C_{\rm b}-\sqrt L/2$.
+The last step uses $\tau L\ge\sqrt L$ and $\sqrt\rho L=o(1)$.
 
 On $0\le\tau\le\rho^{1/4}$, including $B=0$, the finer form of \eqref{eq:Qbound} gives $Q\le C_{\rm b}\rho^{5/8}$. Since $1/(1-\theta)\ge2-C_{\rm b}\sqrt\rho$,
 \begin{equation}\label{eq:tiny}
@@ -708,21 +764,19 @@ This estimate also permits $\theta<1/2$, which is possible for mixed stationary 
 
 \subsection{Leading asymptotics}
 
-It remains to treat
+This subsection separates the contributions of tilt and mixedness to the slow-mode weight in the remaining range of rate ratios. The leading coefficient comes from this range,
 \begin{equation}\label{eq:window}
  \rho^{1/4}\le\tau\le L^{-1/2}.
 \end{equation}
 Here $\chi\le C_{\rm b}\sqrt\rho=o(\tau)$. The two coupling terms in \eqref{eq:Qbound} admit the sharper estimates
-\begin{align}
+\begin{equation}\label{eq:sharpQparts}
+ \begin{aligned}
  \frac{h_0}{g^2}
- &=\frac{8\chi(1+\chi^2)\tau}
- {(1-\chi)^2[(1+\chi)^2-\tau]^2}
- \nonumber\\&\le8\sqrt\nu\,\tau[1+O(\eta+\sqrt\rho)],\nonumber\\
+ &\le8\sqrt\nu\,\tau[1+O(\eta+\sqrt\rho)],\\
  \frac{2\sqrt p(r+c)}g
- &=\frac{4\sqrt{p\tau}(1+\chi)^2}
- {(1-\chi)[(1+\chi)^2-\tau]}
- \nonumber\\&\le4\sqrt{p\tau}[1+O(\eta+\sqrt\rho)].\label{eq:sharpQparts}
-\end{align}
+ &\le4\sqrt{p\tau}[1+O(\eta+\sqrt\rho)].
+ \end{aligned}
+\end{equation}
 Therefore
 \begin{equation}\label{eq:sharpQ}
  Q\le4p+[1+O(\eta+\sqrt\rho)]
@@ -760,7 +814,7 @@ using $\sup_{\tau\ge0}\tau e^{-\tau L}=1/(eL)$. Equations~\eqref{eq:large-final}
 
 \subsection{Matching construction at fixed error}\label{app:unrestricted-sharpness}\label{sec:sharpness}
 
-The pure-state generator of Section~\ref{sec:mechanisms} yields an exact response that establishes the matching lower bound at fixed actual disturbance. At time one, define
+This subsection solves the triangular dynamics of the tilted pure-state construction to obtain a matching reversal at each sufficiently small actual disturbance and to estimate the full-state error of the same channel. At time one, define
 \begin{equation}\label{eq:familykernels}
  \begin{gathered}
  F=e^{-A},\qquad S=e^{-\Gamma},\\
@@ -795,10 +849,8 @@ $(4/e+o(1))p/L$ and $w^2S=o(p/L)$. Thus
  \\ \log\frac1{\eps(L)}=L+o(1).
  \end{gathered}
 \end{equation}
-Thus the construction attains the leading coefficient in Theorem~\ref{thm:main} at its actual measured disturbance.
 
-The construction realizes every sufficiently small positive disturbance. The function $\eps(L)$ is continuous, positive for all sufficiently large $L$, and tends to zero. Its range on a connected tail therefore contains an interval $(0,\eps_0]$. Any sequence of parameter values realizing disturbances that tend to zero must have $L\to\infty$, since $\eps(L)$ has a positive minimum on each compact subinterval of that tail. The lower asymptotic bound therefore holds throughout a punctured neighborhood of zero. Together with \eqref{eq:physicalupper}, this completes the proof of Theorem~\ref{thm:main}.
-
+On a sufficiently large tail $[L_0,\infty)$, $\eps(L)$ is continuous, positive, and tends to zero. Its range contains $(0,\eps(L_0)]$ by the intermediate value theorem. As $\eps\downarrow0$, every preimage on the tail tends to infinity because $\eps(L)$ has a positive minimum on each compact subinterval. The matching lower bound thus holds at every sufficiently small actual disturbance.
 
 The full-state error of this family follows from the same solution. For an arbitrary input, write $n=\bra e\rho\ket e\in[0,1]$ and $z=\bra e\rho\ket g$, with $|z|\le1/2$. At time one, $n'=Fn$ and $z'=Sz-kn$, where $k=\sqrt{AB}J_0$. Since the stationary state is $\proj g$,
 \begin{equation}\label{eq:pure-full-state-bound}
@@ -812,12 +864,12 @@ The stationary input gives $E_{\rm tr}\ge\tfrac12\|\proj g-\proj1\|_1=\sqrt p$, 
 
 \section{Diagonal stationary states}\label{app:diagonal}
 
-This appendix proves Theorem~\ref{thm:diagonal} using the full mixed-state equations \eqref{eq:ueq}--\eqref{eq:zeq}. For a stationary state diagonal in the measurement basis, the population $\nu$ satisfies
+This appendix proves the sharp reversal law for diagonal stationary states. Reversal requires transient coherence to feed back into the population. We bound that feedback uniformly in the rates and then construct a generator attaining the leading coefficient. The stationary population satisfies
 $\nu=a\nu+\eps(1-\nu)$, which gives \eqref{eq:diagonal-exact}. Only $q<0$ contributes to the reversal, and then $0<\nu\le\eps$. For small $\eps$, the stationary state has $\nu<1/2$, $\ket e=\ket0$, $\ket g=\ket1$, and $p=0$. The input difference starts at $(u,z)=(1,0)$ and gives $q=u(1)$. If $A=0$ or $B=0$, the Gram constraints decouple population from coherence, giving $q=e^{-\alpha}\ge0$. It therefore suffices to consider $A,B>0$.
 
 \subsection{Feedback bound}
 
-Let $(X,Z)^T=e^{tK}(1,0)^T$. Lemma~\ref{lem:comparison} gives $u(t)\ge2e^{-\alpha t}-X(t)$. Introduce dimensionless time $x=\alpha t$ and the parameters
+This subsection bounds the feedback by a positive convolution. A weighted estimate handles large rate ratios uniformly through repeated roots, and the slow-mode weight gives a sharper bound at smaller ratios. Positive comparison gives $u(t)\ge2e^{-\alpha t}-X(t)$ for $(X,Z)^T=e^{tK}(1,0)^T$. Introduce dimensionless time $x=\alpha t$ and the parameters
 \begin{equation}\label{eq:diag-parameters}
  \begin{gathered}
  \tau=\frac BA,\qquad
@@ -889,7 +941,7 @@ $d_{\rm sp}-(1-\zeta)=4h_f/[d_{\rm sp}+(1-\zeta)]$.
 
 \subsection{Uniform asymptotics}
 
-Here $C_{\rm d}$ denotes a finite universal constant, independent of the rates and $\nu$.
+This subsection optimizes over the rate ratio to obtain the upper-bound coefficient $64/e^2$. The constant $C_{\rm d}$ is finite and independent of the rates and $\nu$.
 
 If $0<\tau\le\sqrt\chi$, then $d_0\le C_{\rm d}\chi^{3/2}$ and $\beta\ge1/3$ for small $\chi$. Hence
 \begin{equation}\label{eq:diag-tiny}
@@ -931,11 +983,11 @@ For $\tau\ge L^{-1/2}$, \eqref{eq:diag-F} is exponentially small in $\sqrt L$. O
  \\&=\frac{64/e^2+o(1)}{L^2}.
  \end{aligned}
 \end{equation}
-Together with \eqref{eq:diag-large} and \eqref{eq:diag-tiny}, this proves a uniform bound for all finite generators in the restricted class. For $q<0$, Eq.~\eqref{eq:diagonal-exact} gives $\nu\le\eps$. Since $x/\log^2(1/x)$ increases for small positive $x$, the same leading bound holds with $\eps$ in place of $\nu$; for $q\ge0$, it is immediate. The resulting bound depends only on the measured probabilities and extends to $\mathcal Q_{\rm diag}$ as in Section~\ref{sec:universal}.
+Together with \eqref{eq:diag-large} and \eqref{eq:diag-tiny}, this proves a uniform bound for all finite generators in the restricted class. For $q<0$, Eq.~\eqref{eq:diagonal-exact} gives $\nu\le\eps$. Since $x/\log^2(1/x)$ increases for small positive $x$, the same leading bound holds with $\eps$ in place of $\nu$; for $q\ge0$, it is immediate. At fixed sufficiently small positive $\eps$, a limit along convergent probability tables extends the uniform bound to $\mathcal Q_{\rm diag}$.
 
 \subsection{Matching generator}
 
-Take $\nu\downarrow0$, $\chi=\sqrt{\nu/(1-\nu)}$, $L=\log(1/\nu)$, and $\tau=2/L$. Let $B=\tau A$, $U=\chi^2A$, and in the measurement basis choose
+This subsection constructs a single-jump generator whose negative feedback attains the uniform bound. Take $\nu\downarrow0$, $\chi=\sqrt{\nu/(1-\nu)}$, $L=\log(1/\nu)$, and $\tau=2/L$. Let $B=\tau A$, $U=\chi^2A$, and in the measurement basis choose
 \begin{equation}\label{eq:diag-jump}
  \begin{gathered}
  J=\begin{pmatrix}-\sqrt B&-\sqrt U\\\sqrt A&0\end{pmatrix},\qquad
@@ -945,7 +997,6 @@ Take $\nu\downarrow0$, $\chi=\sqrt{\nu/(1-\nu)}$, $L=\log(1/\nu)$, and $\tau=2/L
 \end{equation}
 Equation~\eqref{eq:stationarity} confirms that $\diag(\nu,1-\nu)$ is stationary. The coefficients satisfy
 $\widetilde C=-c_0$, $R_0=r_0$, $E=-\sqrt{AU}$, and $\omega=0$. The subspace with real coherence is invariant and obeys \eqref{eq:diag-real}.
-This single-jump generator realizes the negative-feedback mechanism described in Section~\ref{sec:mechanisms}.
 
 Write $\zeta_+=\lambda_+/\alpha$ and define
 \begin{equation}\label{eq:diag-negative-spectrum}
@@ -969,21 +1020,11 @@ $-q(x_*)=\mathcal D_0(\beta_-,d_-)$ with $\beta_-=\gamma_-/\gamma_+$. These para
 \begin{equation}\label{eq:diag-lower}
  -q(x_*)=\left(\frac{64}{e^2}+o(1)\right)\frac\nu{L^2}.
 \end{equation}
-The actual disturbance is $\eps(\nu)=\nu[1-q(x_*)]\sim\nu$. It is positive, continuous, and tends to zero, so the connected-range argument in Appendix~\ref{app:unrestricted-sharpness} covers every sufficiently small positive $\eps$. This matches the upper bound \eqref{eq:diag-optimized} and completes Theorem~\ref{thm:diagonal}. Figure~\ref{fig:convergence} shows both constructions approaching their asymptotic constants.
-
-The curves in Figs.~\ref{fig:gain-comparison} and \ref{fig:convergence} evaluate the explicit solutions with 100-digit arithmetic. Figure~\ref{fig:gain-comparison} matches the two constructions at common actual errors by solving for their family parameters; Fig.~\ref{fig:convergence} uses the actual error of each sampled realization for both axes.
-
-\begin{figure}[tbp]
- \centering
- \includegraphics[width=\linewidth]{reset_convergence.pdf}
- \caption{\ResetConvergenceCaption}
- \label{fig:convergence}
-\end{figure}
-
+The actual disturbance $\eps(\nu)=\nu[1-q(x_*)]\sim\nu$ is continuous and tends to zero through positive values as $\nu\downarrow0$. By the intermediate value theorem the construction covers every sufficiently small actual $\eps$, attaining the same leading coefficient as the upper bound.
 
 \section{Prescribed stationary-coherence fraction}\label{app:coherence-fraction}
 
-The physical constraints in Eqs.~\eqref{eq:coherence-fraction} and \eqref{eq:population-state-tradeoff} can be attained at each fixed fraction of the leading reversal. Fix $\eta\in(0,1]$, let $L\to\infty$, and set
+This appendix constructs stationary states that attain any prescribed fraction of the leading unrestricted reversal, together with the corresponding bounds on coherence, purity, and full-state error. First fix $\eta\in(0,1]$, let $L\to\infty$, and set
 \begin{equation}\label{eq:fraction-family}
  \begin{gathered}
  \sigma=e^{-L},\qquad p=\eta\sigma,\qquad\nu=(1-\eta)\sigma,\\
@@ -1030,11 +1071,11 @@ The same matrix estimates, together with the imaginary-coherence decay, imply
 $\sup_\rho\tfrac12\|\Phi(\rho)-\rho_*\|_1=O_\eta(\sqrt{\sigma/L})$.
 Since $\tfrac12\|\rho_*-\proj1\|_1\sim\sqrt{\eta\sigma}$, the stationary input and triangle inequality yield $E_{\rm tr}^2/\eps\to\eta$.
 
-The function $\eps(L)$ is continuous, positive on a sufficiently large closed tail, and tends to zero. The connected-range argument in Appendix~\ref{app:unrestricted-sharpness} therefore supplies a finite realization at every sufficiently small actual $\eps$, with the limits above preserved. For $\eta=0$, the diagonal construction gives $C_*=0$, $I_*/(2\eps)\to1$, and $r_\eps\to0$. These statements concern fixed $\eta$; no uniform crossover as $\eta$ tends to zero with $\eps$ is asserted.
+On a sufficiently large tail $\eps(L)$ is continuous, positive, and tends to zero, so the finite construction covers every sufficiently small actual disturbance. At the remaining fixed fraction $\eta=0$, the diagonal construction gives $C_*=0$, $I_*/(2\eps)\to1$, and $r_\eps\to0$.
 
 \section{Relation to the four-parameter family}\label{app:prior-family}
 
-This appendix establishes the relation stated in Section~\ref{sec:discussion} between the attaining constructions and the family used for numerical boundary searches in Ref.~\cite{Shahbeigi2024}. That family has
+This appendix relates the two matching constructions to the four-parameter family used in numerical boundary searches \cite{Shahbeigi2024}. The tilted pure-state tables belong to its closure, and the diagonal construction belongs to the family itself at sufficiently small disturbance. The four-parameter family has
 \begin{equation}\label{eq:prior-family}
  \begin{gathered}
  H_{\rm old}=X,\qquad
@@ -1074,10 +1115,9 @@ This identity shift preserves the GKSL generator. Since $J'$ is nonzero, real, a
 \end{equation}
 Write $J'=s\ket{u'}\bra{v'}$ with $s>0$ and real unit vectors. After the same phase change, choose duration $t=k'$ and jump rate $\gamma=s^2/k'$ in the prior family. The integrated generator then equals the transformed time-one generator of the diagonal construction. Thus the diagonal family belongs to the prior ansatz for every sufficiently small $\nu$.
 
-
 \section{Comparison of exclusion regions}\label{app:exclusions}\label{sec:exclusions}
 
-To compare with the earlier analytic outer bound, denote the reset-side function in Theorem~1 of Ref.~\cite{Shahbeigi2024} by
+This appendix compares the sharp reset law with the earlier analytic exclusion bound and identifies a region of positive area beyond that bound. The reset-side function in Theorem~1 of Ref.~\cite{Shahbeigi2024} is
 \begin{equation}\label{eq:oldg}
  g_R(a)=(2-a)(2a+a^{1/10}).
 \end{equation}
@@ -1086,7 +1126,6 @@ $g_R(a)=2a^{1/10}[1+o(1)]$ is locally increasing, its inversion gives the necess
 \begin{equation}\label{eq:oldinverse}
  a\ge(\eps/2)^{10}[1+o(1)].
 \end{equation}
-Equation~\eqref{eq:oldinverse} is the necessary condition obtained by inverting the earlier exclusion bound.
 
 To compare the excluded regions directly, fix $C>4/e$ and choose $\eps_C>0$ so that Theorem~\ref{thm:main} gives $a\ge\eps[1-C/\log(1/\eps)]$ below this threshold. Every table in
 \begin{equation}\label{eq:newwedge}
@@ -1100,6 +1139,7 @@ is excluded by the present bound. None is excluded by the earlier theorem or its
 $g_R(a)>2a(2-a)>2a>\eps$, so the earlier reset condition fails. After exchanging the coordinates, the first coordinate is near one and fails the small-coordinate premise. The additional excluded region therefore has nonzero area.
 
 % 采用 PRA 类默认的 apsrev4-2，使 longbibliography 保留题名。
+\clearpage
 \bibliography{reset_references}
 \end{document}
 
